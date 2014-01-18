@@ -38,7 +38,7 @@
   <li class="">
     <a href="/" data-toggle="pill">Overview</a>
   </li>
-  <li class="">
+  <li class="active">
     <a href="/docs/home/" data-toggle="pill">Documentation</a>
   </li>
   <li class="">
@@ -50,7 +50,7 @@
   <li class="">
 	  <a href="/" data-toggle="tab">Overview</a>
   </li>
-   <li class="">
+   <li class="active">
 	   <a href="/docs/home" data-toggle="tab">Documentation</a>
    </li>
   <li>
@@ -63,11 +63,13 @@
 	</div>
 </header>
 
-  <h2>Getting Started</h2>
-<p class="meta">17 Jan 2014</p>
-
-<div class="post">
-<h3>Latest image</h3>
+  <div id="content-wrapper">
+	<div class="inner clearfix">
+		<section id="main-content">
+			<div>
+				<article>
+					<h1>Installation</h1>
+					<h3>Latest image</h3>
 
 <p>The lastest version of the <em>Spec</em> source code can be found <a href="https://github.com/SpecForPharo/spec">here</a>.</p>
 
@@ -82,8 +84,320 @@ This image can be downloaded <a href="http://ezial.dyndns.org:9095/view/My%20bra
 
 <p>If you are curious about <em>Spec</em> and you want to read more. Or you want to have a nice <em>Spec</em> icon, some material can be found in a dedicated <a href="https://github.com/SpecForPharo/material">repository</a>.</p>
 
+<h3>Website</h3>
+
+<p>This website can also be found on <a href="https://github.com/SpecForPharo/website">GitHub</a>. Feel free to fork it if you want to contribute <i class="fa fa-smile-o"></i></p>
+
+					<div class="section-nav">
+	<div class="btn-group">
+		<a class="btn btn-default " href="/docs/quickstart/">Back
+		</a>
+		<a class="btn btn-default disabled" href="/docs//">Next
+		</a>
+	</div>
+	<div class="clear">
+	</div>
+</div>
+				</article>
+			</div>
+		</section>
+		<div id="commentWrapper">
+	<div id="comment">
+		<aside id="sidebar">
+			
+			<h4>Getting Started</h4>
+			
+
+<ul>
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+      <li class=""><a href="/docs/home/">Welcome</a></li>
+    
+  
+    
+  
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+      <li class=""><a href="/docs/quickstart/">Quick start</a></li>
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+      <li class="current"><a href="/docs/installation/">Installation</a></li>
+    
+  
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+</ul>
+			
+			<h4>The Three Pillars</h4>
+			
+
+<ul>
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+</ul>
+			
+			<h4>Meta</h4>
+			
+
+<ul>
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+</ul>
+			
+		</aside>
+	</div>
 </div>
 
+<script>
+$(document).ready(function () {  
+	var top = $('#comment').offset().top - parseFloat($('#comment').css('marginTop').replace(/auto/, 0));
+	$(window).scroll(function (event) {
+		// what the y position of the scroll is
+		var y = $(this).scrollTop();
+
+		// whether that's below the form
+		if (y >= top) {
+			// if so, ad the fixed class
+			$('#comment').addClass('fixed');
+			$('#thanks').addClass('fixed');
+		} else {
+			// otherwise remove it
+			$('#comment').removeClass('fixed');
+			$('#thanks').removeClass('fixed');
+		}
+	});
+});
+</script>
+
+		<div class="clear"></div>	
+	</div>
+</div>
 
   <footer>
   <div class="grid">

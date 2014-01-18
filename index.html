@@ -4,14 +4,15 @@
 		<meta charset='utf-8'>
 		<meta http-equiv="X-UA-Compatible" content="chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<script src="javascripts/jquery-1.10.2.min.js"></script>
+		<script src="/javascripts/jquery-1.10.2.min.js"></script>
 		
-		<link rel='stylesheet' type='text/css' href='stylesheets/ArchitectsDaughter.css'>
-		<link rel='stylesheet' type='text/css' href='stylesheets/bootstrap.css'>
-		<link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-		<link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-		<link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-		<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
+		<link rel='stylesheet' type='text/css' href='/stylesheets/ArchitectsDaughter.css'>
+		<link rel='stylesheet' type='text/css' href='/stylesheets/bootstrap.css'>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="/stylesheets/pygment_trac.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print" />
+		<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap-theme.css">
+		<link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome.css">
 
 		<!--[if lt IE 9]>
 			<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -19,7 +20,7 @@
 
 	<title>Spec • A new Smalltalk framework</title>
 	<head profile="http://www.w3.org/2005/10/profile">
-		<link rel="icon" type="image/png" href="favicon.png">
+		<link rel="icon" type="image/png" href="/favicon.png">
 	</head>
 
 <body>
@@ -46,9 +47,15 @@
 </ul> -->
 
 <ul class="nav nav-pills">
-  <li class="active"><a href="" data-toggle="tab">Overview</a></li>
-  <li><a href="#profile" data-toggle="tab">Documentation</a></li>
-  <li><a href="#messages" data-toggle="tab">News</a></li>
+  <li class="active">
+	  <a href="/" data-toggle="tab">Overview</a>
+  </li>
+   <li class="">
+	   <a href="/docs/home" data-toggle="tab">Documentation</a>
+   </li>
+  <li>
+	  <a href="#messages" data-toggle="tab">News</a>
+  </li>
 </ul>
 				<a href="https://github.com/SpecForPharo" class="button"><small>Follow Spec on </small>GitHub</a></div>
 			</div>
@@ -89,83 +96,17 @@ This image can be downloaded <a href="http://ezial.dyndns.org:9095/view/My%20bra
 
 			
 
-
 		</section>
-
-		<style>
-		/* required to avoid jumping */
-		#commentWrapper { 
-			left: 690px;
-			position: absolute;
-			margin-left: 35px;
-			width: 280px;
-		}
-
-		#comment {
-			position: absolute;
-			top: 0;
-			/* just used to show how to include the margin in the effect */
-			margin-top: 20px;
-			padding-top: 19px;
-		}
-
-		#comment.fixed {
-			position: fixed;
-			top: 0;
-		}
-		
-		#thanks {
-			position: fixed;
-			bottom: 0;
-		}
-		
-/*				#thanks.fixed {
-			position: fixed;
-			bottom: 0;
-		}*/
-		</style>
-
-		<div id="commentWrapper">
-			<div id="comment">
-				<aside id="sidebar">
-					<h4></h4>
-					<u>
-						
-							<li><a href=#Overview>Overview</a></li>
-						
-							<li><a href=#Getting+Started>Getting Started</a></li>
-						
-					</u>
-				</aside>
-			</div>
-		</div>
-		<script>
-		$(document).ready(function () {  
-			var top = $('#comment').offset().top - parseFloat($('#comment').css('marginTop').replace(/auto/, 0));
-			$(window).scroll(function (event) {
-				// what the y position of the scroll is
-				var y = $(this).scrollTop();
-
-				// whether that's below the form
-				if (y >= top) {
-					// if so, ad the fixed class
-					$('#comment').addClass('fixed');
-					$('#thanks').addClass('fixed');
-				} else {
-					// otherwise remove it
-					$('#comment').removeClass('fixed');
-					$('#thanks').removeClass('fixed');
-				}
-			});
-		});
-		</script>
 	</div>
 </div>
 
   <footer>
   <div class="grid">
     <div class="unit one-third center-on-mobiles">
-      <p>The contents of this website are &copy;&nbsp;2014 <a href="http://benjamin.vanryseghem.com">Benjamin Van Ryseghem</a> under the terms of the <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a>.</p>
+      <p>
+		  The contents of this website are &copy;&nbsp;2014 <a href="http://benjamin.vanryseghem.com">Benjamin Van Ryseghem</a><br/>
+		  under the terms of the <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a>.
+	  </p>
     </div>
   </div>
 </footer>
