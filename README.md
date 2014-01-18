@@ -1,4 +1,6 @@
-website
+Spec website
 =======
 
-Since github does not supprt Jekyll website there are now two repo.
+This website is generated with Jekyll from [website](https://github.com/SpecForPharo/website).
+
+This repository is read-only excpet for the travis job.
