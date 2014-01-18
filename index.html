@@ -4,39 +4,65 @@
 		<meta charset='utf-8'>
 		<meta http-equiv="X-UA-Compatible" content="chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
-		<link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+		<script src="javascripts/jquery-1.10.2.min.js"></script>
+		
+		<link rel='stylesheet' type='text/css' href='stylesheets/ArchitectsDaughter.css'>
+		<link rel='stylesheet' type='text/css' href='stylesheets/bootstrap.css'>
 		<link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
 		<link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
 		<link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+		<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
 
 		<!--[if lt IE 9]>
 			<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 			<![endif]-->
 
-	<title>Spec</title>
+	<title>Spec • A new Smalltalk framework</title>
 	<head profile="http://www.w3.org/2005/10/profile">
-		<link rel="icon" 
-		type="image/png" 
-		href="https://raw.github.com/SpecForPharo/SpecForPharo.github.io/master/favicon.png">
+		<link rel="icon" type="image/png" href="favicon.png">
 	</head>
 
-	<body>
-		<header>
+<body>
+  <header>
+	<div class="grid">
+		<div class="unit one-third center-on-mobiles">
 			<div class="inner">
-				<h1 class="title">Spec</h1>
-				<h2>A new framework for describing user interfaces</h2>
-				<a href="https://github.com/SpecForPharo" class="button"><small>Follow Spec on </small>GitHub</a>
-			</div>
-		</header>
+				<h1>
+					<a href="/">
+						<span class="title">Spec</span>
+						<img class="flake" src="/images/flake72.png" width="72" height="72" alt="">
+					</a>
+				</h1>
+				<!-- <ul class="nav nav-tabs">
+  <li class="active">
+    <a href="/" data-toggle="pill">Overview</a>
+  </li>
+  <li class="">
+    <a href="/docs/home/" data-toggle="pill">Documentation</a>
+  </li>
+  <li class="">
+    <a href="/news/" data-toggle="pill">News</a>
+  </li>
+</ul> -->
 
-		<div id="content-wrapper">
-			<div class="inner clearfix">
-				<section id="main-content">
- 
-					
-						<h2><a name=Introduction class="anchor"></a>Introduction</h2>
-						<p>Writing user interfaces is notoriously a tedious task.
+<ul class="nav nav-pills">
+  <li class="active"><a href="" data-toggle="tab">Overview</a></li>
+  <li><a href="#profile" data-toggle="tab">Documentation</a></li>
+  <li><a href="#messages" data-toggle="tab">News</a></li>
+</ul>
+				<a href="https://github.com/SpecForPharo" class="button"><small>Follow Spec on </small>GitHub</a></div>
+			</div>
+		</div>
+	</div>
+</header>
+
+  <div id="content-wrapper">
+	<div class="inner clearfix">
+		<section id="main-content">
+
+			
+				<h2><a name=Overview class="anchor"></a>Overview</h2>
+				<p>Writing user interfaces is notoriously a tedious task.
 It often requires time and a clear understanding of the separation of concerns. 
 Indeed most of the frameworks mix domain applicative models with widget models.</p>
 
@@ -44,9 +70,9 @@ Indeed most of the frameworks mix domain applicative models with widget models.<
 It allows the separation of concerns between the different part of the user interface as expressed in the MVP pattern.
 <em>Spec</em> emphasis the reuse of the widgets as well as there customization.</p>
 
-					
-						<h2><a name=Getting+Started class="anchor"></a>Getting Started</h2>
-						<h3>Latest image</h3>
+			
+				<h2><a name=Getting+Started class="anchor"></a>Getting Started</h2>
+				<h3>Latest image</h3>
 
 <p>The lastest version of the <em>Spec</em> source code can be found <a href="https://github.com/SpecForPharo/spec">here</a>.</p>
 
@@ -61,70 +87,88 @@ This image can be downloaded <a href="http://ezial.dyndns.org:9095/view/My%20bra
 
 <p>If you are curious about <em>Spec</em> and you want to read more. Or you want to have a nice <em>Spec</em> icon, some material can be found in a dedicated <a href="https://github.com/SpecForPharo/material">repository</a>.</p>
 
-					
+			
 
 
-				</section>
+		</section>
 
-				<style>
-				/* required to avoid jumping */
-				#commentWrapper { 
-					left: 690px;
-					position: absolute;
-					margin-left: 35px;
-					width: 280px;
-				}
+		<style>
+		/* required to avoid jumping */
+		#commentWrapper { 
+			left: 690px;
+			position: absolute;
+			margin-left: 35px;
+			width: 280px;
+		}
 
-				#comment {
-					position: absolute;
-					top: 0;
-					/* just used to show how to include the margin in the effect */
-					margin-top: 20px;
-					padding-top: 19px;
-				}
+		#comment {
+			position: absolute;
+			top: 0;
+			/* just used to show how to include the margin in the effect */
+			margin-top: 20px;
+			padding-top: 19px;
+		}
 
-				#comment.fixed {
-					position: fixed;
-					top: 0;
-				}
-				</style>
+		#comment.fixed {
+			position: fixed;
+			top: 0;
+		}
+		
+		#thanks {
+			position: fixed;
+			bottom: 0;
+		}
+		
+/*				#thanks.fixed {
+			position: fixed;
+			bottom: 0;
+		}*/
+		</style>
 
-				<div id="commentWrapper">
-					<div id="comment">
-						<aside id="sidebar">
-							<u>
-								
-									<li><a href=#Introduction>Introduction</a></li>
-								
-									<li><a href=#Getting+Started>Getting Started</a></li>
-								
-							</u>
-							<div class="Thanks">
-							Thanks to all the contributors to Spec: <a href="https://github.com/BenjaminVanRyseghem">Benjamin Van Ryseghem</a>.
-							Thanks also to all the contributors to the <i>Spec</i> documentation: <a href="https://github.com/BenjaminVanRyseghem">Benjamin Van Ryseghem</a>, <a href="https://github.com/jfabry">Johan Fabry</a>, <a href="https://github.com/BenjaminVanRyseghemJenkins">Benjamin Van Ryseghem - Jenkins bot</a> and <a href="https://github.com/seandenigris">Sean DeNigris</a>.
-							</div>
-						</aside>
-					</div>
-				</div>
-				<script>
-				$(document).ready(function () {  
-					var top = $('#comment').offset().top - parseFloat($('#comment').css('marginTop').replace(/auto/, 0));
-					$(window).scroll(function (event) {
-						// what the y position of the scroll is
-						var y = $(this).scrollTop();
-
-						// whether that's below the form
-						if (y >= top) {
-							// if so, ad the fixed class
-							$('#comment').addClass('fixed');
-						} else {
-							// otherwise remove it
-							$('#comment').removeClass('fixed');
-						}
-					});
-				});
-				</script>
+		<div id="commentWrapper">
+			<div id="comment">
+				<aside id="sidebar">
+					<h4></h4>
+					<u>
+						
+							<li><a href=#Overview>Overview</a></li>
+						
+							<li><a href=#Getting+Started>Getting Started</a></li>
+						
+					</u>
+				</aside>
 			</div>
 		</div>
-	</body>
+		<script>
+		$(document).ready(function () {  
+			var top = $('#comment').offset().top - parseFloat($('#comment').css('marginTop').replace(/auto/, 0));
+			$(window).scroll(function (event) {
+				// what the y position of the scroll is
+				var y = $(this).scrollTop();
+
+				// whether that's below the form
+				if (y >= top) {
+					// if so, ad the fixed class
+					$('#comment').addClass('fixed');
+					$('#thanks').addClass('fixed');
+				} else {
+					// otherwise remove it
+					$('#comment').removeClass('fixed');
+					$('#thanks').removeClass('fixed');
+				}
+			});
+		});
+		</script>
+	</div>
+</div>
+
+  <footer>
+  <div class="grid">
+    <div class="unit one-third center-on-mobiles">
+      <p>The contents of this website are &copy;&nbsp;2014 <a href="http://benjamin.vanryseghem.com">Benjamin Van Ryseghem</a> under the terms of the <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a>.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
 </html>
