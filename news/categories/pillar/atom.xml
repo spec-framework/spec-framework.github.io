@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: pillar | ]]></title>
+  <link href="/news/categories/pillar/atom.xml" rel="self"/>
+  <link href="/"/>
+  <updated>2014-01-20T04:24:36+00:00</updated>
+  <id>/</id>
+  <author>
+    <name><![CDATA[]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Pillar converter]]></title>
+    <link href="/website/pillar/2014/01/19/pillar_exporter.html"/>
+    <updated>2014-01-19T00:00:00+00:00</updated>
+    <id>/website/pillar/2014/01/19/pillar_exporter</id>
+    <content type="html"><![CDATA[<p>I am happy announcing my implementation of a <em>Pillar&gt;https://github.com/DamienCassou/pillar-documentation</em> converter for <em>Jekyll&gt;http://jekyllrb.com/</em>.
+This way, posts and documentation can be written using the Pillar syntax.</p>
+
+<p>
+{{{markdown:
+The converter is based on a Ruby script<sup><a href='https://raw.github.com/SpecForPharo/website/master/_plugins/pillarConverter.rb'><i class='fa fa-github-alt'></i></a></sup> calling a Pharo image. The Pharo image converts the Pillar input are gives it back to Jekyll. All the file matching <code>*.pier</code> are thus converted.
+}}}
+</p>
+
+<p>Few things to know about this exporter:</p>
+
+<ul>
+<li>First the content is exported in ==markdown==, then in ==html== using <strong>kramdown</strong>,</li>
+<li>Since the Pillar syntax is conflicting with the <em>Liquid&gt;http://docs.shopify.com/themes/liquid-basics</em> syntax, you may need to use the tags ==raw== and ==endraw==,</li>
+<li>Inside the ==raw== blocks, the string delimited by ==\&quot;== are splitted on space. You&#39;d better use ==&#39;==,</li>
+<li>The character ==\&quot;== must be escaped with &#92;,</li>
+<li>The character &#92; should be escaped using its ASCII value ==&#92;==. </li>
+</ul>
+
+<p>
+{{{markdown:
+Thank you <a href="http://damiencassou.seasidehosting.st/seaside">Damien Cassou</a> for your great work on Pillar <i class='fa fa-smile-o fa-2x'></i>!
+}}}
+</p>
+]]></content>
+  </entry>
+  
+</feed>
