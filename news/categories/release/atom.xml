@@ -4,7 +4,7 @@
   <title><![CDATA[Category: release | ]]></title>
   <link href="/news/categories/release/atom.xml" rel="self"/>
   <link href="/"/>
-  <updated>2014-01-20T04:24:36+00:00</updated>
+  <updated>2014-01-20T04:36:31+00:00</updated>
   <id>/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -22,7 +22,7 @@
 
 <p>You will find here the Spec documentation as well as a news feed about Spec progresses.</p>
 
-<p>If you want to collaborate, the website can be found on <a href="https://github.com/SpecForPharo/website"><i class="fa fa-github-alt"></i></a>.</p>
+<p>If you want to collaborate, the website can be found on <a href="https://github.com/SpecForPharo/website"><i class="fa fa-github-alt fa-2x"></i></a>.</p>
 
 <p>Thank you all!</p>
 ]]></content>
