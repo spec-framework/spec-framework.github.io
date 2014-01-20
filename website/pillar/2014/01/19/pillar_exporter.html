@@ -85,11 +85,30 @@
 		</div>
 	</div>
 	<div class="post-content">
-		<p>I am glad to announce the implementation of a <em>Pillar&gt;https://github.com/DamienCassou/pillar-documentation</em>.</p>
+		<p>I am happy announcing my implementation of a <em>Pillar&gt;https://github.com/DamienCassou/pillar-documentation</em> converter for <em>Jekyll&gt;http://jekyllrb.com/</em>.
+This way, posts and documentation can be written using the Pillar syntax.</p>
 
-<p>This way, posts and documentation can be written using the Pillar syntax.</p>
+<p>{% raw %}
+{{{markdown:
+The converter is based on a Ruby script<sup><a href='https://raw.github.com/SpecForPharo/website/master/_plugins/pillarConverter.rb'><i class='fa fa-github-alt'></i></a></sup> calling a Pharo image. The Pharo image converts the Pillar input are gives it back to Jekyll. All the file matching <code>*.pier</code> are thus converted.
+}}}
+{% endraw %}</p>
 
-<p>Thank you Damien Cassou for your great work <i class="fa fa-smile-o"></i>!</p>
+<p>Few things to know about this exporter:</p>
+
+<ul>
+<li>First the content is exported in ==markdown==, then in ==html== using <strong>kramdown</strong>,</li>
+<li>Since the Pillar syntax is conflicting with the <em>Liquid&gt;http://docs.shopify.com/themes/liquid-basics</em> syntax, you may need to use the tags ==raw== and ==endraw==,</li>
+<li>Inside the ==raw== blocks, the string delimited by ==\&quot;== are splitted on space. You&#39;d better use ==&#39;==,</li>
+<li>The character ==\&quot;== must be escaped with &#92;,</li>
+<li>The character &#92; should be escaped using its ASCII value ==&#92;==. </li>
+</ul>
+
+<p>{% raw %}
+{{{markdown:
+Thank you <a href="http://damiencassou.seasidehosting.st/seaside">Damien Cassou</a> for your great work on Pillar <i class='fa fa-smile-o fa-2x'></i>!
+}}}
+{% endraw %}</p>
 
 	</div>
 </article>

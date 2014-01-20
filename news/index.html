@@ -94,12 +94,24 @@
 		</div>
 	</div>
 	<div class="post-content">
-		<p>I am glad to announce the implementation of a 
-<a href="https://github.com/DamienCassou/pillar-documentation">Pillar</a>.</p>
+		<p>I am happy announcing my implementation of a 
+<a href="https://github.com/DamienCassou/pillar-documentation">Pillar</a> converter for 
+<a href="http://jekyllrb.com/">Jekyll</a>.
+This way, posts and documentation can be written using the Pillar syntax.</p>
 
-<p>This way, posts and documentation can be written using the Pillar syntax.</p>
+<p>The converter is based on a Ruby script<sup><a href="https://raw.github.com/SpecForPharo/website/master/_plugins/pillarConverter.rb"><i class="fa fa-github-alt"></i></a></sup> calling a Pharo image. The Pharo image converts the Pillar input are gives it back to Jekyll. All the file matching <code>*.pier</code> are thus converted.</p>
 
-<p>Thank you Damien Cassou for your great work &lt;i class=fa fa-smile-o&gt;&lt;/i&gt;!</p>
+<p>Few things to know about this exporter:</p>
+
+<ul>
+  <li>First the content is exported in <code>markdown</code>, then in <code>html</code> using <u>kramdown</u>,</li>
+  <li>Since the Pillar syntax is conflicting with the <a href="http://docs.shopify.com/themes/liquid-basics">Liquid</a> syntax, you may need to use the tags <code>raw</code> and <code>endraw</code>,</li>
+  <li>Inside the <code>raw</code> blocks, the string delimited by <code>"</code> are splitted on space. You'd better use <code>'</code>,</li>
+  <li>The character <code>"</code> must be escaped with &#92;,</li>
+  <li>The character &#92; should be escaped using its ASCII value <code>&amp;#92;</code>. </li>
+</ul>
+
+<p>Thank you <a href="http://damiencassou.seasidehosting.st/seaside">Damien Cassou</a> for your great work on Pillar <i class="fa fa-smile-o fa-2x"></i>!</p>
 
 	</div>
 	<hr>
