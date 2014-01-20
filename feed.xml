@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+        <channel>
+                <title>Spec</title>
+                <description>All the news about Spec</description>
+                <link></link>
+                <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
+                
+                        <item>
+                                <title>Pillar converter</title>
+                                <description>&lt;p&gt;I am happy announcing my implementation of a 
+&lt;a href=&quot;https://github.com/DamienCassou/pillar-documentation&quot;&gt;Pillar&lt;/a&gt; converter for 
+&lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;.
+This way, posts and documentation can be written using the Pillar syntax.&lt;/p&gt;
+
+&lt;p&gt;The converter is based on a Ruby script&lt;sup&gt;&lt;a href=&quot;https://raw.github.com/SpecForPharo/website/master/_plugins/pillarConverter.rb&quot;&gt;&lt;i class=&quot;fa fa-github-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/sup&gt; calling a Pharo image. The Pharo image converts the Pillar input are gives it back to Jekyll. All the file matching &lt;code&gt;*.pier&lt;/code&gt; are thus converted.&lt;/p&gt;
+
+&lt;p&gt;Few things to know about this exporter:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;First the content is exported in &lt;code&gt;markdown&lt;/code&gt;, then in &lt;code&gt;html&lt;/code&gt; using &lt;u&gt;kramdown&lt;/u&gt;,&lt;/li&gt;
+  &lt;li&gt;Since the Pillar syntax is conflicting with the &lt;a href=&quot;http://docs.shopify.com/themes/liquid-basics&quot;&gt;Liquid&lt;/a&gt; syntax, you may need to use the tags &lt;code&gt;raw&lt;/code&gt; and &lt;code&gt;endraw&lt;/code&gt;,&lt;/li&gt;
+  &lt;li&gt;Inside the &lt;code&gt;raw&lt;/code&gt; blocks, the string delimited by &lt;code&gt;&quot;&lt;/code&gt; are splitted on space. You&#39;d better use &lt;code&gt;&#39;&lt;/code&gt;,&lt;/li&gt;
+  &lt;li&gt;The character &lt;code&gt;&quot;&lt;/code&gt; must be escaped with &amp;#92;,&lt;/li&gt;
+  &lt;li&gt;The character &amp;#92; should be escaped using its ASCII value &lt;code&gt;&amp;amp;#92;&lt;/code&gt;. &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thank you &lt;a href=&quot;http://damiencassou.seasidehosting.st/seaside&quot;&gt;Damien Cassou&lt;/a&gt; for your great work on Pillar &lt;i class=&quot;fa fa-smile-o fa-2x&quot;&gt;&lt;/i&gt;!&lt;/p&gt;
+</description>
+                                <pubDate>Sun, 19 Jan 2014 00:00:00 +0000</pubDate>
+                                <link>//website/pillar/2014/01/19/pillar_exporter.html</link>
+                                <guid isPermaLink="true">//website/pillar/2014/01/19/pillar_exporter.html</guid>
+                        </item>
+                
+                        <item>
+                                <title>First Release</title>
+                                <description>&lt;p&gt;I am glad to announce this super website dedicated to Spec and the things related to this cool framework &lt;i class=&quot;fa fa-smile-o&quot;&gt;&lt;/i&gt;.&lt;/p&gt;
+
+&lt;p&gt;You will find here the Spec documentation as well as a news feed about Spec progresses.&lt;/p&gt;
+
+&lt;p&gt;If you want to collaborate, the website can be found on &lt;a href=&quot;https://github.com/SpecForPharo/website&quot;&gt;&lt;i class=&quot;fa fa-github-alt fa-2x&quot;&gt;&lt;/i&gt;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thank you all!&lt;/p&gt;
+</description>
+                                <pubDate>Fri, 17 Jan 2014 20:41:09 +0000</pubDate>
+                                <link>//release/website/2014/01/17/first_release.html</link>
+                                <guid isPermaLink="true">//release/website/2014/01/17/first_release.html</guid>
+                        </item>
+                
+        </channel>
+</rss>
