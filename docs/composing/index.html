@@ -13,6 +13,7 @@
 		<link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print" />
 		<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap-theme.css">
 		<link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome.css">
+		<link rel="stylesheet" type="text/css" href="/stylesheets/spec.css">
 
 		<!--[if lt IE 9]>
 			<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -30,20 +31,20 @@
 		<div class="unit one-third center-on-mobiles">
 			<div class="inner">
 				<h1>
-					<a href="/">
+					<a href="/" class="spec-header">
 						<span class="title">Spec</span>
 						<img class="flake" src="/images/flake72.png" width="72" height="72" alt="">
 					</a>
 				</h1>
 				<ul class="nav nav-pills">
-  <li class="">
-	  <a href="/" data-toggle="tab">Overview</a>
+  <li class="nav-item ">
+	  <a href="/" data-toggle="tab" class="nav-a">Overview</a>
   </li>
-   <li class="active">
-	   <a href="/docs/home" data-toggle="tab">Documentation</a>
+   <li class="nav-item active">
+	   <a href="/docs/home" data-toggle="tab" class="nav-a">Documentation</a>
    </li>
-  <li class="">
-	  <a href="/news" data-toggle="tab">News</a>
+  <li class="nav-item ">
+	  <a href="/news" data-toggle="tab" class="nav-a">News</a>
   </li>
 </ul>
 				<a href="https://github.com/SpecForPharo" class="button"><small>Follow Spec on </small>GitHub</a></div>
@@ -94,6 +95,14 @@
     
   
     
+  
+    
+  
+    
+  
+    
+  
+    
       <li class="sidebar_item "><a href="/docs/home/">Welcome</a></li>
     
   
@@ -111,6 +120,8 @@
   
     
   
+    
+  
 
 
   
@@ -119,6 +130,16 @@
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -160,8 +181,6 @@
     
   
     
-  
-    
       <li class="sidebar_item "><a href="/docs/installation/">Installation</a></li>
     
   
@@ -173,23 +192,6 @@
   
     
   
-
-
-  
-
-  
-    
-  
-
-  
-    
-  
-    
-  
-    
-  
-    
-  
     
   
     
@@ -210,6 +212,55 @@
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -258,8 +309,6 @@
     
   
     
-  
-    
       <li class="sidebar_item current"><a href="/docs/composing/">Composing widgets</a></li>
     
   
@@ -269,6 +318,18 @@
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 
 
   
@@ -277,8 +338,6 @@
     
   
 
-  
-    
   
     
   
@@ -288,6 +347,18 @@
   
     
       <li class="sidebar_item "><a href="/docs/customizing/">Customizing sub widgets</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
     
   
     
@@ -345,6 +416,16 @@
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 
 
 </ul>
@@ -381,6 +462,16 @@
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 
 
   
@@ -389,6 +480,16 @@
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -446,7 +547,7 @@ $(document).ready(function () {
   <footer>
   <div class="grid">
     <div class="unit one-third center-on-mobiles">
-      <p>
+      <p class="footer-text">
 		  The contents of this website are &copy;&nbsp;2014 <a href="http://benjamin.vanryseghem.com">Benjamin Van Ryseghem</a><br/>
 		  under the terms of the <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a>.
 	  </p>
