@@ -4,7 +4,7 @@
                 <title>Spec</title>
                 <description>All the news about Spec</description>
                 <link>http://spec.st</link>
-                <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
+                <atom:link href="http://spec.st/feed.xml" rel="self" type="application/rss+xml" />
                 
                         <item>
                                 <title>Pillar converter</title>
@@ -29,7 +29,7 @@ This way, posts and documentation can be written using the Pillar syntax.&lt;/p&
 </description>
                                 <pubDate>Sun, 19 Jan 2014 00:00:00 +0000</pubDate>
                                 <link>http://spec.st//website/pillar/2014/01/19/pillar_exporter.html</link>
-                                <guid isPermaLink="true">//website/pillar/2014/01/19/pillar_exporter.html</guid>
+                                <guid isPermaLink="true">http://spec.st//website/pillar/2014/01/19/pillar_exporter.html</guid>
                         </item>
                 
                         <item>
@@ -44,7 +44,7 @@ This way, posts and documentation can be written using the Pillar syntax.&lt;/p&
 </description>
                                 <pubDate>Fri, 17 Jan 2014 20:41:09 +0000</pubDate>
                                 <link>http://spec.st//release/website/2014/01/17/first_release.html</link>
-                                <guid isPermaLink="true">//release/website/2014/01/17/first_release.html</guid>
+                                <guid isPermaLink="true">http://spec.st//release/website/2014/01/17/first_release.html</guid>
                         </item>
                 
         </channel>
