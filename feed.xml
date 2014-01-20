@@ -3,7 +3,7 @@
         <channel>
                 <title>Spec</title>
                 <description>All the news about Spec</description>
-                <link></link>
+                <link>spec.st</link>
                 <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
                 
                         <item>
@@ -28,7 +28,7 @@ This way, posts and documentation can be written using the Pillar syntax.&lt;/p&
 &lt;p&gt;Thank you &lt;a href=&quot;http://damiencassou.seasidehosting.st/seaside&quot;&gt;Damien Cassou&lt;/a&gt; for your great work on Pillar &lt;i class=&quot;fa fa-smile-o fa-2x&quot;&gt;&lt;/i&gt;!&lt;/p&gt;
 </description>
                                 <pubDate>Sun, 19 Jan 2014 00:00:00 +0000</pubDate>
-                                <link>//website/pillar/2014/01/19/pillar_exporter.html</link>
+                                <link>spec.st//website/pillar/2014/01/19/pillar_exporter.html</link>
                                 <guid isPermaLink="true">//website/pillar/2014/01/19/pillar_exporter.html</guid>
                         </item>
                 
@@ -43,7 +43,7 @@ This way, posts and documentation can be written using the Pillar syntax.&lt;/p&
 &lt;p&gt;Thank you all!&lt;/p&gt;
 </description>
                                 <pubDate>Fri, 17 Jan 2014 20:41:09 +0000</pubDate>
-                                <link>//release/website/2014/01/17/first_release.html</link>
+                                <link>spec.st//release/website/2014/01/17/first_release.html</link>
                                 <guid isPermaLink="true">//release/website/2014/01/17/first_release.html</guid>
                         </item>
                 
