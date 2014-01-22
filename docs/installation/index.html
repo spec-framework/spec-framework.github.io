@@ -61,24 +61,34 @@
 			<div>
 				<article>
 					<h1>Installation</h1>
-					<h3>Latest image</h3>
+					<p>To fetch the latest <em>Spec</em> version, you first need to get a local copy of the repository:</p>
 
-<p>The lastest version of the <em>Spec</em> source code can be found <a href="https://github.com/SpecForPharo/spec">here</a>.</p>
+<div class="highlight"><pre><code class="bash">~ <span class="nv">$ </span><span class="nb">cd</span> /tmp
+tmp <span class="nv">$ </span>git clone https://github.com/SpecForPharo/spec.git
+</code></pre></div>
 
-<p>A jenkins job builds an image based on the latests <a href="http://www.pharo-project.org/home">Pharo</a> image and the lastest <em>Spec</em> version.
-This image can be downloaded <a href="http://ezial.dyndns.org:9095/view/My%20branches/job/Spec/lastSuccessfulBuild/artifact/Spec.zip">here</a>.</p>
+<p>Then open your image and execute the following script:</p>
 
-<h3>Documentation</h3>
+<div class="highlight"><pre><code class="smalltalk"><span class="o">|</span><span class="nv"> repo names currentVersions toLoad </span><span class="o">|</span>
 
-<p>The latests <em>Spec</em> documentation is available <a href="https://github.com/SpecForPharo/documentation">here</a>. A markdown version of the <a href="https://github.com/SpecForPharo/documentation/blob/master/output/book.md">output</a> can be found in this repository.</p>
+<span class="nv">repo</span> <span class="o">:=</span> <span class="nc">MCFileTreeRepository</span> <span class="nb">new</span> <span class="nf">directory:</span> <span class="s">&#39;/tmp/spec&#39;</span> <span class="nf">asFileReference</span><span class="p">.</span>
 
-<h3>Material</h3>
+<span class="nv">currentVersions</span> <span class="o">:=</span> <span class="nc">MCWorkingCopy</span> <span class="nf">allManagers</span> 
+    <span class="nf">select:</span> [ <span class="o">:</span><span class="nv">e</span> <span class="o">|</span> (<span class="nv">e</span> <span class="nf">ancestry</span> <span class="nf">ancestors</span>) <span class="nf">notEmpty</span> ]
+    <span class="nf">thenCollect:</span> [ <span class="o">:</span><span class="nv">e</span> <span class="o">|</span> <span class="nv">e</span> <span class="nf">ancestry</span> <span class="nf">ancestors</span> <span class="nf">first</span> <span class="nf">name</span> ]<span class="p">.</span>
+<span class="nv">names</span> <span class="o">:=</span> <span class="nv">repo</span> <span class="nf">packageDescriptionsFromReadableFileNames</span><span class="p">.</span>
+<span class="nv">toLoad</span> <span class="o">:=</span> <span class="nv">names</span> <span class="nf">select:</span> [ <span class="o">:</span><span class="nv">e</span> <span class="o">||</span><span class="nv"> currentVersion </span><span class="o">|</span> 
+    <span class="nv">currentVersion</span> <span class="o">:=</span> <span class="nv">e</span> <span class="nf">first</span> <span class="nf">,</span> <span class="s">&#39;-&#39;</span><span class="nf">,</span> <span class="nv">e</span> <span class="nf">second</span> <span class="nf">,</span> <span class="s">&#39;.&#39;</span><span class="nf">,</span> <span class="nv">e</span> <span class="nf">third</span> <span class="nf">asString</span><span class="p">.</span>
+    (<span class="nv">currentVersions</span> <span class="nf">includes:</span> <span class="nv">currentVersion</span>) <span class="nf">not</span> ]<span class="p">.</span>
 
-<p>If you are curious about <em>Spec</em> and you want to read more. Or you want to have a nice <em>Spec</em> icon, some material can be found in a dedicated <a href="https://github.com/SpecForPharo/material">repository</a>.</p>
+<span class="nv">toLoad</span> <span class="nf">do:</span> [ <span class="o">:</span><span class="nv">name</span> <span class="o">||</span><span class="nv"> version </span><span class="o">|</span>
+    <span class="nv">version</span> <span class="o">:=</span> <span class="nv">repo</span> <span class="nf">versionFromFileNamed:</span> <span class="nv">name</span> <span class="nf">first,</span> <span class="s">&#39;.package&#39;</span><span class="p">.</span>
+    [ <span class="nv">version</span> <span class="nf">load</span> ]
+        <span class="nf">on:</span> <span class="nc">MCMergeOrLoadWarning</span>
+        <span class="nf">do:</span> [ <span class="o">:</span><span class="nv">ex</span> <span class="o">|</span> [ <span class="nv">ex</span> <span class="nf">load</span>  ] <span class="nf">on:</span> <span class="nc">MCNoChangesException</span> <span class="nf">do:</span> [] ] ]<span class="p">.</span>
+</code></pre></div>
 
-<h3>Website</h3>
-
-<p>This website can also be found on <a href="https://github.com/SpecForPharo/website">GitHub</a>. Feel free to fork it if you want to contribute <i class="fa fa-smile-o"></i></p>
+<p>Your image contains now the latest stable version of <em>Spec</em>.</p>
 
 					<div class="section-nav">
 	<div class="btn-group">
@@ -118,6 +128,8 @@ This image can be downloaded <a href="http://ezial.dyndns.org:9095/view/My%20bra
     
   
 
+  
+    
   
     
   
@@ -167,14 +179,6 @@ This image can be downloaded <a href="http://ezial.dyndns.org:9095/view/My%20bra
 
   
     
-  
-    
-  
-    
-  
-    
-  
-    
       <li class="sidebar_item "><a href="/docs/quickstart/">Quick start</a></li>
     
   
@@ -204,6 +208,16 @@ This image can be downloaded <a href="http://ezial.dyndns.org:9095/view/My%20bra
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 
 
   
@@ -212,6 +226,8 @@ This image can be downloaded <a href="http://ezial.dyndns.org:9095/view/My%20bra
     
   
 
+  
+    
   
     
   
@@ -296,6 +312,8 @@ This image can be downloaded <a href="http://ezial.dyndns.org:9095/view/My%20bra
   
     
   
+    
+  
 
 
   
@@ -304,6 +322,8 @@ This image can be downloaded <a href="http://ezial.dyndns.org:9095/view/My%20bra
     
   
 
+  
+    
   
     
   
@@ -368,6 +388,8 @@ This image can be downloaded <a href="http://ezial.dyndns.org:9095/view/My%20bra
     
   
     
+  
+    
       <li class="sidebar_item "><a href="/docs/composing/">Composing widgets</a></li>
     
   
@@ -403,6 +425,8 @@ This image can be downloaded <a href="http://ezial.dyndns.org:9095/view/My%20bra
     
   
 
+  
+    
   
     
   
@@ -466,15 +490,17 @@ This image can be downloaded <a href="http://ezial.dyndns.org:9095/view/My%20bra
 
   
     
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
       <li class="sidebar_item "><a href="/docs/adapters/">Adapters</a></li>
-    
-  
-    
-  
-    
-  
-    
-  
     
   
     
@@ -522,6 +548,10 @@ This image can be downloaded <a href="http://ezial.dyndns.org:9095/view/My%20bra
     
   
     
+      <li class="sidebar_item "><a href="/docs/more/">More</a></li>
+    
+  
+    
   
     
   
@@ -563,6 +593,8 @@ This image can be downloaded <a href="http://ezial.dyndns.org:9095/view/My%20bra
     
   
 
+  
+    
   
     
   

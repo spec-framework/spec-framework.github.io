@@ -64,15 +64,26 @@
 					<p>For the impatient, Spec can be found in any Pharo 3.0 image.
 You can download ans run one with the following script:</p>
 
-<div class="highlight"><pre><code class="bash"> 
-~ <span class="nv">$ </span>curl get.pharo.org/30+vm <span class="p">|</span> bash
+<div class="highlight"><pre><code class="bash">~ <span class="nv">$ </span>curl get.pharo.org/30+vm <span class="p">|</span> bash
 ~ <span class="nv">$ </span>./pharo-ui Pharo.image
 
 <span class="c">#=&gt; Pharo is now opening</span>
 </code></pre></div>
 
 <p>Here you are, you can now play with Spec.
-Where is starts to be really interesting is when you need to define your own user interface, or if you want to quickly prototype one. Then the magic happens and one line of code are enough to open a widget.</p>
+Where is starts to be really interesting is when you need to define your own user interface, or if you want to quickly prototype one. Then the magic happens and a couple line of code is enough to open a widget.</p>
+
+<div class="highlight"><pre><code class="smalltalk"><span class="nc">ButtonModel</span> <span class="nb">new</span> 
+    <span class="nf">label:</span> <span class="s">&#39;Click me&#39;</span><span class="p">;</span>
+    <span class="nf">action:</span> [ <span class="bp">self</span> <span class="nf">halt</span> ]<span class="p">;</span>
+    <span class="nf">openWithSpec</span><span class="p">.</span>
+    
+<span class="nc">ListModel</span> <span class="nb">new</span> 
+    <span class="nf">items:</span> <span class="nc">Smalltalk</span> <span class="nf">classes</span>
+    <span class="nf">openWithSpec</span><span class="p">.</span>    
+    
+<span class="c">&quot;And many more are waiting for you!&quot;</span>
+</code></pre></div>
 
 					<div class="section-nav">
 	<div class="btn-group">
@@ -112,6 +123,8 @@ Where is starts to be really interesting is when you need to define your own use
     
   
 
+  
+    
   
     
   
@@ -161,14 +174,6 @@ Where is starts to be really interesting is when you need to define your own use
 
   
     
-  
-    
-  
-    
-  
-    
-  
-    
       <li class="sidebar_item current"><a href="/docs/quickstart/">Quick start</a></li>
     
   
@@ -198,6 +203,16 @@ Where is starts to be really interesting is when you need to define your own use
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 
 
   
@@ -206,6 +221,8 @@ Where is starts to be really interesting is when you need to define your own use
     
   
 
+  
+    
   
     
   
@@ -290,6 +307,8 @@ Where is starts to be really interesting is when you need to define your own use
   
     
   
+    
+  
 
 
   
@@ -298,6 +317,8 @@ Where is starts to be really interesting is when you need to define your own use
     
   
 
+  
+    
   
     
   
@@ -362,6 +383,8 @@ Where is starts to be really interesting is when you need to define your own use
     
   
     
+  
+    
       <li class="sidebar_item "><a href="/docs/composing/">Composing widgets</a></li>
     
   
@@ -397,6 +420,8 @@ Where is starts to be really interesting is when you need to define your own use
     
   
 
+  
+    
   
     
   
@@ -460,15 +485,17 @@ Where is starts to be really interesting is when you need to define your own use
 
   
     
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
       <li class="sidebar_item "><a href="/docs/adapters/">Adapters</a></li>
-    
-  
-    
-  
-    
-  
-    
-  
     
   
     
@@ -516,6 +543,10 @@ Where is starts to be really interesting is when you need to define your own use
     
   
     
+      <li class="sidebar_item "><a href="/docs/more/">More</a></li>
+    
+  
+    
   
     
   
@@ -557,6 +588,8 @@ Where is starts to be really interesting is when you need to define your own use
     
   
 
+  
+    
   
     
   
