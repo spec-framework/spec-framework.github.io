@@ -625,27 +625,6 @@ It takes a model and a layout description, runs it through an interpreter and a 
 	</div>
 </div>
 
-<script>
-$(document).ready(function () {  
-	var top = $('#comment').offset().top - parseFloat($('#comment').css('marginTop').replace(/auto/, 0));
-	$(window).scroll(function (event) {
-		// what the y position of the scroll is
-		var y = $(this).scrollTop();
-
-		// whether that's below the form
-		if (y >= top) {
-			// if so, ad the fixed class
-			$('#comment').addClass('fixed');
-			$('#thanks').addClass('fixed');
-		} else {
-			// otherwise remove it
-			$('#comment').removeClass('fixed');
-			$('#thanks').removeClass('fixed');
-		}
-	});
-});
-</script>
-
 		<div class="clear"></div>
 	</div>	  
 </div>

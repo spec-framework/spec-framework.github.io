@@ -73,9 +73,7 @@ tmp <span class="nv">$ </span>git clone https://github.com/SpecForPharo/spec.git
 
 <span class="nv">repo</span> <span class="o">:=</span> <span class="nc">MCFileTreeRepository</span> <span class="nb">new</span> <span class="nf">directory:</span> <span class="s">&#39;/tmp/spec&#39;</span> <span class="nf">asFileReference</span><span class="p">.</span>
 
-<span class="nv">currentVersions</span> <span class="o">:=</span> <span class="nc">MCWorkingCopy</span> <span class="nf">allManagers</span> 
-    <span class="nf">select:</span> [ <span class="o">:</span><span class="nv">e</span> <span class="o">|</span> (<span class="nv">e</span> <span class="nf">ancestry</span> <span class="nf">ancestors</span>) <span class="nf">notEmpty</span> ]
-    <span class="nf">thenCollect:</span> [ <span class="o">:</span><span class="nv">e</span> <span class="o">|</span> <span class="nv">e</span> <span class="nf">ancestry</span> <span class="nf">ancestors</span> <span class="nf">first</span> <span class="nf">name</span> ]<span class="p">.</span>
+<span class="nv">currentVersions</span> <span class="o">:=</span> <span class="nc">MCWorkingCopy</span> <span class="nf">allManagers</span> <span class="nf">select:</span> [ <span class="o">:</span><span class="nv">e</span> <span class="o">|</span> (<span class="nv">e</span> <span class="nf">ancestry</span> <span class="nf">ancestors</span>) <span class="nf">notEmpty</span> ] <span class="nf">thenCollect:</span> [ <span class="o">:</span><span class="nv">e</span> <span class="o">|</span> <span class="nv">e</span> <span class="nf">ancestry</span> <span class="nf">ancestors</span> <span class="nf">first</span> <span class="nf">name</span> ]<span class="p">.</span>
 <span class="nv">names</span> <span class="o">:=</span> <span class="nv">repo</span> <span class="nf">packageDescriptionsFromReadableFileNames</span><span class="p">.</span>
 <span class="nv">toLoad</span> <span class="o">:=</span> <span class="nv">names</span> <span class="nf">select:</span> [ <span class="o">:</span><span class="nv">e</span> <span class="o">||</span><span class="nv"> currentVersion </span><span class="o">|</span> 
     <span class="nv">currentVersion</span> <span class="o">:=</span> <span class="nv">e</span> <span class="nf">first</span> <span class="nf">,</span> <span class="s">&#39;-&#39;</span><span class="nf">,</span> <span class="nv">e</span> <span class="nf">second</span> <span class="nf">,</span> <span class="s">&#39;.&#39;</span><span class="nf">,</span> <span class="nv">e</span> <span class="nf">third</span> <span class="nf">asString</span><span class="p">.</span>
@@ -639,27 +637,6 @@ tmp <span class="nv">$ </span>git clone https://github.com/SpecForPharo/spec.git
 		</aside>
 	</div>
 </div>
-
-<script>
-$(document).ready(function () {  
-	var top = $('#comment').offset().top - parseFloat($('#comment').css('marginTop').replace(/auto/, 0));
-	$(window).scroll(function (event) {
-		// what the y position of the scroll is
-		var y = $(this).scrollTop();
-
-		// whether that's below the form
-		if (y >= top) {
-			// if so, ad the fixed class
-			$('#comment').addClass('fixed');
-			$('#thanks').addClass('fixed');
-		} else {
-			// otherwise remove it
-			$('#comment').removeClass('fixed');
-			$('#thanks').removeClass('fixed');
-		}
-	});
-});
-</script>
 
 		<div class="clear"></div>
 	</div>	  
