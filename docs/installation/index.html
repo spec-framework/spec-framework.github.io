@@ -73,7 +73,9 @@ tmp <span class="nv">$ </span>git clone https://github.com/SpecForPharo/spec.git
 
 <span class="nv">repo</span> <span class="o">:=</span> <span class="nc">MCFileTreeRepository</span> <span class="nb">new</span> <span class="nf">directory:</span> <span class="s">&#39;/tmp/spec&#39;</span> <span class="nf">asFileReference</span><span class="p">.</span>
 
-<span class="nv">currentVersions</span> <span class="o">:=</span> <span class="nc">MCWorkingCopy</span> <span class="nf">allManagers</span> <span class="nf">select:</span> [ <span class="o">:</span><span class="nv">e</span> <span class="o">|</span> (<span class="nv">e</span> <span class="nf">ancestry</span> <span class="nf">ancestors</span>) <span class="nf">notEmpty</span> ] <span class="nf">thenCollect:</span> [ <span class="o">:</span><span class="nv">e</span> <span class="o">|</span> <span class="nv">e</span> <span class="nf">ancestry</span> <span class="nf">ancestors</span> <span class="nf">first</span> <span class="nf">name</span> ]<span class="p">.</span>
+<span class="nv">currentVersions</span> <span class="o">:=</span> <span class="nc">MCWorkingCopy</span> <span class="nf">allManagers</span>
+    <span class="nf">select:</span> [ <span class="o">:</span><span class="nv">e</span> <span class="o">|</span> (<span class="nv">e</span> <span class="nf">ancestry</span> <span class="nf">ancestors</span>) <span class="nf">notEmpty</span> ]
+    <span class="nf">thenCollect:</span> [ <span class="o">:</span><span class="nv">e</span> <span class="o">|</span> <span class="nv">e</span> <span class="nf">ancestry</span> <span class="nf">ancestors</span> <span class="nf">first</span> <span class="nf">name</span> ]<span class="p">.</span>
 <span class="nv">names</span> <span class="o">:=</span> <span class="nv">repo</span> <span class="nf">packageDescriptionsFromReadableFileNames</span><span class="p">.</span>
 <span class="nv">toLoad</span> <span class="o">:=</span> <span class="nv">names</span> <span class="nf">select:</span> [ <span class="o">:</span><span class="nv">e</span> <span class="o">||</span><span class="nv"> currentVersion </span><span class="o">|</span> 
     <span class="nv">currentVersion</span> <span class="o">:=</span> <span class="nv">e</span> <span class="nf">first</span> <span class="nf">,</span> <span class="s">&#39;-&#39;</span><span class="nf">,</span> <span class="nv">e</span> <span class="nf">second</span> <span class="nf">,</span> <span class="s">&#39;.&#39;</span><span class="nf">,</span> <span class="nv">e</span> <span class="nf">third</span> <span class="nf">asString</span><span class="p">.</span>
@@ -92,7 +94,7 @@ tmp <span class="nv">$ </span>git clone https://github.com/SpecForPharo/spec.git
 	<div class="btn-group">
 		<a class="btn btn-default nav-btn " href="/docs/quickstart/">Back
 		</a>
-		<a class="btn btn-default nav-btn " href="/docs/composing/">Next
+		<a class="btn btn-default nav-btn " href="/docs/starting/">Next
 		</a>
 	</div>
 	<div class="clear">
@@ -126,8 +128,6 @@ tmp <span class="nv">$ </span>git clone https://github.com/SpecForPharo/spec.git
     
   
 
-  
-    
   
     
   
@@ -167,6 +167,10 @@ tmp <span class="nv">$ </span>git clone https://github.com/SpecForPharo/spec.git
   
     
   
+    
+  
+    
+  
 
 
   
@@ -175,17 +179,19 @@ tmp <span class="nv">$ </span>git clone https://github.com/SpecForPharo/spec.git
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
       <li class="sidebar_item "><a href="/docs/quickstart/">Quick start</a></li>
-    
-  
-    
-  
-    
-  
-    
-  
     
   
     
@@ -265,51 +271,6 @@ tmp <span class="nv">$ </span>git clone https://github.com/SpecForPharo/spec.git
   
     
   
-
-
-  
-
-  
-    
-  
-
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
     
   
 
@@ -320,6 +281,57 @@ tmp <span class="nv">$ </span>git clone https://github.com/SpecForPharo/spec.git
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
   
     
   
@@ -388,7 +400,9 @@ tmp <span class="nv">$ </span>git clone https://github.com/SpecForPharo/spec.git
     
   
     
-      <li class="sidebar_item "><a href="/docs/composing/">Composing widgets</a></li>
+  
+    
+      <li class="sidebar_item "><a href="/docs/starting/">Where to start?</a></li>
     
   
     
@@ -431,7 +445,7 @@ tmp <span class="nv">$ </span>git clone https://github.com/SpecForPharo/spec.git
     
   
     
-      <li class="sidebar_item "><a href="/docs/customizing/">Customizing sub widgets</a></li>
+      <li class="sidebar_item "><a href="/docs/initializing/">Instantiating sub&nbsp;widgets</a></li>
     
   
     
@@ -440,6 +454,59 @@ tmp <span class="nv">$ </span>git clone https://github.com/SpecForPharo/spec.git
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li class="sidebar_item "><a href="/docs/layout/">Defining the layout</a></li>
     
   
     
@@ -492,13 +559,15 @@ tmp <span class="nv">$ </span>git clone https://github.com/SpecForPharo/spec.git
     
   
     
-  
-    
-  
-    
-  
-    
       <li class="sidebar_item "><a href="/docs/adapters/">Adapters</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
     
   
     
@@ -546,6 +615,16 @@ tmp <span class="nv">$ </span>git clone https://github.com/SpecForPharo/spec.git
     
   
     
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
       <li class="sidebar_item "><a href="/docs/more/">More</a></li>
     
   
@@ -575,14 +654,6 @@ tmp <span class="nv">$ </span>git clone https://github.com/SpecForPharo/spec.git
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -591,6 +662,8 @@ tmp <span class="nv">$ </span>git clone https://github.com/SpecForPharo/spec.git
     
   
 
+  
+    
   
     
   

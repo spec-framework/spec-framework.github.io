@@ -60,14 +60,67 @@
 		<section id="main-content">
 			<div>
 				<article>
-					<h1>Composing widgets</h1>
-					<p>The first goal of Spec is to allow reusability ...</p>
+					<h1>Instantiating sub&nbsp;widgets</h1>
+					<p>This method is used to instantiate the different widgets that are part of the UI and store them in their respective instance variables.
+The configuration and default values of each widget are specified here as well.
+This focus in this method is to specify what the widgets will look like and what their self-contained behavior is.
+The behavior to update model state, e.g. when pressing a <code>Save</code> button, is described in this method as well.
+It is explicitly <strong>not</strong> the responsibility of this method to define the interactions <strong>between</strong> the widgets.</p>
+
+<p>In general the <code>initializeWidgets</code> method should follow the pattern:</p>
+
+<ul>
+<li>widgets instantiation</li>
+<li>widgets configuration specification</li>
+<li>specification of order of focus</li>
+</ul>
+
+<p>The last step is not mandatory but <strong>highly</strong> recommended.
+Indeed, without this final step keyboard navigation will not work at all.</p>
+
+<p>The code in figure <em>pattern</em> shows an example of an <code>initializeWidgets</code> method.
+It first instantiates a button and a list widget, storing each in an instance variable.
+It second configures the button it by setting its label.
+Third it specifies the focus order of all the widgets: first the button and then the list.</p>
+
+<div class="highlight"><pre><code class="smalltalk"><span class="nf">initializeWidgets</span>
+
+    <span class="nv">theButton</span> <span class="o">:=</span> <span class="bp">self</span> <span class="nf">newButton</span><span class="p">.</span>
+    <span class="nv">theList</span> <span class="o">:=</span> <span class="bp">self</span> <span class="nf">newList</span><span class="p">.</span>
+
+    <span class="nv">theButton</span> <span class="nf">label:</span> <span class="s">&#39;I am a button&#39;</span><span class="p">.</span>
+    
+    <span class="bp">self</span> <span class="nf">focusOrder</span>
+        <span class="nf">add:</span> <span class="nv">theButton</span><span class="p">;</span>
+        <span class="nf">add:</span> <span class="nv">theList</span><span class="p">.</span>
+</code></pre></div>
+
+
+<div class="alert">
+    <span class="fa-stack fa-lg alert-icon">
+      <i class="fa fa-square fa-stack-2x"></i>
+      <i class="fa fa-exclamation fa-stack-1x alert-overlay"></i>
+    </span>
+    <span class="alert-text"><p>Specifying this method is <strong>mandatory</strong>, as without it the UI would have no widgets</p>
+</span>
+</div>
+
+<h4>Widget instantiation</h4>
+
+<p>The instantiation of a widget can be done in two ways: through the use of an creation method or through the use of the <code>instantiate:</code> method.</p>
+
+<p>Considering the first option, the framework provides unary messages for the creation of all basic widgets.
+The format of these messages is <code>new[Widget]</code>, for example <code>newButton</code> creates a button widget, and <code>newList</code> creates a list widget, as we have seen above.
+The complete list of available widget creation methods can be found in the class <strong>ComposableModel</strong> in the protocol <em>widgets</em>.</p>
+
+<p>Considering the second option, to reuse any composite widgets, i.e. a subclass of <strong>ComposableModel</strong>, the widget needs to be initialized using the <code>instantiate:</code> method.
+For example, to reuse a <strong>MessageBrowser</strong> widget, the code is <code>self instantiate: MessageBrowser</code>.</p>
 
 					<div class="section-nav">
 	<div class="btn-group">
 		<a class="btn btn-default nav-btn " href="/docs/installation/">Back
 		</a>
-		<a class="btn btn-default nav-btn " href="/docs/customizing/">Next
+		<a class="btn btn-default nav-btn " href="/docs/layout/">Next
 		</a>
 	</div>
 	<div class="clear">
@@ -101,8 +154,6 @@
     
   
 
-  
-    
   
     
   
@@ -142,6 +193,10 @@
   
     
   
+    
+  
+    
+  
 
 
   
@@ -150,17 +205,19 @@
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
       <li class="sidebar_item "><a href="/docs/quickstart/">Quick start</a></li>
-    
-  
-    
-  
-    
-  
-    
-  
     
   
     
@@ -240,51 +297,6 @@
   
     
   
-
-
-  
-
-  
-    
-  
-
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
     
   
 
@@ -295,6 +307,57 @@
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
   
     
   
@@ -363,7 +426,9 @@
     
   
     
-      <li class="sidebar_item current"><a href="/docs/composing/">Composing widgets</a></li>
+  
+    
+      <li class="sidebar_item "><a href="/docs/starting/">Where to start?</a></li>
     
   
     
@@ -406,7 +471,7 @@
     
   
     
-      <li class="sidebar_item "><a href="/docs/customizing/">Customizing sub widgets</a></li>
+      <li class="sidebar_item current"><a href="/docs/initializing/">Instantiating sub&nbsp;widgets</a></li>
     
   
     
@@ -415,6 +480,59 @@
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li class="sidebar_item "><a href="/docs/layout/">Defining the layout</a></li>
     
   
     
@@ -467,13 +585,15 @@
     
   
     
-  
-    
-  
-    
-  
-    
       <li class="sidebar_item "><a href="/docs/adapters/">Adapters</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
     
   
     
@@ -521,6 +641,16 @@
     
   
     
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
       <li class="sidebar_item "><a href="/docs/more/">More</a></li>
     
   
@@ -550,14 +680,6 @@
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -566,6 +688,8 @@
     
   
 
+  
+    
   
     
   
