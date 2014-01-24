@@ -94,12 +94,11 @@ Note that by default, a widget will take all the space available.</p>
 
 <p>As said above, multiple layouts can be described for the same user interface.
 In order to retrieve the correct method to apply, these methods need to be flagged with a pragma.
-The pragma can be either <code>&lt; spec: default&gt;</code> for the layout to use by default, or <code>&lt;spec&gt;</code> for the other layouts.</p>
+The pragma can be either <code>&lt;spec: default&gt;</code> for the layout to use by default, or <code>&lt;spec&gt;</code> for the other layouts.</p>
 
-<div class="alert">
+<div class="alert alertbox">
     <span class="fa-stack fa-lg alert-icon">
-      <i class="fa fa-square fa-stack-2x"></i>
-      <i class="fa fa-exclamation fa-stack-1x alert-overlay"></i>
+      <i class="fa fa-exclamation-triangle fa-2x"></i>
     </span>
     <span class="alert-text"><p>Specifying this method is <strong>mandatory</strong>, as without it the UI would show no widgets to the user.</p>
 </span>
@@ -254,10 +253,10 @@ So when the layout of a widget that is composed of multiple sub-widgets is defin
 By example, for the <code>add:</code> method the variant is  <code>add:withSpec:</code>.</p>
 
 <p>For example, consider a widget <strong>MyWidget</strong> defining a first layout method <code>firstLayout</code> as the default layout and another layout method called <code>anotherLayout</code>.
-The following example shows how to add an instance of <strong>MyWidget</strong> using its <code>anotherLayout</code> layout method.</p>
+The following example shows how to add an instance of <strong>MyUserInterface</strong> using its <code>anotherLayout</code> layout method.</p>
 
 <div class="highlight"><pre><code class="smalltalk"><span class="o">^</span> <span class="nc">SpecLayout</span> <span class="nf">composed</span>
-    <span class="nf">add:</span> <span class="ss">#myWidget</span> <span class="nf">withSpec:</span> <span class="ss">#anotherLayout</span><span class="p">;</span>
+    <span class="nf">add:</span> <span class="ss">#MyUserInterface</span> <span class="nf">withSpec:</span> <span class="ss">#anotherLayout</span><span class="p">;</span>
     <span class="nf">yourself</span>
 </code></pre></div>
 
@@ -265,7 +264,7 @@ The following example shows how to add an instance of <strong>MyWidget</strong> 
 	<div class="btn-group">
 		<a class="btn btn-default nav-btn " href="/docs/initializing/">Back
 		</a>
-		<a class="btn btn-default nav-btn disabled" href="/docs//">Next
+		<a class="btn btn-default nav-btn " href="/docs/open/">Next
 		</a>
 	</div>
 	<div class="clear">
@@ -303,6 +302,20 @@ The following example shows how to add an instance of <strong>MyWidget</strong> 
     
   
     
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
       <li class="sidebar_item "><a href="/docs/home/">Welcome</a></li>
     
   
@@ -330,18 +343,6 @@ The following example shows how to add an instance of <strong>MyWidget</strong> 
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -350,6 +351,14 @@ The following example shows how to add an instance of <strong>MyWidget</strong> 
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -365,12 +374,6 @@ The following example shows how to add an instance of <strong>MyWidget</strong> 
   
     
       <li class="sidebar_item "><a href="/docs/quickstart/">Quick start</a></li>
-    
-  
-    
-  
-    
-  
     
   
     
@@ -444,53 +447,6 @@ The following example shows how to add an instance of <strong>MyWidget</strong> 
   
     
   
-
-
-  
-
-  
-    
-  
-
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
     
   
 
@@ -501,6 +457,59 @@ The following example shows how to add an instance of <strong>MyWidget</strong> 
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
   
     
   
@@ -559,6 +568,20 @@ The following example shows how to add an instance of <strong>MyWidget</strong> 
 
   
     
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
       <li class="sidebar_item "><a href="/docs/starting/">Where to start?</a></li>
     
   
@@ -588,18 +611,6 @@ The following example shows how to add an instance of <strong>MyWidget</strong> 
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -608,6 +619,24 @@ The following example shows how to add an instance of <strong>MyWidget</strong> 
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -635,22 +664,6 @@ The following example shows how to add an instance of <strong>MyWidget</strong> 
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -659,6 +672,24 @@ The following example shows how to add an instance of <strong>MyWidget</strong> 
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -672,6 +703,43 @@ The following example shows how to add an instance of <strong>MyWidget</strong> 
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li class="sidebar_item "><a href="/docs/open/">Open your UI</a></li>
     
   
     
@@ -767,6 +835,8 @@ The following example shows how to add an instance of <strong>MyWidget</strong> 
   
     
   
+    
+  
 
 
 </ul>
@@ -782,6 +852,10 @@ The following example shows how to add an instance of <strong>MyWidget</strong> 
     
   
 
+  
+    
+  
+    
   
     
   
@@ -823,8 +897,6 @@ The following example shows how to add an instance of <strong>MyWidget</strong> 
   
     
   
-    
-  
 
 
   
@@ -833,6 +905,8 @@ The following example shows how to add an instance of <strong>MyWidget</strong> 
     
   
 
+  
+    
   
     
   

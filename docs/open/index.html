@@ -60,26 +60,35 @@
 		<section id="main-content">
 			<div>
 				<article>
-					<h1>Welcome</h1>
-					<p>This site aims to be a comprehensive guide to Spec. We’ll cover topics such
-as installing the lastest stable version, creating a simple UI, customizing a UI sub widgets, and give you instructions about writing your own model.</p>
+					<h1>Open your UI</h1>
+					<p>The user&nbsp;interface we just implemented is ready to be opened.
+To open it in a window, the message <code>openWithSpec</code> needs to be sent to an instance of the previously implemented class <strong>MyUserInterface</strong>.</p>
 
-<h2>So what is Spec, exactly?</h2>
+<div class="highlight"><pre><code class="smalltalk"><span class="nc">MyUserInterface</span> <span class="nb">new</span> <span class="nf">openWithSpec</span>
+</code></pre></div>
 
-<p><em>Spec</em> is a simple framework for describing user interfaces. 
-It takes a model and a layout description, runs it through an interpreter and a UI is produced as a result.</p>
+<p>A window should appears where you can site the list with ten elements and the button labbelled <em>I am a button</em>.</p>
 
-<p>All the widget implemented this can then immediately be reused as any other widget.</p>
+<p>In addition, <em>Spec</em> provides support to open a model directly as a dialog window.
+For this, the method used to open the user&nbsp;interface must be <code>openDialogWithSpec</code>.</p>
 
-<p>It also allows the separation of concerns between the different part of the user interface as expressed in the MVP pattern.</p>
+<div class="highlight"><pre><code class="smalltalk"><span class="nc">MyUserInterface</span> <span class="nb">new</span> <span class="nf">openDialogWithSpec</span>
+</code></pre></div>
 
-<p><em>Spec</em> emphasis the reuse of the widgets as well as there customization.</p>
+<p>The dialog window is opened with a toolbar contening a <strong>cancel</strong> button and an <strong>ok</strong> button.
+To set the action to perform when ok is pressed, the hook method <code>initializeDialogWindow:</code> requires to be implemented.
+The following example shows how to open a debugger when ok is pressed.</p>
+
+<div class="highlight"><pre><code class="smalltalk"><span class="nf">initializeDialogWindow:</span> <span class="nv">aWindow</span>
+
+    <span class="nv">aWindow</span> <span class="nf">okAction:</span> [ <span class="bp">self</span> <span class="nf">halt</span> ]<span class="p">.</span>
+</code></pre></div>
 
 					<div class="section-nav">
 	<div class="btn-group">
-		<a class="btn btn-default nav-btn disabled" href="/docs//">Back
+		<a class="btn btn-default nav-btn " href="/docs/layout/">Back
 		</a>
-		<a class="btn btn-default nav-btn " href="/docs/quickstart/">Next
+		<a class="btn btn-default nav-btn disabled" href="/docs//">Next
 		</a>
 	</div>
 	<div class="clear">
@@ -131,7 +140,7 @@ It takes a model and a layout description, runs it through an interpreter and a 
     
   
     
-      <li class="sidebar_item current"><a href="/docs/home/">Welcome</a></li>
+      <li class="sidebar_item "><a href="/docs/home/">Welcome</a></li>
     
   
     
@@ -554,7 +563,7 @@ It takes a model and a layout description, runs it through an interpreter and a 
     
   
     
-      <li class="sidebar_item "><a href="/docs/open/">Open your UI</a></li>
+      <li class="sidebar_item current"><a href="/docs/open/">Open your UI</a></li>
     
   
     
