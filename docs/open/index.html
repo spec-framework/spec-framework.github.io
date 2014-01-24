@@ -77,11 +77,23 @@ For this, the method used to open the user&nbsp;interface must be <code>openDial
 
 <p>The dialog window is opened with a toolbar contening a <strong>cancel</strong> button and an <strong>ok</strong> button.
 To set the action to perform when ok is pressed, the hook method <code>initializeDialogWindow:</code> requires to be implemented.
-The following example shows how to open a debugger when ok is pressed.</p>
+The following example shows how to change the toolbar and to make it opens a debugger when ok is pressed.</p>
 
 <div class="highlight"><pre><code class="smalltalk"><span class="nf">initializeDialogWindow:</span> <span class="nv">aWindow</span>
+    
+    <span class="nv">aWindow</span>
+        <span class="nf">toolbar:</span> <span class="nc">OkToolbar</span> <span class="nb">new</span><span class="p">;</span>
+        <span class="nf">okAction:</span> [ <span class="bp">self</span> <span class="nf">halt</span> ]<span class="p">.</span>
+</code></pre></div>
 
-    <span class="nv">aWindow</span> <span class="nf">okAction:</span> [ <span class="bp">self</span> <span class="nf">halt</span> ]<span class="p">.</span>
+<h2>Morphic specific</h2>
+
+<p>The morphic extension provides a new way to open a <em>Spec</em> model.
+Indeed thanks to the message <code>openWorldWithSpec</code>, the model is open taking 100% of the Pharo window.</p>
+
+<p>It is usefull to run a desktop application, simulating a native window by using the Pharo window.</p>
+
+<div class="highlight"><pre><code class="smalltalk"><span class="nc">MyUserInterface</span> <span class="nb">new</span> <span class="nf">openWorldWithSpec</span>
 </code></pre></div>
 
 					<div class="section-nav">
@@ -128,6 +140,18 @@ The following example shows how to open a debugger when ok is pressed.</p>
     
   
     
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
       <li class="sidebar_item "><a href="/docs/home/">Welcome</a></li>
     
   
@@ -163,10 +187,6 @@ The following example shows how to open a debugger when ok is pressed.</p>
   
     
   
-    
-  
-    
-  
 
 
   
@@ -175,8 +195,6 @@ The following example shows how to open a debugger when ok is pressed.</p>
     
   
 
-  
-    
   
     
   
@@ -220,6 +238,16 @@ The following example shows how to open a debugger when ok is pressed.</p>
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 
 
   
@@ -228,6 +256,10 @@ The following example shows how to open a debugger when ok is pressed.</p>
     
   
 
+  
+    
+  
+    
   
     
   
@@ -273,6 +305,69 @@ The following example shows how to open a debugger when ok is pressed.</p>
   
     
   
+    
+  
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 
 
   
@@ -289,49 +384,6 @@ The following example shows how to open a debugger when ok is pressed.</p>
     
   
     
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-
-
-  
-
-  
-    
-  
-
   
     
   
@@ -398,16 +450,6 @@ The following example shows how to open a debugger when ok is pressed.</p>
     
   
     
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
       <li class="sidebar_item "><a href="/docs/starting/">Where to start?</a></li>
     
   
@@ -435,6 +477,24 @@ The following example shows how to open a debugger when ok is pressed.</p>
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 
 
   
@@ -443,20 +503,6 @@ The following example shows how to open a debugger when ok is pressed.</p>
     
   
 
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
   
     
       <li class="sidebar_item "><a href="/docs/initializing/">Instantiating sub&nbsp;widgets</a></li>
@@ -488,6 +534,28 @@ The following example shows how to open a debugger when ok is pressed.</p>
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 
 
   
@@ -496,8 +564,6 @@ The following example shows how to open a debugger when ok is pressed.</p>
     
   
 
-  
-    
   
     
   
@@ -505,6 +571,16 @@ The following example shows how to open a debugger when ok is pressed.</p>
   
     
       <li class="sidebar_item "><a href="/docs/layout/">Defining the layout</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
     
   
     
@@ -594,6 +670,14 @@ The following example shows how to open a debugger when ok is pressed.</p>
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
 
 
 </ul>
@@ -618,11 +702,19 @@ The following example shows how to open a debugger when ok is pressed.</p>
 
   
     
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
       <li class="sidebar_item "><a href="/docs/adapters/">Adapters</a></li>
-    
-  
-    
-  
     
   
     
@@ -721,6 +813,14 @@ The following example shows how to open a debugger when ok is pressed.</p>
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
 
 
   
@@ -729,6 +829,14 @@ The following example shows how to open a debugger when ok is pressed.</p>
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   

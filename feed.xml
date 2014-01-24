@@ -7,6 +7,28 @@
                 <atom:link href="http://spec.st/feed.xml" rel="self" type="application/rss+xml" />
                 
                         <item>
+                                <title>Sprint Chileno</title>
+                                <description>&lt;p&gt;After a cool sprint yesterday, a couple of &lt;em&gt;Spec&lt;/em&gt; issues has been tackled &lt;i class=&#39;fa fa-smile-o fa-2x&#39;&gt;&lt;/i&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://pharo.fogbugz.com/default.asp?12695&quot;&gt;&lt;strong&gt;Case 12695&lt;/strong&gt;&lt;/a&gt;: Fix &lt;em&gt;InputWidget&lt;/em&gt; example and add a new one. These examples are showing how to set up a window modality. Thanks Samir Saleh and &lt;a href=&quot;http://seandenigris.com&quot;&gt;Sean P. DeNigris&lt;/a&gt; for this fix.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://pharo.fogbugz.com/default.asp?12683&quot;&gt;&lt;strong&gt;Case 12683&lt;/strong&gt;&lt;/a&gt;: The labels background is changing when the containing model is open as world (with &lt;code&gt;openWorldWithSpec&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://pharo.fogbugz.com/default.asp?12684&quot;&gt;&lt;strong&gt;Case 12684&lt;/strong&gt;&lt;/a&gt;: Renaming &lt;strong&gt;NewValueHolder&lt;/strong&gt; into &lt;strong&gt;ReactiveVariable&lt;/strong&gt;. But since Pharo 3 is already in beta phase, changing the API was not possible. So instead two hooks were introduced to allow the integration of code from Spec bleeding edge to Pharo 3. For new code (and all code in future versions of Pharo), use the following two hook methods:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;asReactiveVariable&lt;/code&gt;: use wherever you would have used &lt;code&gt;asValueHolder&lt;/code&gt;, which will soon be deprecated. For now, it returns a &lt;strong&gt;NewValueHolder&lt;/strong&gt;. In the future it will return a (polymorphic) &lt;strong&gt;ReactiveVariable&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;selectionReactiveVariable&lt;/code&gt;: as above, returns a &lt;strong&gt;SelectionValueHolder&lt;/strong&gt; for now. This extension method allows the two different packages to coexist without having direct references from the Spec model.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Thanks a lot &lt;a href=&quot;http://seandenigris.com&quot;&gt;Sean P. DeNigris&lt;/a&gt; for you help and energy.&lt;/p&gt;
+</description>
+                                <pubDate>Fri, 24 Jan 2014 15:26:32 +0000</pubDate>
+                                <link>http://spec.st//sprint/chile/2014/01/24/sprint_chileno.html</link>
+                                <guid isPermaLink="true">http://spec.st//sprint/chile/2014/01/24/sprint_chileno.html</guid>
+                        </item>
+                
+                        <item>
                                 <title>Improvements in DynamicComposableModel</title>
                                 <description>&lt;p&gt;Right now it is easy to prototype a UI in a workspace or to dynamically build a model on demand at run time, but this prototype can not be reused for composition.&lt;/p&gt;
 
