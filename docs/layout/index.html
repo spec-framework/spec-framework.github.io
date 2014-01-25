@@ -104,17 +104,22 @@ The pragma can be either <code>&lt;spec: default&gt;</code> for the layout to us
 </span>
 </div>
 
-<h2>Layout Examples</h2>
+<p><a name="examples" class="hash"></a></p>
+
+<h2>Layout Examples <a href="#examples" class="permalink" title="Permalink"><i class='fa fa-link'></i></a></h2>
 
 <p>As layouts can become quite complex, this section provides a list of examples of the construction of layouts.
-First two examples are given of the use of <a href="#layout_rows_and_column_layout">rows and columns</a>.
-This is followed by two examples that explain how to set a <a href="#layout_set_size_pixels">fixed size</a> for rows and columns.
-Next is an example that explains how to specify a widget <a href="#layout_percentage">proportionally</a>.
-The last example presents the <a href="#layout_expert">expert</a> mode in case everything else fails.
-To conclude, this section ends with a little <a href="#layout_specify_layout">explanation</a> of how to specify which layout to use and where to find the complete API.</p>
+First two examples are given of the use of <a href="#rows_columns">rows and columns</a>.
+This is followed by two examples that explain how to set a <a href="#pixels">fixed size</a> for rows and columns.
+Next is an example that explains how to specify a widget <a href="#percentage">proportionally</a>.
+The last example presents the <a href="#expert">expert</a> mode in case everything else fails.
+To conclude, this section ends with a little <a href="#specify_layout">explanation</a> of how to specify which layout to use and where to find the complete API.</p>
 
-<p><a name="layout_rows_and_column_layout"></a>
-Often the layout of user interfaces can be described in rows and columns, and <strong>Spec</strong> provides for an easy way to specify such layouts.
+<p><a name="rows_columns" class="hash"></a></p>
+
+<h3>Rows and Columns <a href="#rows_columns" class="permalink" title="Permalink"><i class='fa fa-link'></i></a></h3>
+
+<p>Often the layout of user interfaces can be described in rows and columns, and <strong>Spec</strong> provides for an easy way to specify such layouts.
 The following example shows how to build a row of widgets.</p>
 
 <div class="highlight"><pre><code class="smalltalk"><span class="o">^</span> <span class="nc">SpecLayout</span> <span class="nf">composed</span>
@@ -168,10 +173,11 @@ This example also shows the <code>addSplitter</code> message, which adds a split
     <span class="nf">yourself</span>
 </code></pre></div>
 
-<hr>
+<p><a name="pixels" class="hash"></a></p>
 
-<p><a name="layout_set_size_pixels"></a>
-The height of rows as well as the width of columns can be specified, to prevent them to take all the available space.
+<h3>Set size in pixels <a href="#pixels" class="permalink" title="Permalink"><i class='fa fa-link'></i></a></h3>
+
+<p>The height of rows as well as the width of columns can be specified, to prevent them to take all the available space.
 The first example shows how to specify the height of a row in pixels while the second example is about how to specify the column width.</p>
 
 <div class="highlight"><pre><code class="smalltalk"><span class="o">^</span> <span class="nc">SpecLayout</span> <span class="nf">composed</span>
@@ -196,10 +202,11 @@ The first example shows how to specify the height of a row in pixels while the s
 Methods are available on <em>ComposableModel</em> providing sensible default sizes, like the width of a button.
 When specifying custom widget sizes, care should be taken to take in account the current font size.</p>
 
-<hr>
+<p><a name="percentage" class="hash"></a></p>
 
-<p><a name="layout_percentage"></a>
-It is also possible to specify the percentage of the container, e.g. the window, that a widget should occupy.
+<h3>Set proportional size <a href="#percentage" class="permalink" title="Permalink"><i class='fa fa-link'></i></a></h3>
+
+<p>It is also possible to specify the percentage of the container, e.g. the window, that a widget should occupy.
 As a result of this, the widget size will change accordingly when the container is resized.
 To do so, the proportional position of the four sides of a widget can be specified, as shown in this example.</p>
 
@@ -215,10 +222,11 @@ For example, for the top edge, the percentage is counted from the top down: 0 is
 <p>Also, the argument can be an integer if the offset has to be a fixed number of pixels.
 The number of pixels should be positive, as it indicates a distance from the corresponding edge, going to the opposite edge.</p>
 
-<hr>
+<p><a name="expert" class="hash"></a></p>
 
-<p><a name="layout_expert"></a>
-The previous examples should cover most of the cases of layout of widgets.
+<h3>Expert layouting <a href="#expert" class="permalink" title="Permalink"><i class='fa fa-link'></i></a></h3>
+
+<p>The previous examples should cover most of the cases of layout of widgets.
 For the remaining cases there is a last way to specify a widget by specifying its position.</p>
 
 <p>The method <code>add: origin: corner:</code> of <strong>SpecLayout</strong> specifies the layout of a widget, percentage-wise from the origin point to the corner point.
@@ -240,10 +248,11 @@ It specifies that the widget in the <code>toolbar</code> instance variable shoul
     <span class="nf">yourself</span>
 </code></pre></div>
 
-<hr>
+<p><a name="specify_layout" class="hash"></a></p>
 
-<p><a name="layout_specify_layout"></a>
-All the methods for adding sub widgets can be found in the <em>commands</em> and <em>commands-advanced</em> protocols of <strong>SpecLayout</strong>.</p>
+<h3>Specify the layout <a href="#specify_layout" class="permalink" title="Permalink"><i class='fa fa-link'></i></a></h3>
+
+<p>All the methods for adding sub widgets can be found in the <em>commands</em> and <em>commands-advanced</em> protocols of <strong>SpecLayout</strong>.</p>
 
 <p>As explained at the beginning of this page, a UI can have multiple layouts.
 So when the layout of a widget that is composed of multiple sub-widgets is defined, and this widget contains multiple layout methods that determine the layout of its sub-widgets, the layout method to use can be specified.</p>
@@ -301,6 +310,8 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
     
   
     
+  
+    
       <li class="sidebar_item "><a href="/docs/home/">Welcome</a></li>
     
   
@@ -354,6 +365,10 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
   
     
   
+    
+  
+    
+  
 
 
   
@@ -362,10 +377,6 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
     
   
 
-  
-    
-  
-    
   
     
       <li class="sidebar_item "><a href="/docs/quickstart/">Quick start</a></li>
@@ -419,6 +430,16 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 
 
   
@@ -427,6 +448,12 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
     
   
 
+  
+    
+  
+    
+  
+    
   
     
   
@@ -547,6 +574,12 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
   
     
   
+    
+  
+    
+  
+    
+  
 
 
   
@@ -555,6 +588,12 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
     
   
 
+  
+    
+  
+    
+  
+    
   
     
   
@@ -635,6 +674,24 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
     
   
     
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
       <li class="sidebar_item "><a href="/docs/starting/">Where to start?</a></li>
     
   
@@ -670,18 +727,6 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -690,6 +735,20 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -739,14 +798,6 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -755,16 +806,6 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
     
   
 
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
   
     
   
@@ -812,6 +853,22 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 
 
   
@@ -820,6 +877,8 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
     
   
 
+  
+    
   
     
   
@@ -877,6 +936,10 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
   
     
   
+    
+  
+    
+  
 
 
   
@@ -885,9 +948,86 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
   
     
       <li class="sidebar_item "><a href="/docs/interactions/">Sub&nbsp;widgets interaction</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+      <li class="sidebar_item "><a href="/docs/dynamic/">Dynamic UI</a></li>
     
   
     
@@ -977,6 +1117,12 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
     
   
     
+  
+    
+  
+    
+  
+    
       <li class="sidebar_item "><a href="/docs/api/">Where to find what I want</a></li>
     
   
@@ -1040,7 +1186,155 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
     
   
     
+  
+    
+  
+    
+  
+    
+      <li class="sidebar_item "><a href="/docs/own-model/">Creating new basic widgets</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
       <li class="sidebar_item "><a href="/docs/adapters/">Adapters</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li class="sidebar_item "><a href="/docs/interpreter/">Interpreter</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
     
   
     
@@ -1098,18 +1392,6 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
     
   
     
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
       <li class="sidebar_item "><a href="/docs/more/">More</a></li>
     
   
@@ -1151,6 +1433,24 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 
 
   
@@ -1159,6 +1459,12 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
     
   
 
+  
+    
+  
+    
+  
+    
   
     
   
@@ -1225,6 +1531,64 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
 		<div class="clear"></div>
 	</div>	  
 </div>
+
+<script>
+$(function () {
+	var currentHash = "remove_me";
+	
+	function changeHash(hash){
+		var parent = $(".news_title");
+		var elt = parent.find(".current");
+		elt.removeClass('current');
+		if(hash){
+			var id = "";
+			var iChars = "~`!#$%^&*+=-[]\\\';,/{}|\":<>?";
+			for ( var i = 0; i < hash.length; i++ ){
+				var each = hash.charAt(i);
+				if ((each !== ' ') && (iChars.indexOf(each) === -1)){
+					id += each;
+				}
+			};
+			elt = parent.find("."+id);
+			elt.addClass('current');
+		}
+	}
+	
+	$(window).on('hashchange', function() {
+		changeHash(window.location.hash);
+	});
+	
+	$(document).scroll(function (e) {
+		$('.hash').each(function () {
+			var top = window.pageYOffset;
+			var distance = top - $(this).offset().top;
+			var hash = $(this).attr('name');
+			// 30 is an arbitrary padding choice, 
+			// if you want a precise check then use distance===0
+			if (distance < 30 && distance > -30 && ( currentHash != hash || (hash === "" && currentHash === "remove_me" ))) { 
+				if(hash === "remove_me"){
+					if(history.replaceState) {
+						history.pushState('', document.title, window.location.pathname);
+					    e.preventDefault();
+					}
+					else {
+					    location.hash = "";
+					}
+				} else {
+					if(history.replaceState) {
+					    history.replaceState(null, null, '#'+hash);
+					}
+					else {
+					    location.hash = hash;
+					}
+				}
+				currentHash = hash;
+				changeHash(hash);
+			}
+		});
+	});
+});
+</script>
 
 </body>
 </html>

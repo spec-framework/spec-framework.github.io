@@ -1,0 +1,1567 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<meta http-equiv="X-UA-Compatible" content="chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<script src="/javascripts/jquery-1.10.2.min.js"></script>
+		
+		<link rel='stylesheet' type='text/css' href='/stylesheets/ArchitectsDaughter.css'>
+		<link rel='stylesheet' type='text/css' href='/stylesheets/bootstrap.css'>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="/stylesheets/pygment_trac.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print" />
+		<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap-theme.css">
+		<link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome.css">
+		<link rel="stylesheet" type="text/css" href="/stylesheets/spec.css">
+		<link rel="stylesheet" type="text/css" href="/stylesheets/figures.css">
+		<link rel="alternate" type="application/rss+xml" title="Spec" href="/feed.xml"> 
+
+		<!--[if lt IE 9]>
+			<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+			<![endif]-->
+
+	<title>Spec • A new Smalltalk framework</title>
+	<head profile="http://www.w3.org/2005/10/profile">
+		<link rel="icon" type="image/png" href="/favicon.png">
+	</head>
+
+<body>
+  <a name="remove_me" class="hash">
+<header>
+	<div class="grid">
+		<div class="unit one-third center-on-mobiles">
+			<div class="inner">
+				<h1>
+					<a href="/" class="spec-header">
+						<span class="title">Spec</span>
+						<img class="flake" src="/images/flake72.png" width="72" height="72" alt="">
+					</a>
+				</h1>
+				<ul class="nav nav-pills">
+  <li class="nav-item ">
+	  <a href="/" data-toggle="tab" class="nav-a">Overview</a>
+  </li>
+   <li class="nav-item active">
+	   <a href="/docs/home" data-toggle="tab" class="nav-a">Documentation</a>
+   </li>
+  <li class="nav-item ">
+	  <a href="/news" data-toggle="tab" class="nav-a">News</a>
+  </li>
+</ul>
+				<a href="https://github.com/SpecForPharo" class="button"><small>Follow Spec on </small>GitHub</a></div>
+			</div>
+		</div>
+	</div>
+</header>
+
+  <div id="content-wrapper">
+	<div class="inner clearfix">
+		<section id="main-content">
+			<div>
+				<article>
+					<h1>Creating new basic widgets</h1>
+					<p><em>Spec</em> provides for a large amount and wide variety of basic widgets. 
+In the rare case that a basic widget is missing, the 
+<em>Spec</em> framework will need to be extended to add this new widget.
+In this section we will explain how to create such a new basic widget.</p>
+
+<p>We will first explain the applicable part of how the widget build process is performed.
+This will reveal the different actors in the process and provide a clearer understanding of their responsibilities.
+We then present the three steps of widget creation: writing a new model, writing an adapter, and updating or creating an individual UI framework binding.</p>
+
+<p><a name="one_step" class="hash"></a></p>
+
+<h2>One step in the building process of a widget <a href="#one_step" class="permalink" title="Permalink"><i class='fa fa-link'></i></a></h2>
+
+<p>The UI building process does not make a distinction between basic and composed widgets.
+Hence, at a specific point in the building process of a basic widget the default spec method of the widget is called, just as if it would be a composed widget.
+However in this case, instead of providing a layout for multiple widgets that comprise the UI, this method builds an adapter to the underlying UI framework.
+Depending of the underlying UI framework that is currently used, this method can provide different kind of adapters, for example an adapter for Morphic, or an adapter for Seaside, etc.</p>
+
+<p>The adapter, when instantiated by the UI model, will in turn instantiate a widget that is specific to the UI framework being used.</p>
+
+<p>For example, when using a List in the Morphic UI, the adaptor will be a MorphicListAdapter and it will contain a PluggableListMorph.
+This is this framework-specific widget that will be added to the widget container.</p>
+
+<p>Figure 
+<a href="#model_adapter_uielement">1.1</a> shows the relationship between those objects.</p>
+
+<p><a name="model_adapter_uielement"></a><img src="figures/Model-Adapter-UIElement.png" alt="model_adapter_uielement" title="Relationship between the model, the adapter, and the UI element"></p>
+
+<p><a name="the_model" class="hash"></a></p>
+
+<h2>The Model <a href="#the_model" class="permalink" title="Permalink"><i class='fa fa-link'></i></a></h2>
+
+<p>The new model needs to be a subclass of 
+<strong>AbstractWidgetModel</strong> and its name should be composed of the new basic widget concept, e.g. list or button, and of the word 
+<em>Model</em>.
+The responsibility of the model is to store all the state of the widget.
+Examples of widget-specific state are:</p>
+
+<ul>
+<li> the index of a list</li>
+<li> the label of a button</li>
+<li> the action block for when a text is validated in a text field</li>
+</ul>
+
+<p>The state is wrapped in value holders and kept in instance variables.
+For example, the code in 
+<a href="#ex_value_holder">1.1</a> shows how to wrap the state 
+<code>0</code> in a value holder and keep it as an instance variable.
+Value holders are needed because they are later used to propagate state changes and thus create the interaction flow of the user interface, as discussed in Section 
+<a href="#sec_heart_of_spec">¿?</a>.</p>
+
+<p><a name="ex_value_holder"></a><strong>Storing state wrapped in a Value Holder in an instance variable</strong></p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">index := 0 asValueHolder.
+</code></pre></div>
+<p>For each instance variable that holds state three methods should be defined: the getter, the setter, and the registration method.
+The first two should classified in the protocol named 
+<em>protocol</em> while the registration method should be in 
+<em>protocol-events</em>.
+For example, the code in 
+<a href="#ex_mutators">1.2</a> shows the methods for the example code in 
+<a href="#ex_value_holder">1.1</a>. </p>
+
+<p><a name="ex_mutators"></a><strong>Example of mutators for index</strong></p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">&quot;in protocol: protocol&quot;
+index
+    ^index value
+
+&quot;in protocol: protocol&quot;
+index: anInteger
+    index value: anInteger
+
+&quot;in protocol: protocol-events&quot;
+whenIndexChanged: aBlock
+    index whenChangedDo: aBlock
+</code></pre></div>
+<p>The last step to define a new model is to implement a method 
+<code>adapterName</code> at the class side.
+The method should be in the protocol named 
+<em>spec</em> and should return a symbol.
+The symbol should be composed of the basic concept of the widget, e.g. list or button, and the word 
+<em>Adapter</em> like 
+<strong>ListAdapter</strong>.</p>
+
+<p>The communication from the UI model to the adapter is performed using the dependents mechanism.
+This mechanism is used to to handle the fact that a same model can have multiple UI elements concurrently displayed.
+In fact the message 
+<code>change: with:</code> is used to send the message 
+<em>selector</em> with the arguments 
+<em>aCollection</em> to the adapter.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">Note: For Ben. I still don&#39;t understand it. Please explain to me tomorrow.
+</code></pre></div>
+<p><a name="the_adapter" class="hash"></a></p>
+
+<h2>The Adapter <a href="#the_adapter" class="permalink" title="Permalink"><i class='fa fa-link'></i></a></h2>
+
+<p>An adapter must be a subclass of 
+<strong>AbstractAdapter</strong>.
+The adapter name should be composed of the UI framework name, e.g. Morphic, and the name of the adapter it is implementing, e.g. ListAdapter.
+The adapter is an object used to connect a UI framework specific element and the framework independent model.</p>
+
+<p>The only mandatory method for an adapter is 
+<code>defaultSpec</code> on the class side.
+This method has the responsibility to instantiate the corresponding UI element.</p>
+
+<p>The example 
+<a href="#ex_adapter_instanciation">1.3</a> shows how 
+<strong>MorphicButtonAdapter</strong> instantiates its UI element.</p>
+
+<p><a name="ex_adapter_instanciation"></a><strong>How MorphicButtonAdapter instantiates its UI element</strong></p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">defaultSpec
+    &lt;spec&gt;
+
+    ^ {#PluggableButtonMorph.
+            #color:. Color white.
+                #on:getState:action:label:menu:.    #model. #state. #action. #label. nil.
+            #getEnabledSelector:.               #enabled.
+            #getMenuSelector:.              #menu:.
+            #hResizing:.                        #spaceFill.
+            #vResizing:.                        #spaceFill.
+            #borderWidth:.                      #(model borderWidth).
+            #borderColor:.                      #(model borderColor).
+            #askBeforeChanging:.                #(model askBeforeChanging).
+            #setBalloonText:.                   { #model . #help}.
+            #dragEnabled:.                      #(model dragEnabled).
+            #dropEnabled:.                      #(model dropEnabled).   
+            #eventHandler:.                 {   #EventHandler. #on:send:to:. #keyStroke.    #keyStroke:fromMorph:. #model   }}
+</code></pre></div>
+<p>Since the adapter is bridging the gap between the element of the UI framework and the model, the adapter also needs to forward the queries from the UI element to the model.
+Seen from the other way around: since the model is holding the state, the adapter is used to update the UI element state of the model.</p>
+
+<p>The methods involved in the communication from the model to the adapter as well as the methods involved in the communication from the adapter to the UI model should be in the protocol 
+<em>spec protocol</em>.
+On the other hand the methods involved in the communication from the adapter to the UI element and vice versa should be categorized in the protocol 
+<em>widget API</em>.</p>
+
+<p>To communicate with the UI element, the adapter methods use the method 
+<code>widgetDo:</code>.
+This method executes the block provided as argument, which will only happen after the UI element has already been created.</p>
+
+<p>The example 
+<a href="#ex_emphasis">1.4</a> shows how 
+<strong>MorphicLabelAdapter</strong> propagates the modification of the emphasis from the adapter to the UI element.</p>
+
+<p><a name="ex_emphasis"></a><strong>How MorphicLabelAdapter propagates the emphasis changes</strong></p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">emphasis: aTextEmphasis
+
+    self widgetDo: [ :w | w emphasis: aTextEmphasis ]
+</code></pre></div>
+<p><a name="the_binding" class="hash"></a></p>
+
+<h2>The UI Framework binding <a href="#the_binding" class="permalink" title="Permalink"><i class='fa fa-link'></i></a></h2>
+
+<p>The bindings is an object that is used to resolve the name of the adapter at run time.
+This allows for the same model to be used with several UI frameworks.</p>
+
+<p>Adding the new adapter to the default binding is quite simple.
+It requires to update two methods: 
+<code>initializeBindings</code> in 
+<strong>SpecAdapterBindings</strong> and 
+<code>initializeBindings</code> in the framework specific adapter class, e.g. 
+<strong>MorphicAdapterBindings</strong> for Morphic.</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">Note: For Ben: Give an example here.
+</code></pre></div>
+<p>Once this is done, the bindings should be re-initialized by running the following snippet of code: 
+<code>SpecInterpreter hardResetBindings</code>.</p>
+
+<p>For creating a specific binding, the class 
+<strong>SpecAdapterBindings</strong> needs to be overriden as well as its method 
+<code>initializeBindings</code>.
+It can then be used during a spec interpretation by setting it as the bindings to use for the 
+<strong>SpecInterpreter</strong>.
+The example 
+<a href="#ex_setting_bindings">1.5</a> shows how to do so.</p>
+
+<p><a name="ex_setting_bindings"></a><strong>How to set custom bindings</strong></p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">SpecInterpreter bindings: MyOwnBindingClass new.
+</code></pre></div>
+<p>Note that the 
+<strong>SpecInterpreter</strong> bindings are reset after each execution.</p>
+
+					<div class="section-nav">
+	<div class="btn-group">
+		<a class="btn btn-default nav-btn " href="/docs/api/">Back
+		</a>
+		<a class="btn btn-default nav-btn " href="/docs/adapters/">Next
+		</a>
+	</div>
+	<div class="clear">
+	</div>
+</div>
+					<footer>
+  <div class="grid">
+    <div class="unit one-third center-on-mobiles">
+      <p class="footer-text">
+		  The contents of this website are &copy;&nbsp;2014 <a href="http://benjamin.vanryseghem.com">Benjamin Van Ryseghem</a><br/>
+		  under the terms of the <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a>.
+	  </p>
+    </div>
+  </div>
+</footer>
+				</article>
+			</div>
+		</section>
+		<div id="commentWrapper">
+	<div id="comment">
+		<aside id="sidebar">
+			
+			<h4>Getting Started</h4>
+			
+
+<ul>
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+      <li class="sidebar_item "><a href="/docs/home/">Welcome</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
+      <li class="sidebar_item "><a href="/docs/quickstart/">Quick start</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li class="sidebar_item "><a href="/docs/installation/">Installation</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+</ul>
+			
+			<h4>Your UI</h4>
+			
+
+<ul>
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li class="sidebar_item "><a href="/docs/starting/">Where to start?</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li class="sidebar_item "><a href="/docs/initializing/">Instantiating sub&nbsp;widgets</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li class="sidebar_item "><a href="/docs/layout/">Defining the layout</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li class="sidebar_item "><a href="/docs/open/">Open your UI</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li class="sidebar_item "><a href="/docs/interactions/">Sub&nbsp;widgets interaction</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+      <li class="sidebar_item "><a href="/docs/dynamic/">Dynamic UI</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+</ul>
+			
+			<h4>Inside Spec</h4>
+			
+
+<ul>
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li class="sidebar_item "><a href="/docs/api/">Where to find what I want</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li class="sidebar_item current"><a href="/docs/own-model/">Creating new basic widgets</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li class="sidebar_item "><a href="/docs/adapters/">Adapters</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li class="sidebar_item "><a href="/docs/interpreter/">Interpreter</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+</ul>
+			
+			<h4>Meta</h4>
+			
+
+<ul>
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+      <li class="sidebar_item "><a href="/docs/more/">More</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+</ul>
+			
+		</aside>
+	</div>
+</div>
+
+		<div class="clear"></div>
+	</div>	  
+</div>
+
+<script>
+$(function () {
+	var currentHash = "remove_me";
+	
+	function changeHash(hash){
+		var parent = $(".news_title");
+		var elt = parent.find(".current");
+		elt.removeClass('current');
+		if(hash){
+			var id = "";
+			var iChars = "~`!#$%^&*+=-[]\\\';,/{}|\":<>?";
+			for ( var i = 0; i < hash.length; i++ ){
+				var each = hash.charAt(i);
+				if ((each !== ' ') && (iChars.indexOf(each) === -1)){
+					id += each;
+				}
+			};
+			elt = parent.find("."+id);
+			elt.addClass('current');
+		}
+	}
+	
+	$(window).on('hashchange', function() {
+		changeHash(window.location.hash);
+	});
+	
+	$(document).scroll(function (e) {
+		$('.hash').each(function () {
+			var top = window.pageYOffset;
+			var distance = top - $(this).offset().top;
+			var hash = $(this).attr('name');
+			// 30 is an arbitrary padding choice, 
+			// if you want a precise check then use distance===0
+			if (distance < 30 && distance > -30 && ( currentHash != hash || (hash === "" && currentHash === "remove_me" ))) { 
+				if(hash === "remove_me"){
+					if(history.replaceState) {
+						history.pushState('', document.title, window.location.pathname);
+					    e.preventDefault();
+					}
+					else {
+					    location.hash = "";
+					}
+				} else {
+					if(history.replaceState) {
+					    history.replaceState(null, null, '#'+hash);
+					}
+					else {
+					    location.hash = hash;
+					}
+				}
+				currentHash = hash;
+				changeHash(hash);
+			}
+		});
+	});
+});
+</script>
+
+</body>
+</html>

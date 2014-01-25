@@ -60,93 +60,14 @@
 		<section id="main-content">
 			<div>
 				<article>
-					<h1>Where to find what I want</h1>
-					<p>All the <strong>Spec</strong> models for basic widgets have an API that is explicitly documented through the use of pragmas.
-This section explains where to find the API of a model and meaning of the meta information that is attached to the API methods.</p>
-
-<p>Each model contains at least two protocols that group the public API methods.
-The first protocol is named <strong>protocol</strong>.
-It gathers all the methods that set or get the different state elements of the model plus the behavioural methods acting directly on these elements.
-The second protocol is named <strong>protocol-events</strong>.
-It gathers all the methods that are used to register to a state change.</p>
-
-<p>All the meta-information of public API methods is documented through the use of pragmas that start with <em>api:</em>.
-There are three types of public API methods: getters, setters and registration methods.</p>
-
-<h2>Meta information for getters</h2>
-
-<p>The pragma for getters is always <code>&lt;api: #inspect&gt;</code>.
-For example, the following code shows how the <em>action</em>  method in <strong>ButtonModel</strong> is implemented.</p>
-
-<div class="highlight"><pre><code class="smalltalk"><span class="nf">action</span>
-    &lt;<span class="k">api:</span> #inspect&gt;
-    <span class="c">&quot;get the block performed when the button is clicked&quot;</span>
-
-    <span class="o">^</span> <span class="nv">actionHolder</span> <span class="nf">value</span>
-</code></pre></div>
-
-<h2>Meta information for setters</h2>
-
-<p>The pragma for setters is a bit more complex.
-The pattern of the pragma is <code>&lt;api: typeOfState getter: getterSelector registration: registrationMethodSelector&gt;</code>.
-In this pattern, <em>typeOfState</em> , <em>getterSelector</em> and <em>registrationMethodSelector</em> need to be substituted by the relevant values for this setter.</p>
-
-<p>The <em>getterSelector</em> specifies the name of the getter method (a Symbol) that returns the state set by this method.
-The <em>registrationMethodSelector</em> states the name of the method (a Symbol) that needs to be used to register to changes in the state.
-<em>typeOfState</em>  gives the type of the state being set by this setter.
-The possible types are as follows:</p>
-
-<ul>
-<li><em>block</em> indicates a block, </li>
-<li><em>boolean</em> indicates a boolean,</li>
-<li><em>color</em> indicates a Color,</li>
-<li><em>image</em> indicates a Form,</li>
-<li><em>integer</em> indicates an integer,</li>
-<li><em>point</em> indicates a Point,</li>
-<li><em>string</em> indicates a String,</li>
-<li><em>st</em> indicates any other type of <em>Smalltalk</em> object.</li>
-</ul>
-
-<p>For example, the following code shows how <em>actions:</em> is implemented in <strong>ButtonModel</strong>.</p>
-
-<div class="highlight"><pre><code class="smalltalk"><span class="nf">action:</span> <span class="nv">aBlock</span>
-    &lt;<span class="k">api:</span> #block getter: #getAction registration: #whenActionChangedDo:&gt;
-    <span class="c">&quot;set the block performed when the button is clicked&quot;</span>
-
-    <span class="nv">actionHolder</span> <span class="nf">value:</span> <span class="nv">aBlock</span>
-</code></pre></div>
-
-<h2>Meta information for registration methods</h2>
-
-<p>The pragma for registration methods information always is <em>&lt;api: #event&gt;</em>.
-For example, the incoming code shows how the method <em>whenActionChangedDo:</em> is implemented in <strong>ButtonModel</strong>.</p>
-
-<div class="highlight"><pre><code class="smalltalk"><span class="nf">whenActionChangedDo:</span> <span class="nv">aBlock</span> 
-    &lt;<span class="k">api:</span> #event&gt;
-    <span class="c">&quot;Set the block performed when the action to perform is changed&quot;</span>
-
-    <span class="nv">actionHolder</span> <span class="nf">whenChangedDo:</span> <span class="nv">aBlock</span>
-</code></pre></div>
-
-<h2>Meta information for behavioural method</h2>
-
-<p>The other methods should be mainly behavioural methods.
-The pragma for these methods is <em>&lt;api: #do&gt;</em>.
-The next example shows how <em>resetSelection</em> is implemented in <strong>ListModel</strong>.</p>
-
-<div class="highlight"><pre><code class="smalltalk"><span class="nf">resetSelection</span>
-    &lt;<span class="k">api:</span> #do&gt;
-    <span class="c">&quot;Unselect every items&quot;</span>
-
-    <span class="nv">selectionHolder</span> <span class="nf">reset</span><span class="p">.</span>
-    <span class="nv">multiSelectionHolder</span> <span class="nf">removeAll</span>
-</code></pre></div>
+					<h1>Interpreter</h1>
+					<p>The interpreter is in charge of converting a spec model and a layout (as an array) into a framework specific ui element.</p>
 
 					<div class="section-nav">
 	<div class="btn-group">
-		<a class="btn btn-default nav-btn " href="/docs/dynamic/">Back
+		<a class="btn btn-default nav-btn " href="/docs/adapters/">Back
 		</a>
-		<a class="btn btn-default nav-btn " href="/docs/own-model/">Next
+		<a class="btn btn-default nav-btn " href="/docs/more/">Next
 		</a>
 	</div>
 	<div class="clear">
@@ -997,7 +918,7 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
     
   
     
-      <li class="sidebar_item current"><a href="/docs/api/">Where to find what I want</a></li>
+      <li class="sidebar_item "><a href="/docs/api/">Where to find what I want</a></li>
     
   
     
@@ -1198,7 +1119,7 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
     
   
     
-      <li class="sidebar_item "><a href="/docs/interpreter/">Interpreter</a></li>
+      <li class="sidebar_item current"><a href="/docs/interpreter/">Interpreter</a></li>
     
   
     
