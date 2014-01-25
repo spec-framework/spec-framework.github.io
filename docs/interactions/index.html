@@ -60,41 +60,55 @@
 		<section id="main-content">
 			<div>
 				<article>
-					<h1>Installation</h1>
-					<p>To fetch the latest <em>Spec</em> version, you first need to get a local copy of the repository:</p>
+					<h1>Sub&nbsp;widgets interaction</h1>
+					<p>The only missing part of this user&nbsp;interface is the interaction between the sub&nbsp;widgets.
+The interaction is described in the method <code>initializePresenter</code>.</p>
 
-<div class="highlight"><pre><code class="bash">~ <span class="nv">$ </span><span class="nb">cd</span> /tmp
-tmp <span class="nv">$ </span>git clone https://github.com/SpecForPharo/spec.git
+<p>By linking the behavior of the different widgets it specifies the overall presentation, i.e. how the overall UI responds to interactions by the user.</p>
+
+<p>Usually this method consists of specifications of actions to perform when a certain event is received by a widget.
+From the propagation of those events the whole interaction flow of the UI emerges.</p>
+
+<p>In  <strong>Spec</strong>, the different UI models are contained in reactive variables, and the event mechanism relies on the announcements of these reactive variables to manage the interactions between widgets.</p>
+
+<p>Reactive variables provide a single method <code>whenChangedDo:</code> that is used to register a block to perform on change.
+In addition to this primitive  <code>whenChangedDo:</code> method, the basic widgets provide more specific hooks, e.g. when an item in a list is selected or deselected.</p>
+
+<p>The following example shows how to use one of the registration methods of the list widget to change the label of the button according to the selection in the list.</p>
+
+<div class="highlight"><pre><code class="smalltalk"><span class="nv">theList</span> <span class="nf">whenSelectedItemChanged:</span> [ <span class="o">:</span><span class="nv">item</span> <span class="o">|</span> 
+    <span class="nv">item</span> 
+        <span class="nf">ifNil:</span> [ <span class="nv">theButton</span> <span class="nf">text:</span> <span class="s">&#39;No selected item&#39;</span> ]
+        <span class="nf">ifNotNil:</span> [ <span class="nv">theButton</span> <span class="nf">text:</span> <span class="s">&#39;An item is selected&#39;</span>] ]
 </code></pre></div>
 
-<p>Then open your image and execute the following script:</p>
 
-<div class="highlight"><pre><code class="smalltalk"><span class="o">|</span><span class="nv"> repo names currentVersions toLoad </span><span class="o">|</span>
+The whole event API of the basic widgets is described on this <a href="/docs/api">page</a>.
 
-<span class="nv">repo</span> <span class="o">:=</span> <span class="nc">MCFileTreeRepository</span> <span class="nb">new</span> <span class="nf">directory:</span> <span class="s">&#39;/tmp/spec&#39;</span> <span class="nf">asFileReference</span><span class="p">.</span>
+<div class="alert hint">
+    <span class="fa-stack fa-lg hint-icon">
+      <i class="fa fa-square fa-stack-2x"></i>
+      <i class="fa fa-info fa-stack-1x hint-overlay"></i>
+    </span>
+    <span class="hint-text"><p>If a programmer wants his or her widgets to be reused,
+they should provide a comprehensive API.</p>
+</span>
+</div>
 
-<span class="nv">currentVersions</span> <span class="o">:=</span> <span class="nc">MCWorkingCopy</span> <span class="nf">allManagers</span>
-    <span class="nf">select:</span> [ <span class="o">:</span><span class="nv">e</span> <span class="o">|</span> (<span class="nv">e</span> <span class="nf">ancestry</span> <span class="nf">ancestors</span>) <span class="nf">notEmpty</span> ]
-    <span class="nf">thenCollect:</span> [ <span class="o">:</span><span class="nv">e</span> <span class="o">|</span> <span class="nv">e</span> <span class="nf">ancestry</span> <span class="nf">ancestors</span> <span class="nf">first</span> <span class="nf">name</span> ]<span class="p">.</span>
-<span class="nv">names</span> <span class="o">:=</span> <span class="nv">repo</span> <span class="nf">packageDescriptionsFromReadableFileNames</span><span class="p">.</span>
-<span class="nv">toLoad</span> <span class="o">:=</span> <span class="nv">names</span> <span class="nf">select:</span> [ <span class="o">:</span><span class="nv">e</span> <span class="o">||</span><span class="nv"> currentVersion </span><span class="o">|</span> 
-    <span class="nv">currentVersion</span> <span class="o">:=</span> <span class="nv">e</span> <span class="nf">first</span> <span class="nf">,</span> <span class="s">&#39;-&#39;</span><span class="nf">,</span> <span class="nv">e</span> <span class="nf">second</span> <span class="nf">,</span> <span class="s">&#39;.&#39;</span><span class="nf">,</span> <span class="nv">e</span> <span class="nf">third</span> <span class="nf">asString</span><span class="p">.</span>
-    (<span class="nv">currentVersions</span> <span class="nf">includes:</span> <span class="nv">currentVersion</span>) <span class="nf">not</span> ]<span class="p">.</span>
-
-<span class="nv">toLoad</span> <span class="nf">do:</span> [ <span class="o">:</span><span class="nv">name</span> <span class="o">||</span><span class="nv"> version </span><span class="o">|</span>
-    <span class="nv">version</span> <span class="o">:=</span> <span class="nv">repo</span> <span class="nf">versionFromFileNamed:</span> <span class="nv">name</span> <span class="nf">first,</span> <span class="s">&#39;.package&#39;</span><span class="p">.</span>
-    [ <span class="nv">version</span> <span class="nf">load</span> ]
-        <span class="nf">on:</span> <span class="nc">MCMergeOrLoadWarning</span>
-        <span class="nf">do:</span> [ <span class="o">:</span><span class="nv">ex</span> <span class="o">|</span> [ <span class="nv">ex</span> <span class="nf">load</span>  ] <span class="nf">on:</span> <span class="nc">MCNoChangesException</span> <span class="nf">do:</span> [] ] ]<span class="p">.</span>
-</code></pre></div>
-
-<p>Your image contains now the latest stable version of <em>Spec</em>.</p>
+<div class="alert hint">
+    <span class="fa-stack fa-lg hint-icon">
+      <i class="fa fa-square fa-stack-2x"></i>
+      <i class="fa fa-info fa-stack-1x hint-overlay"></i>
+    </span>
+    <span class="hint-text"><p>This method is optional. Without it, the different widgets in the UI will simply not respond to changes in each others' state.</p>
+</span>
+</div>
 
 					<div class="section-nav">
 	<div class="btn-group">
-		<a class="btn btn-default nav-btn " href="/docs/quickstart/">Back
+		<a class="btn btn-default nav-btn " href="/docs/open/">Back
 		</a>
-		<a class="btn btn-default nav-btn " href="/docs/starting/">Next
+		<a class="btn btn-default nav-btn " href="/docs/api/">Next
 		</a>
 	</div>
 	<div class="clear">
@@ -274,7 +288,7 @@ tmp <span class="nv">$ </span>git clone https://github.com/SpecForPharo/spec.git
     
   
     
-      <li class="sidebar_item current"><a href="/docs/installation/">Installation</a></li>
+      <li class="sidebar_item "><a href="/docs/installation/">Installation</a></li>
     
   
     
@@ -734,7 +748,7 @@ tmp <span class="nv">$ </span>git clone https://github.com/SpecForPharo/spec.git
     
   
     
-      <li class="sidebar_item "><a href="/docs/interactions/">Sub&nbsp;widgets interaction</a></li>
+      <li class="sidebar_item current"><a href="/docs/interactions/">Sub&nbsp;widgets interaction</a></li>
     
   
     
