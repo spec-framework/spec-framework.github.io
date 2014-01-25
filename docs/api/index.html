@@ -73,7 +73,9 @@ It gathers all the methods that are used to register to a state change.</p>
 <p>All the meta-information of public API methods is documented through the use of pragmas that start with <em>api:</em>.
 There are three types of public API methods: getters, setters and registration methods.</p>
 
-<h2>Meta information for getters</h2>
+<p><a name="getters" class="hash"></a></p>
+
+<h2>Meta information for getters <a href="#getters" class="permalink" title="Permalink"><i class='fa fa-link'></i></a></h2>
 
 <p>The pragma for getters is always <code>&lt;api: #inspect&gt;</code>.
 For example, the following code shows how the <em>action</em>  method in <strong>ButtonModel</strong> is implemented.</p>
@@ -85,7 +87,9 @@ For example, the following code shows how the <em>action</em>  method in <strong
     <span class="o">^</span> <span class="nv">actionHolder</span> <span class="nf">value</span>
 </code></pre></div>
 
-<h2>Meta information for setters</h2>
+<p><a name="setters" class="hash"></a></p>
+
+<h2>Meta information for setters <a href="#setters" class="permalink" title="Permalink"><i class='fa fa-link'></i></a></h2>
 
 <p>The pragma for setters is a bit more complex.
 The pattern of the pragma is <code>&lt;api: typeOfState getter: getterSelector registration: registrationMethodSelector&gt;</code>.
@@ -116,7 +120,9 @@ The possible types are as follows:</p>
     <span class="nv">actionHolder</span> <span class="nf">value:</span> <span class="nv">aBlock</span>
 </code></pre></div>
 
-<h2>Meta information for registration methods</h2>
+<p><a name="events" class="hash"></a></p>
+
+<h2>Meta information for registration methods <a href="#events" class="permalink" title="Permalink"><i class='fa fa-link'></i></a></h2>
 
 <p>The pragma for registration methods information always is <em>&lt;api: #event&gt;</em>.
 For example, the incoming code shows how the method <em>whenActionChangedDo:</em> is implemented in <strong>ButtonModel</strong>.</p>
@@ -128,7 +134,9 @@ For example, the incoming code shows how the method <em>whenActionChangedDo:</em
     <span class="nv">actionHolder</span> <span class="nf">whenChangedDo:</span> <span class="nv">aBlock</span>
 </code></pre></div>
 
-<h2>Meta information for behavioural method</h2>
+<p><a name="behavior" class="hash"></a></p>
+
+<h2>Meta information for behavioral method <a href="#behavior" class="permalink" title="Permalink"><i class='fa fa-link'></i></a></h2>
 
 <p>The other methods should be mainly behavioural methods.
 The pragma for these methods is <em>&lt;api: #do&gt;</em>.
@@ -186,6 +194,26 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
     
   
     
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
       <li class="sidebar_item "><a href="/docs/home/">Welcome</a></li>
     
   
@@ -223,26 +251,6 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -251,6 +259,18 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
       <li class="sidebar_item "><a href="/docs/quickstart/">Quick start</a></li>
@@ -302,18 +322,6 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -322,6 +330,16 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -341,16 +359,6 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
   
     
       <li class="sidebar_item "><a href="/docs/installation/">Installation</a></li>
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
     
   
     
@@ -566,6 +574,14 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
     
   
     
+  
+    
+  
+    
+  
+    
+  
+    
       <li class="sidebar_item "><a href="/docs/starting/">Where to start?</a></li>
     
   
@@ -593,14 +609,6 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -609,6 +617,14 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -664,14 +680,6 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -680,6 +688,18 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -731,18 +751,6 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -751,10 +759,6 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
     
   
 
-  
-    
-  
-    
   
     
   
@@ -814,6 +818,10 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
   
     
   
+    
+  
+    
+  
 
 
   
@@ -822,6 +830,30 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -861,30 +893,6 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -893,6 +901,30 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -902,30 +934,6 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
   
     
       <li class="sidebar_item "><a href="/docs/dynamic/">Dynamic UI</a></li>
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
     
   
     
@@ -987,16 +995,6 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
     
   
     
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
       <li class="sidebar_item current"><a href="/docs/api/">Where to find what I want</a></li>
     
   
@@ -1034,6 +1032,16 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 
 
   
@@ -1042,12 +1050,6 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
     
   
 
-  
-    
-  
-    
-  
-    
   
     
   
@@ -1105,6 +1107,12 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
   
     
   
+    
+  
+    
+  
+    
+  
 
 
   
@@ -1113,6 +1121,8 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
     
   
 
+  
+    
   
     
   
@@ -1174,8 +1184,6 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
   
     
   
-    
-  
 
 
   
@@ -1184,6 +1192,12 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
     
   
 
+  
+    
+  
+    
+  
+    
   
     
   
@@ -1199,12 +1213,6 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
   
     
       <li class="sidebar_item "><a href="/docs/interpreter/">Interpreter</a></li>
-    
-  
-    
-  
-    
-  
     
   
     
@@ -1266,13 +1274,13 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
     
   
     
+  
+    
+  
+    
+  
+    
       <li class="sidebar_item "><a href="/docs/more/">More</a></li>
-    
-  
-    
-  
-    
-  
     
   
     

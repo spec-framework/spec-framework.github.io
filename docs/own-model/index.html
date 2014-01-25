@@ -84,10 +84,9 @@ Depending of the underlying UI framework that is currently used, this method can
 <p>For example, when using a List in the Morphic UI, the adaptor will be a MorphicListAdapter and it will contain a PluggableListMorph.
 This is this framework-specific widget that will be added to the widget container.</p>
 
-<p>Figure 
-<a href="#model_adapter_uielement">1.1</a> shows the relationship between those objects.</p>
+<p>Figure <a href="#model_adapter_uielement">1.1</a> shows the relationship between those objects.</p>
 
-<p><a name="model_adapter_uielement"></a><img src="figures/Model-Adapter-UIElement.png" alt="model_adapter_uielement" title="Relationship between the model, the adapter, and the UI element"></p>
+<p><a name="model_adapter_uielement"></a><img src="/figures/Model-Adapter-UIElement.png" alt="model_adapter_uielement" title="Relationship between the model, the adapter, and the UI element"></p>
 
 <p><a name="the_model" class="hash"></a></p>
 
@@ -105,53 +104,63 @@ Examples of widget-specific state are:</p>
 <li> the action block for when a text is validated in a text field</li>
 </ul>
 
-<p>The state is wrapped in value holders and kept in instance variables.
-For example, the code in 
-<a href="#ex_value_holder">1.1</a> shows how to wrap the state 
-<code>0</code> in a value holder and keep it as an instance variable.
-Value holders are needed because they are later used to propagate state changes and thus create the interaction flow of the user interface, as discussed in Section 
-<a href="#sec_heart_of_spec">¿?</a>.</p>
+<p>The state is wrapped in reactive variables and kept in instance variables.
+For example, the code following shows how to wrap the state 
+<code>0</code> in a reactive variable and keep it as an instance variable.
+reactive variables are needed because they are later used to propagate state changes and thus create the interaction flow of the user interface, as discussed in the page <a href="/docs/interactions/">Sub&nbsp;widgets interaction</a>.</p>
 
-<p><a name="ex_value_holder"></a><strong>Storing state wrapped in a Value Holder in an instance variable</strong></p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">index := 0 asValueHolder.
+<div class="highlight"><pre><code class="smalltalk"><span class="nv">index</span> <span class="o">:=</span> <span class="m">0</span> <span class="nf">asValueHolder</span><span class="p">.</span>
 </code></pre></div>
+
+
+
 <p>For each instance variable that holds state three methods should be defined: the getter, the setter, and the registration method.
 The first two should classified in the protocol named 
-<em>protocol</em> while the registration method should be in 
-<em>protocol-events</em>.
-For example, the code in 
-<a href="#ex_mutators">1.2</a> shows the methods for the example code in 
-<a href="#ex_value_holder">1.1</a>. </p>
+<strong>protocol</strong> while the registration method should be in 
+<strong>protocol-events</strong>.</p>
 
-<p><a name="ex_mutators"></a><strong>Example of mutators for index</strong></p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">&quot;in protocol: protocol&quot;
-index
-    ^index value
+<p>For example, the methods to define for the previous example can be implemented as following:</p>
 
-&quot;in protocol: protocol&quot;
-index: anInteger
-    index value: anInteger
 
-&quot;in protocol: protocol-events&quot;
-whenIndexChanged: aBlock
-    index whenChangedDo: aBlock
+
+<div class="highlight"><pre><code class="smalltalk"><span class="c">&quot;in protocol: protocol&quot;</span>
+<span class="nf">index</span>
+    <span class="o">^</span><span class="nv">index</span> <span class="nf">value</span>
+ 
+<span class="c">&quot;in protocol: protocol&quot;</span>
+<span class="nf">index:</span> <span class="nv">anInteger</span>
+    <span class="nf">index</span> <span class="nf">value:</span> <span class="nv">anInteger</span>
+   
+<span class="c">&quot;in protocol: protocol-events&quot;</span>
+<span class="nf">whenIndexChanged:</span> <span class="nv">aBlock</span>
+    <span class="nf">index</span> <span class="nf">whenChangedDo:</span> <span class="nv">aBlock</span>
 </code></pre></div>
+
+
+
 <p>The last step to define a new model is to implement a method 
 <code>adapterName</code> at the class side.
 The method should be in the protocol named 
-<em>spec</em> and should return a symbol.
-The symbol should be composed of the basic concept of the widget, e.g. list or button, and the word 
-<em>Adapter</em> like 
-<strong>ListAdapter</strong>.</p>
+*spec* and should return a symbol.
+The symbol should be composed of the basic concept of the widget, e.g. list or button, and the word <strong>Adapter</strong> like <strong>ListAdapter</strong>.</p>
+
 
 <p>The communication from the UI model to the adapter is performed using the dependents mechanism.
 This mechanism is used to to handle the fact that a same model can have multiple UI elements concurrently displayed.
 In fact the message 
 <code>change: with:</code> is used to send the message 
-<em>selector</em> with the arguments 
-<em>aCollection</em> to the adapter.</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">Note: For Ben. I still don&#39;t understand it. Please explain to me tomorrow.
-</code></pre></div>
+<emph>selector</emph> with the arguments 
+<emph>aCollection</emph> to the adapter.</p>
+
+
+<div class="alert question">
+    <span class="fa-stack fa-lg question-icon">
+      <i class="fa fa-question-circle fa-2x"></i>
+    </span>
+    <span class="question-text"><p>Note: For Ben. I still don't understand it. Please explain to me tomorrow.</p>
+</span>
+</div>
+
 <p><a name="the_adapter" class="hash"></a></p>
 
 <h2>The Adapter <a href="#the_adapter" class="permalink" title="Permalink"><i class='fa fa-link'></i></a></h2>
@@ -165,56 +174,65 @@ The adapter is an object used to connect a UI framework specific element and the
 <code>defaultSpec</code> on the class side.
 This method has the responsibility to instantiate the corresponding UI element.</p>
 
-<p>The example 
-<a href="#ex_adapter_instanciation">1.3</a> shows how 
-<strong>MorphicButtonAdapter</strong> instantiates its UI element.</p>
+<p>The next example shows how <strong>MorphicButtonAdapter</strong> instantiates its UI element.</p>
 
-<p><a name="ex_adapter_instanciation"></a><strong>How MorphicButtonAdapter instantiates its UI element</strong></p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">defaultSpec
-    &lt;spec&gt;
+<div class="highlight"><pre><code class="smalltalk"><span class="nf">defaultSpec</span>
+    <span class="err">&lt;</span><span class="nv">spec</span><span class="nf">&gt;</span>
 
-    ^ {#PluggableButtonMorph.
-            #color:. Color white.
-                #on:getState:action:label:menu:.    #model. #state. #action. #label. nil.
-            #getEnabledSelector:.               #enabled.
-            #getMenuSelector:.              #menu:.
-            #hResizing:.                        #spaceFill.
-            #vResizing:.                        #spaceFill.
-            #borderWidth:.                      #(model borderWidth).
-            #borderColor:.                      #(model borderColor).
-            #askBeforeChanging:.                #(model askBeforeChanging).
-            #setBalloonText:.                   { #model . #help}.
-            #dragEnabled:.                      #(model dragEnabled).
-            #dropEnabled:.                      #(model dropEnabled).   
-            #eventHandler:.                 {   #EventHandler. #on:send:to:. #keyStroke.    #keyStroke:fromMorph:. #model   }}
+    <span class="o">^</span> {<span class="ss">#PluggableButtonMorph</span><span class="p">.</span>
+        <span class="ss">#color:</span><span class="p">.</span> <span class="nc">Color</span> <span class="nf">white</span><span class="p">.</span>
+        <span class="ss">#on:getState:action:label:menu:</span><span class="p">.</span>     <span class="ss">#model</span><span class="p">.</span> <span class="ss">#state</span><span class="p">.</span> <span class="ss">#action</span><span class="p">.</span> <span class="ss">#label</span><span class="p">.</span> <span class="bp">nil</span><span class="p">.</span>
+        <span class="ss">#getEnabledSelector:</span><span class="p">.</span>                <span class="ss">#enabled</span><span class="p">.</span>
+        <span class="ss">#getMenuSelector:</span><span class="p">.</span>                   <span class="ss">#menu:</span><span class="p">.</span>
+        <span class="ss">#hResizing:</span><span class="p">.</span>                         <span class="ss">#spaceFill</span><span class="p">.</span>
+        <span class="ss">#vResizing:</span><span class="p">.</span>                         <span class="ss">#spaceFill</span><span class="p">.</span>
+        <span class="ss">#borderWidth:</span><span class="p">.</span>                       <span class="ss">#(model</span> <span class="ss">borderWidth)</span><span class="p">.</span>
+        <span class="ss">#borderColor:</span><span class="p">.</span>                       <span class="ss">#(model</span> <span class="ss">borderColor)</span><span class="p">.</span>
+        <span class="ss">#askBeforeChanging:</span><span class="p">.</span>                 <span class="ss">#(model</span> <span class="ss">askBeforeChanging)</span><span class="p">.</span>
+        <span class="ss">#setBalloonText:</span><span class="p">.</span>                    <span class="ss">#(model</span> <span class="ss">help)</span><span class="p">.</span>
+        <span class="ss">#dragEnabled:</span><span class="p">.</span>                       <span class="ss">#(model</span> <span class="ss">dragEnabled)</span><span class="p">.</span>
+        <span class="ss">#dropEnabled:</span><span class="p">.</span>                       <span class="ss">#(model</span> <span class="ss">dropEnabled)</span><span class="p">.</span>    
+        <span class="ss">#eventHandler:</span><span class="p">.</span>                      <span class="ss">#(EventHandler</span> <span class="ss">on:send:to:</span> <span class="ss">keyStroke</span> <span class="ss">keyStroke:fromMorph:</span> <span class="ss">model)</span>}
 </code></pre></div>
+
+
+
 <p>Since the adapter is bridging the gap between the element of the UI framework and the model, the adapter also needs to forward the queries from the UI element to the model.
 Seen from the other way around: since the model is holding the state, the adapter is used to update the UI element state of the model.</p>
 
+
 <p>The methods involved in the communication from the model to the adapter as well as the methods involved in the communication from the adapter to the UI model should be in the protocol 
-<em>spec protocol</em>.
+<emph>spec protocol</emph>.
 On the other hand the methods involved in the communication from the adapter to the UI element and vice versa should be categorized in the protocol 
-<em>widget API</em>.</p>
+<emph>widget API</emph>.</p>
+
 
 <p>To communicate with the UI element, the adapter methods use the method 
 <code>widgetDo:</code>.
 This method executes the block provided as argument, which will only happen after the UI element has already been created.</p>
 
-<p>The example 
-<a href="#ex_emphasis">1.4</a> shows how 
+
+<p>The follwoing example shows how 
 <strong>MorphicLabelAdapter</strong> propagates the modification of the emphasis from the adapter to the UI element.</p>
 
-<p><a name="ex_emphasis"></a><strong>How MorphicLabelAdapter propagates the emphasis changes</strong></p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">emphasis: aTextEmphasis
 
-    self widgetDo: [ :w | w emphasis: aTextEmphasis ]
+
+
+<div class="highlight"><pre><code class="smalltalk"><span class="nf">emphasis:</span> <span class="nv">aTextEmphasis</span>
+
+    <span class="bp">self</span> <span class="nf">widgetDo:</span> [ <span class="o">:</span><span class="nv">w</span> <span class="o">|</span> <span class="nv">w</span> <span class="nf">emphasis:</span> <span class="nv">aTextEmphasis</span> ]
 </code></pre></div>
-<p><a name="the_binding" class="hash"></a></p>
 
+
+
+<a name="the_binding" class="hash"></a>
 <h2>The UI Framework binding <a href="#the_binding" class="permalink" title="Permalink"><i class='fa fa-link'></i></a></h2>
+
+
 
 <p>The bindings is an object that is used to resolve the name of the adapter at run time.
 This allows for the same model to be used with several UI frameworks.</p>
+
 
 <p>Adding the new adapter to the default binding is quite simple.
 It requires to update two methods: 
@@ -222,8 +240,17 @@ It requires to update two methods:
 <strong>SpecAdapterBindings</strong> and 
 <code>initializeBindings</code> in the framework specific adapter class, e.g. 
 <strong>MorphicAdapterBindings</strong> for Morphic.</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">Note: For Ben: Give an example here.
-</code></pre></div>
+
+
+
+<div class="alert question">
+    <span class="fa-stack fa-lg question-icon">
+      <i class="fa fa-question-circle fa-2x"></i>
+    </span>
+    <span class="question-text"><p>For Ben: Give an example here.</p>
+</span>
+</div>
+
 <p>Once this is done, the bindings should be re-initialized by running the following snippet of code: 
 <code>SpecInterpreter hardResetBindings</code>.</p>
 
@@ -232,14 +259,21 @@ It requires to update two methods:
 <code>initializeBindings</code>.
 It can then be used during a spec interpretation by setting it as the bindings to use for the 
 <strong>SpecInterpreter</strong>.
-The example 
-<a href="#ex_setting_bindings">1.5</a> shows how to do so.</p>
+The next example shows how to do so.</p>
 
-<p><a name="ex_setting_bindings"></a><strong>How to set custom bindings</strong></p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">SpecInterpreter bindings: MyOwnBindingClass new.
+<div class="highlight"><pre><code class="smalltalk"><span class="nc">SpecInterpreter</span> <span class="nf">bindings:</span> <span class="nc">MyOwnBindingClass</span> <span class="nb">new</span><span class="p">.</span>
 </code></pre></div>
-<p>Note that the 
-<strong>SpecInterpreter</strong> bindings are reset after each execution.</p>
+
+
+
+<div class="alert hint">
+    <span class="fa-stack fa-lg hint-icon">
+      <i class="fa fa-square fa-stack-2x"></i>
+      <i class="fa fa-info fa-stack-1x hint-overlay"></i>
+    </span>
+    <span class="hint-text"><p>The <strong>SpecInterpreter</strong> bindings are reset after each execution.</p>
+</span>
+</div>
 
 					<div class="section-nav">
 	<div class="btn-group">
@@ -285,6 +319,26 @@ The example
     
   
     
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
       <li class="sidebar_item "><a href="/docs/home/">Welcome</a></li>
     
   
@@ -322,26 +376,6 @@ The example
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -350,6 +384,18 @@ The example
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
       <li class="sidebar_item "><a href="/docs/quickstart/">Quick start</a></li>
@@ -401,18 +447,6 @@ The example
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -421,6 +455,16 @@ The example
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -440,16 +484,6 @@ The example
   
     
       <li class="sidebar_item "><a href="/docs/installation/">Installation</a></li>
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
     
   
     
@@ -665,6 +699,14 @@ The example
     
   
     
+  
+    
+  
+    
+  
+    
+  
+    
       <li class="sidebar_item "><a href="/docs/starting/">Where to start?</a></li>
     
   
@@ -692,14 +734,6 @@ The example
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -708,6 +742,14 @@ The example
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -763,14 +805,6 @@ The example
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -779,6 +813,18 @@ The example
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -830,18 +876,6 @@ The example
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -850,10 +884,6 @@ The example
     
   
 
-  
-    
-  
-    
   
     
   
@@ -913,6 +943,10 @@ The example
   
     
   
+    
+  
+    
+  
 
 
   
@@ -921,6 +955,30 @@ The example
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -960,30 +1018,6 @@ The example
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -992,6 +1026,30 @@ The example
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -1001,30 +1059,6 @@ The example
   
     
       <li class="sidebar_item "><a href="/docs/dynamic/">Dynamic UI</a></li>
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
     
   
     
@@ -1086,16 +1120,6 @@ The example
     
   
     
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
       <li class="sidebar_item "><a href="/docs/api/">Where to find what I want</a></li>
     
   
@@ -1133,6 +1157,16 @@ The example
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 
 
   
@@ -1141,12 +1175,6 @@ The example
     
   
 
-  
-    
-  
-    
-  
-    
   
     
   
@@ -1204,6 +1232,12 @@ The example
   
     
   
+    
+  
+    
+  
+    
+  
 
 
   
@@ -1212,6 +1246,8 @@ The example
     
   
 
+  
+    
   
     
   
@@ -1273,8 +1309,6 @@ The example
   
     
   
-    
-  
 
 
   
@@ -1283,6 +1317,12 @@ The example
     
   
 
+  
+    
+  
+    
+  
+    
   
     
   
@@ -1298,12 +1338,6 @@ The example
   
     
       <li class="sidebar_item "><a href="/docs/interpreter/">Interpreter</a></li>
-    
-  
-    
-  
-    
-  
     
   
     
@@ -1365,13 +1399,13 @@ The example
     
   
     
+  
+    
+  
+    
+  
+    
       <li class="sidebar_item "><a href="/docs/more/">More</a></li>
-    
-  
-    
-  
-    
-  
     
   
     
