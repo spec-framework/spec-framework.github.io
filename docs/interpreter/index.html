@@ -60,8 +60,60 @@
 		<section id="main-content">
 			<div>
 				<article>
-					<h1>Interpreter</h1>
-					<p>The interpreter is in charge of converting a spec model and a layout (as an array) into a framework specific ui element.</p>
+					<h1>Spec Interpreter</h1>
+					<p><a name="sec_spec_interpreter"></a></p>
+
+<p>In order to create a framework specific UI element a 
+<em>Spec</em> model is interpreted via the 
+<strong>SpecInterpreter</strong>.
+The interpreter is in charge to recursively interpret all the sub widgets of a model.
+It then combine then according to the given layout and the given binding.</p>
+
+<p>The interpreter entry point is the method 
+<code>SpecInterpreter&gt;&gt;#interpretASpec:selector:</code>.</p>
+
+<p>The section will explain the different part of a model interpretation.</p>
+
+<p><a name="collect_the_data" class="hash"></a></p>
+
+<h2>Collect the data <a href="#collect_the_data" class="permalink" title="Permalink"><i class='fa fa-link'></i></a></h2>
+
+<p>Before the interpreting loop itself, the interpreter starts by collecting the needed data from the model.
+The first required data is the array to interpret. Then second required data is the spec wrapper used to encapsulate data during the interpretation.</p>
+
+<p>The array to interpret is extracted to the layout provided with the model.
+But during the recursive calls of the interpretation loop, the interpreter can be called with any kind of object.
+So the first method is here to extract the data to interpret if any.
+Otherwise it means the recursive calls reached a &quot;primitive object&quot;, in other words an object which can not be interpreted.
+In this case the primitive object is directly returned.</p>
+
+<p>The second data to collect if the first step succeeded is the spec wrapper to use along the interpretation.
+This step checks if the model provided as argument needs to be rebuild or not.
+If not, the model current UI element is directly returned.
+Otherwise this step results in the creation of a wrapper object keeping the current model as well as the receiver of messages to perform.
+The wrapper type is based on the array first element.
+The wrapper will at the end provide the result of the interpretation.</p>
+
+<p><a name="interpretation_loop" class="hash"></a></p>
+
+<h2>Interpretation loop <a href="#interpretation_loop" class="permalink" title="Permalink"><i class='fa fa-link'></i></a></h2>
+
+<p>Once all the required data are collected, the interpretation loop can begin.</p>
+
+<p>The loop is quite simple. The first element of the array is popped out of the array to interpret.
+This argument is the selector of the method to perform to the current receiver (stored inside the wrapper).
+According to the selector, an adequate number of arguments are popped from the array to interpret.</p>
+
+<p>Each argument will be then interpreted using a new 
+<strong>SpecInterpreter</strong> instance and following the exact same process.
+This step is the step leading to recursive calls.</p>
+
+<p>Then the results of the argument interpretation are provided to the selector while performed over the current receiver.</p>
+
+<p>The result of this message send is then stored into the current receiver.</p>
+
+<p>The loop ends when the array is empty.
+The resulting adapter is returned and linked to the model provided to the interpreter.</p>
 
 					<div class="section-nav">
 	<div class="btn-group">
@@ -101,12 +153,6 @@
     
   
 
-  
-    
-  
-    
-  
-    
   
     
   
@@ -164,6 +210,12 @@
   
     
   
+    
+  
+    
+  
+    
+  
 
 
   
@@ -172,6 +224,14 @@
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -227,14 +287,6 @@
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -243,13 +295,13 @@
     
   
 
-  
-    
   
     
   
     
       <li class="sidebar_item "><a href="/docs/installation/">Installation</a></li>
+    
+  
     
   
     
@@ -467,8 +519,6 @@
     
   
     
-  
-    
       <li class="sidebar_item "><a href="/docs/starting/">Where to start?</a></li>
     
   
@@ -522,34 +572,16 @@
   
     
   
-
-
-  
-
-  
     
+  
+
+
   
 
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
+
   
     
       <li class="sidebar_item "><a href="/docs/initializing/">Instantiating sub&nbsp;widgets</a></li>
@@ -593,6 +625,26 @@
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 
 
   
@@ -601,10 +653,6 @@
     
   
 
-  
-    
-  
-    
   
     
   
@@ -664,6 +712,10 @@
   
     
   
+    
+  
+    
+  
 
 
   
@@ -672,10 +724,6 @@
     
   
 
-  
-    
-  
-    
   
     
   
@@ -735,6 +783,10 @@
   
     
   
+    
+  
+    
+  
 
 
   
@@ -743,12 +795,6 @@
     
   
 
-  
-    
-  
-    
-  
-    
   
     
   
@@ -806,6 +852,12 @@
   
     
   
+    
+  
+    
+  
+    
+  
 
 
   
@@ -814,18 +866,6 @@
     
   
 
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
   
     
   
@@ -845,6 +885,18 @@
   
     
       <li class="sidebar_item "><a href="/docs/dynamic/">Dynamic UI</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
     
   
     
@@ -906,18 +958,6 @@
     
   
     
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
       <li class="sidebar_item "><a href="/docs/api/">Where to find what I want</a></li>
     
   
@@ -955,6 +995,18 @@
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 
 
   
@@ -963,6 +1015,8 @@
     
   
 
+  
+    
   
     
   
@@ -1024,8 +1078,6 @@
   
     
   
-    
-  
 
 
   
@@ -1048,8 +1100,6 @@
     
   
     
-      <li class="sidebar_item "><a href="/docs/adapters/">Adapters</a></li>
-    
   
     
   
@@ -1058,76 +1108,7 @@
     
   
     
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-
-
-  
-
-  
-    
-  
-
-  
-    
-  
-    
-  
-    
-  
-    
-      <li class="sidebar_item current"><a href="/docs/interpreter/">Interpreter</a></li>
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
+      <li class="sidebar_item current"><a href="/docs/interpreter/">Spec Interpreter</a></li>
     
   
     
@@ -1207,9 +1188,9 @@
     
   
     
-      <li class="sidebar_item "><a href="/docs/more/">More</a></li>
-    
   
+    
+      <li class="sidebar_item "><a href="/docs/more/">More</a></li>
     
   
     
