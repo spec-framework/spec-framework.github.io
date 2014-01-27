@@ -133,7 +133,11 @@ To prevent this, the message
 
 <p>If a user interface needs a varying number of subwidgets, the amount of which cannot be established at compilation time, then another approach is needed.
 In this scenario, 
-<code>DynamicComposableModel</code> is the model that needs to be subclassed, as this class provides support for the required kind of dynamic behavior.</p>
+<code>DynamicComposableModel</code> is the model that needs to be subclassed, as this class provides support for the required kind of dynamic behavior.
+Amongst others, this class adds the method <code>assign:to:</code>, which takes a model instance as a first argument, and a unique symbol as a second argument.</p>
+
+<p>This method is used to assign an already instantiated model as sub widget while the method <code>instantiateModels:</code> takes a class name as argument.
+The fact the method is based on classes prevent to use a dynamically created model as sub widget.</p>
 
 <p>When using 
 <code>DynamicComposableModel</code>, the instantiation of the sub widgets is a bit different from normal use.
@@ -374,16 +378,6 @@ In addition, a text zone is edited to show the selected method source code.</p>
     
   
     
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
       <li class="sidebar_item "><a href="/docs/home/">Welcome</a></li>
     
   
@@ -429,6 +423,16 @@ In addition, a text zone is edited to show the selected method source code.</p>
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 
 
   
@@ -437,6 +441,8 @@ In addition, a text zone is edited to show the selected method source code.</p>
     
   
 
+  
+    
   
     
   
@@ -498,8 +504,6 @@ In addition, a text zone is edited to show the selected method source code.</p>
   
     
   
-    
-  
 
 
   
@@ -508,8 +512,6 @@ In addition, a text zone is edited to show the selected method source code.</p>
     
   
 
-  
-    
   
     
   
@@ -535,6 +537,8 @@ In addition, a text zone is edited to show the selected method source code.</p>
   
     
       <li class="sidebar_item "><a href="/docs/installation/">Installation</a></li>
+    
+  
     
   
     
@@ -738,12 +742,6 @@ In addition, a text zone is edited to show the selected method source code.</p>
     
   
     
-  
-    
-  
-    
-  
-    
       <li class="sidebar_item "><a href="/docs/starting/">Where to start?</a></li>
     
   
@@ -787,6 +785,12 @@ In addition, a text zone is edited to show the selected method source code.</p>
   
     
   
+    
+  
+    
+  
+    
+  
 
 
   
@@ -795,6 +799,16 @@ In addition, a text zone is edited to show the selected method source code.</p>
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -848,16 +862,6 @@ In addition, a text zone is edited to show the selected method source code.</p>
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -866,6 +870,14 @@ In addition, a text zone is edited to show the selected method source code.</p>
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -921,14 +933,6 @@ In addition, a text zone is edited to show the selected method source code.</p>
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -937,12 +941,6 @@ In addition, a text zone is edited to show the selected method source code.</p>
     
   
 
-  
-    
-  
-    
-  
-    
   
     
   
@@ -1000,6 +998,12 @@ In addition, a text zone is edited to show the selected method source code.</p>
   
     
   
+    
+  
+    
+  
+    
+  
 
 
   
@@ -1008,6 +1012,12 @@ In addition, a text zone is edited to show the selected method source code.</p>
     
   
 
+  
+    
+  
+    
+  
+    
   
     
   
@@ -1065,12 +1075,6 @@ In addition, a text zone is edited to show the selected method source code.</p>
   
     
   
-    
-  
-    
-  
-    
-  
 
 
   
@@ -1079,12 +1083,6 @@ In addition, a text zone is edited to show the selected method source code.</p>
     
   
 
-  
-    
-  
-    
-  
-    
   
     
   
@@ -1114,6 +1112,12 @@ In addition, a text zone is edited to show the selected method source code.</p>
   
     
       <li class="sidebar_item current"><a href="/docs/dynamic/">Dynamic UI</a></li>
+    
+  
+    
+  
+    
+  
     
   
     
@@ -1191,8 +1195,6 @@ In addition, a text zone is edited to show the selected method source code.</p>
     
   
     
-  
-    
       <li class="sidebar_item "><a href="/docs/api/">Where to find what I want</a></li>
     
   
@@ -1220,20 +1222,16 @@ In addition, a text zone is edited to show the selected method source code.</p>
   
     
   
-
-
-  
-
-  
     
+  
+
+
   
 
   
     
   
-    
-  
-    
+
   
     
   
@@ -1291,6 +1289,12 @@ In addition, a text zone is edited to show the selected method source code.</p>
   
     
   
+    
+  
+    
+  
+    
+  
 
 
   
@@ -1299,8 +1303,6 @@ In addition, a text zone is edited to show the selected method source code.</p>
     
   
 
-  
-    
   
     
   
@@ -1362,6 +1364,8 @@ In addition, a text zone is edited to show the selected method source code.</p>
   
     
   
+    
+  
 
 
   
@@ -1370,6 +1374,12 @@ In addition, a text zone is edited to show the selected method source code.</p>
     
   
 
+  
+    
+  
+    
+  
+    
   
     
   
@@ -1385,12 +1395,6 @@ In addition, a text zone is edited to show the selected method source code.</p>
   
     
       <li class="sidebar_item "><a href="/docs/interpreter/">Interpreter</a></li>
-    
-  
-    
-  
-    
-  
     
   
     
@@ -1458,27 +1462,27 @@ In addition, a text zone is edited to show the selected method source code.</p>
     
   
     
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
       <li class="sidebar_item "><a href="/docs/more/">More</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
     
   
     
