@@ -7,7 +7,7 @@
                 <atom:link href="http://spec.st/feed.xml" rel="self" type="application/rss+xml" />
                 
                         <item>
-                                <title>Sprint Chileno</title>
+                                <title>El Sprint Chileno</title>
                                 <description>&lt;p&gt;After a cool sprint yesterday, a couple of &lt;em&gt;Spec&lt;/em&gt; issues has been tackled &lt;i class=&#39;fa fa-smile-o fa-2x&#39;&gt;&lt;/i&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://pharo.fogbugz.com/default.asp?12695&quot;&gt;&lt;strong&gt;Case 12695&lt;/strong&gt;&lt;/a&gt;: Fix &lt;em&gt;InputWidget&lt;/em&gt; example and add a new one. These examples are showing how to set up a window modality. Thanks Samir Saleh and &lt;a href=&quot;http://seandenigris.com&quot;&gt;Sean P. DeNigris&lt;/a&gt; for this fix.&lt;/p&gt;
