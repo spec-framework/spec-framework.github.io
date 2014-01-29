@@ -79,8 +79,8 @@ You can download ans run one with the following script:</p>
 Where is starts to be really interesting is when you need to define your own user interface, or if you want to quickly prototype one. Then the magic happens and a couple line of code is enough to open a widget.</p>
 
 <div class="highlight"><pre><code class="smalltalk"><span class="nc">ButtonModel</span> <span class="nb">new</span> 
-    <span class="nf">label:</span> <span class="s">&#39;Click me&#39;</span><span class="p">;</span>
-    <span class="nf">action:</span> [ <span class="bp">self</span> <span class="nf">halt</span> ]<span class="p">;</span>
+    <span class="nf">label:</span> <span class="s">&#39;Browse me&#39;</span><span class="p">;</span>
+    <span class="nf">action:</span> [ <span class="nc">Smalltalk</span> <span class="nf">tools</span> <span class="nf">browser</span> <span class="nf">openOnClass:</span> <span class="nc">ButtonModel</span> ]<span class="p">;</span>
     <span class="nf">openWithSpec</span><span class="p">.</span>
     
 <span class="nc">ListModel</span> <span class="nb">new</span> 
@@ -150,14 +150,6 @@ Where is starts to be really interesting is when you need to define your own use
     
   
     
-  
-    
-  
-    
-  
-    
-  
-    
       <li class="sidebar_item "><a href="/docs/home/">Welcome</a></li>
     
   
@@ -191,6 +183,14 @@ Where is starts to be really interesting is when you need to define your own use
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
 
 
   
@@ -199,6 +199,8 @@ Where is starts to be really interesting is when you need to define your own use
     
   
 
+  
+    
   
     
   
@@ -260,8 +262,6 @@ Where is starts to be really interesting is when you need to define your own use
   
     
   
-    
-  
 
 
   
@@ -270,8 +270,6 @@ Where is starts to be really interesting is when you need to define your own use
     
   
 
-  
-    
   
     
   
@@ -291,6 +289,8 @@ Where is starts to be really interesting is when you need to define your own use
   
     
       <li class="sidebar_item "><a href="/docs/installation/">Installation</a></li>
+    
+  
     
   
     
@@ -494,6 +494,22 @@ Where is starts to be really interesting is when you need to define your own use
     
   
     
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
       <li class="sidebar_item "><a href="/docs/starting/">Where to start?</a></li>
     
   
@@ -533,22 +549,6 @@ Where is starts to be really interesting is when you need to define your own use
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -557,6 +557,10 @@ Where is starts to be really interesting is when you need to define your own use
     
   
 
+  
+    
+  
+    
   
     
   
@@ -616,10 +620,6 @@ Where is starts to be really interesting is when you need to define your own use
   
     
   
-    
-  
-    
-  
 
 
   
@@ -628,6 +628,12 @@ Where is starts to be really interesting is when you need to define your own use
     
   
 
+  
+    
+  
+    
+  
+    
   
     
   
@@ -685,12 +691,6 @@ Where is starts to be really interesting is when you need to define your own use
   
     
   
-    
-  
-    
-  
-    
-  
 
 
   
@@ -699,6 +699,10 @@ Where is starts to be really interesting is when you need to define your own use
     
   
 
+  
+    
+  
+    
   
     
   
@@ -758,10 +762,6 @@ Where is starts to be really interesting is when you need to define your own use
   
     
   
-    
-  
-    
-  
 
 
   
@@ -770,6 +770,10 @@ Where is starts to be really interesting is when you need to define your own use
     
   
 
+  
+    
+  
+    
   
     
   
@@ -829,10 +833,6 @@ Where is starts to be really interesting is when you need to define your own use
   
     
   
-    
-  
-    
-  
 
 
   
@@ -841,18 +841,6 @@ Where is starts to be really interesting is when you need to define your own use
     
   
 
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
   
     
   
@@ -864,6 +852,18 @@ Where is starts to be really interesting is when you need to define your own use
   
     
       <li class="sidebar_item "><a href="/docs/dynamic/">Dynamic UI</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
     
   
     
@@ -937,6 +937,14 @@ Where is starts to be really interesting is when you need to define your own use
     
   
     
+  
+    
+  
+    
+  
+    
+  
+    
       <li class="sidebar_item "><a href="/docs/api/">Where to find what I want</a></li>
     
   
@@ -974,14 +982,6 @@ Where is starts to be really interesting is when you need to define your own use
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -990,8 +990,6 @@ Where is starts to be really interesting is when you need to define your own use
     
   
 
-  
-    
   
     
   
@@ -1053,6 +1051,8 @@ Where is starts to be really interesting is when you need to define your own use
   
     
   
+    
+  
 
 
   
@@ -1061,6 +1061,22 @@ Where is starts to be really interesting is when you need to define your own use
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -1076,22 +1092,6 @@ Where is starts to be really interesting is when you need to define your own use
   
     
       <li class="sidebar_item "><a href="/docs/interpreter/">Spec Interpreter</a></li>
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
     
   
     
@@ -1153,25 +1153,25 @@ Where is starts to be really interesting is when you need to define your own use
     
   
     
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
       <li class="sidebar_item "><a href="/docs/repositories/">Repositories</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
     
   
     
