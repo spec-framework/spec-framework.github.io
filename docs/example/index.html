@@ -77,21 +77,14 @@ In this section we do not detail the different parts of
 <a href="/docs/initializing/">Instantiating sub widgets</a> and <a href="/docs/layout/">Defining the layout</a>.</p>
 
 <p>The example is structured in four parts.
-First a list UI dedicated to render the subclasses of the 
-<em>AbstractWidgetModel</em> class is created and is called 
-<strong>ModelList</strong>.
-Second a UI composed of a list and a label is defined and named 
-<strong>ProtocolList</strong>.
-Third a protocol viewer is defined by combining a 
-<strong>ModelList</strong> with two 
-<strong>ProtocolList</strong> to browse the 
-<em>protocol</em> and 
-<em>protocol-events</em> methods.
-Finally a protocol browser is made by reusing a protocol viewer with a text zone in addition.</p>
+First, a list UI named  <strong>ModelList</strong> that is dedicated to render the subclasses of the <em>AbstractWidgetModel</em> class is created.
+Second, a UI composed of a list and a label is defined and named <strong>ProtocolList</strong>.
+Third, a protocol viewer is defined by combining a <strong>ModelList</strong> with two <strong>ProtocolList</strong> to browse the <em>protocol</em> and <em>protocol-events</em> methods.
+Finally a protocol browser is made by reusing a protocol viewer and adding a text zone.</p>
 
-<p><a name="methodList" class="hash"></a></p>
+<p><a name="modelList" class="hash"></a></p>
 
-<h2>The MethodList <a href="#methodList" class="permalink" title="Permalink"><i class='fa fa-link'></i></a></h2>
+<h2>The ModelList <a href="#modelList" class="permalink" title="Permalink"><i class='fa fa-link'></i></a></h2>
 
 <p>Creating a specific UI always starts with the subclassing of 
 <strong>ComposableModel</strong>.
@@ -152,7 +145,7 @@ This code shows the implementation of these three methods and their protocols:</
 </code></pre></div>
 
 <p>The first UI is now done.
-The result can be seen by performing the following snippet: 
+The result can be seen by executing the following snippet of code: 
 <code>ModelList new openWithSpec</code>.</p>
 
 <p><a name="protocolList" class="hash"></a></p>
@@ -237,8 +230,7 @@ The following code shows the implementations of these methods as well as their p
 </code></pre></div>
 
 <p>The 
-<strong>ProtocolList</strong> UI can be seen by evaluating the snippet 
-<code>ProtocolList new openWithSpec</code>.</p>
+<strong>ProtocolList</strong> UI can be seen by evaluating <code>ProtocolList new openWithSpec</code>.</p>
 
 <p><a name="protocolViewer" class="hash"></a></p>
 
@@ -272,7 +264,7 @@ The following code in shows the definition of the class
 
 <p>The 
 <code>initializeWidgets</code> method now uses a different way to initialize the sub-widgets of the UI. 
-This is because it does not use basic widgets but instead reuses the user interfaces we defines previously as sub widgets.
+This is because it does not use basic widgets but instead reuses the user interfaces we defines previously.
 The remainder of the method is quite similar to the previous implementation:</p>
 
 <div class="highlight"><pre><code class="smalltalk"><span class="nf">initializeWidgets</span>
@@ -332,7 +324,7 @@ More details on the
 </code></pre></div>
 
 <p>The remaining methods are getters, methods to delegate to sub widgets, one method to compute the methods in a specific class for a specific protocol, and methods to register to sub widget events.
-Those methods are summed up in this code:</p>
+Those methods are given in this code:</p>
 
 <div class="highlight"><pre><code class="smalltalk"><span class="c">&quot;accessing&quot;</span>
 <span class="nf">events</span>
@@ -383,7 +375,7 @@ Those methods are summed up in this code:</p>
     <span class="nf">protocols</span> <span class="nf">whenSelectedItemChanged:</span> <span class="nv">aBlock</span>
 </code></pre></div>
 
-<p>As previously the result can be seen by executing the following snippet: 
+<p>As previously, the result can be seen by executing the following snippet of code: 
 <code>ProtocolViewer new openWithSpec</code>.</p>
 
 <p><a name="protocolEditor" class="hash"></a></p>
@@ -416,7 +408,7 @@ The class definition is:</p>
 </code></pre></div>
 
 <p>The layout is more complex than the previous layouts.
-Now the user interface mainly lays out sub widgets of its sub widgets.
+Now the user interface mainly lays out widgets that are contained in its <code>viewer</code> sub widget (the list of models and the two protocol browsers).
 The layout is based on a column whose first row is divided in columns.
 The implementation of this method is shown in the following code:</p>
 
@@ -535,26 +527,6 @@ The result can be seen in figure
     
   
     
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
       <li class="sidebar_item "><a href="/docs/home/">Welcome</a></li>
     
   
@@ -590,6 +562,26 @@ The result can be seen in figure
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 
 
   
@@ -598,6 +590,8 @@ The result can be seen in figure
     
   
 
+  
+    
   
     
   
@@ -661,8 +655,6 @@ The result can be seen in figure
   
     
   
-    
-  
 
 
   
@@ -671,6 +663,8 @@ The result can be seen in figure
     
   
 
+  
+    
   
     
   
@@ -734,8 +728,6 @@ The result can be seen in figure
   
     
   
-    
-  
 
 
   
@@ -886,12 +878,6 @@ The result can be seen in figure
     
   
 
-  
-    
-  
-    
-  
-    
   
     
   
@@ -951,6 +937,12 @@ The result can be seen in figure
   
     
   
+    
+  
+    
+  
+    
+  
 
 
 </ul>
@@ -966,6 +958,30 @@ The result can be seen in figure
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -1007,30 +1023,6 @@ The result can be seen in figure
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -1039,6 +1031,8 @@ The result can be seen in figure
     
   
 
+  
+    
   
     
   
@@ -1102,8 +1096,6 @@ The result can be seen in figure
   
     
   
-    
-  
 
 
   
@@ -1112,6 +1104,16 @@ The result can be seen in figure
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -1167,16 +1169,6 @@ The result can be seen in figure
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -1185,6 +1177,8 @@ The result can be seen in figure
     
   
 
+  
+    
   
     
   
@@ -1248,8 +1242,6 @@ The result can be seen in figure
   
     
   
-    
-  
 
 
   
@@ -1258,14 +1250,6 @@ The result can be seen in figure
     
   
 
-  
-    
-  
-    
-  
-    
-  
-    
   
     
   
@@ -1323,6 +1307,14 @@ The result can be seen in figure
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
 
 
   
@@ -1331,6 +1323,20 @@ The result can be seen in figure
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -1354,20 +1360,6 @@ The result can be seen in figure
   
     
       <li class="sidebar_item "><a href="/docs/dynamic/">Dynamic UI</a></li>
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
     
   
     
@@ -1429,6 +1421,18 @@ The result can be seen in figure
     
   
     
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
       <li class="sidebar_item "><a href="/docs/api/">Where to find what I want</a></li>
     
   
@@ -1464,18 +1468,6 @@ The result can be seen in figure
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -1484,6 +1476,8 @@ The result can be seen in figure
     
   
 
+  
+    
   
     
   
@@ -1547,8 +1541,6 @@ The result can be seen in figure
   
     
   
-    
-  
 
 
   
@@ -1557,6 +1549,26 @@ The result can be seen in figure
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -1572,26 +1584,6 @@ The result can be seen in figure
   
     
       <li class="sidebar_item "><a href="/docs/interpreter/">Spec Interpreter</a></li>
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
     
   
     
@@ -1661,17 +1653,17 @@ The result can be seen in figure
     
   
     
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
       <li class="sidebar_item "><a href="/docs/repositories/">Repositories</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
     
   
     
