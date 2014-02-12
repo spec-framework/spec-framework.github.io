@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: release | ]]></title>
-  <link href="/news/categories/release/atom.xml" rel="self"/>
+  <title><![CDATA[Category: documentation | ]]></title>
+  <link href="/news/categories/documentation/atom.xml" rel="self"/>
   <link href="/"/>
   <updated>2014-02-12T16:47:07+00:00</updated>
   <id>/</id>
@@ -32,21 +32,6 @@ You can find the pier files on GitHub<sup><a href="https://github.com/spec-frame
 <p>Now it&#39;s time to build some cool user interfaces! <i class='fa fa-smile-o fa-2x'></i></p>
 
 <p>PS: I would like to personally thank <a href="http://seandenigris.com">Sean P. DeNigris</a> for his surprise pull requests.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[First Release]]></title>
-    <link href="/release/website/2014/01/17/first_release.html"/>
-    <updated>2014-01-17T20:41:09Z</updated>
-    <id>/release/website/2014/01/17/first_release</id>
-    <content type="html"><![CDATA[<p>I am glad to announce this super website dedicated to Spec and the things related to this cool framework <i class="fa fa-smile-o"></i>.</p>
-
-<p>You will find here the Spec documentation as well as a news feed about Spec progresses.</p>
-
-<p>If you want to collaborate, the website can be found on <a href="https://github.com/SpecForPharo/website"><i class="fa fa-github-alt fa-2x"></i></a>.</p>
-
-<p>Thank you all!</p>
 ]]></content>
   </entry>
   

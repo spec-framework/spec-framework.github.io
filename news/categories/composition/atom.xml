@@ -4,7 +4,7 @@
   <title><![CDATA[Category: composition | ]]></title>
   <link href="/news/categories/composition/atom.xml" rel="self"/>
   <link href="/"/>
-  <updated>2014-02-12T12:04:00+00:00</updated>
+  <updated>2014-02-12T16:47:07+00:00</updated>
   <id>/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -30,7 +30,7 @@
 
 <p>The second problem was slighty more tedious. To work, it requires from the embedded sub widget to have a layout defined. A new instance variable <code>layout</code> has been introduce to hold the <strong>SpecLayout</strong> instance used to position the sub widgets. This way, when a layout is requested for the dynamic model, this layout is returned (<em>regardless of the selector requested</em>).</p>
 
-<p>These two fixes add support for a better composition in the dynamic context  <i class='fa fa-smile-o fa-2x'></i>.</p>
+<p>These two fixes add support for a better composition in the dynamic context <i class='fa fa-smile-o fa-2x'></i>.</p>
 
 <p>If you want to try, this <a href="https://gist.github.com/BenjaminVanRyseghem/cd02f2dc61f350a6495f">snippet</a> gives you an example of how to build such unser interface.</p>
 ]]></content>

@@ -7,6 +7,28 @@
                 <atom:link href="http://spec.st/feed.xml" rel="self" type="application/rss+xml" />
                 
                         <item>
+                                <title>PFTE Release</title>
+                                <description>&lt;p&gt;I am happy to announce that Johan Fabry and I finished the documentation of Spec for the Pharo For The Enterprise book.
+This documentation is up-to-date with the latest version of Spec, and is focused towards people wanting to use it and even extend it.
+We hope that this text will help all the people that are building UIs in Pharo, and it will clear up any doubts that they may have.&lt;/p&gt;
+
+&lt;p&gt;The chapter is available in source form from the GitHub project of the &lt;a href=&quot;https://github.com/SquareBracketAssociates/PharoForTheEnterprise-english&quot;&gt;Pharo For The Enterprise book&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The easiest way to read the chapter is from the continuous integration server, which produces a html file of the chapter &lt;a href=&quot;https://ci.inria.fr/pharo-contribution/job/PharoForTheEnterprise/lastSuccessfulBuild/artifact/Spec/Spec.pier.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;We tried our best to make it understandable and complete, but if you have any doubts or comments please do not hesitate to let us know !!
+You can find the pier files on GitHub&lt;sup&gt;&lt;a href=&quot;https://github.com/spec-framework/documentation&quot;&gt;&lt;i class=&#39;fa fa-github-alt&#39;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/sup&gt;, where you can also report issues or propose fixes.&lt;/p&gt;
+
+&lt;p&gt;Now it&amp;#39;s time to build some cool user interfaces! &lt;i class=&#39;fa fa-smile-o fa-2x&#39;&gt;&lt;/i&gt;&lt;/p&gt;
+
+&lt;p&gt;PS: I would like to personally thank &lt;a href=&quot;http://seandenigris.com&quot;&gt;Sean P. DeNigris&lt;/a&gt; for his surprise pull requests.&lt;/p&gt;
+</description>
+                                <pubDate>Wed, 12 Feb 2014 17:27:32 +0000</pubDate>
+                                <link>http://spec.st//documentation/release/chile/2014/02/12/PFTE-Chapter.html</link>
+                                <guid isPermaLink="true">http://spec.st//documentation/release/chile/2014/02/12/PFTE-Chapter.html</guid>
+                        </item>
+                
+                        <item>
                                 <title>El Sprint Chileno</title>
                                 <description>&lt;p&gt;After a cool sprint yesterday, a couple of &lt;em&gt;Spec&lt;/em&gt; issues has been tackled &lt;i class=&#39;fa fa-smile-o fa-2x&#39;&gt;&lt;/i&gt;.&lt;/p&gt;
 
@@ -42,7 +64,7 @@
 
 &lt;p&gt;The second problem was slighty more tedious. To work, it requires from the embedded sub widget to have a layout defined. A new instance variable &lt;code&gt;layout&lt;/code&gt; has been introduce to hold the &lt;strong&gt;SpecLayout&lt;/strong&gt; instance used to position the sub widgets. This way, when a layout is requested for the dynamic model, this layout is returned (&lt;em&gt;regardless of the selector requested&lt;/em&gt;).&lt;/p&gt;
 
-&lt;p&gt;These two fixes add support for a better composition in the dynamic context  &lt;i class=&#39;fa fa-smile-o fa-2x&#39;&gt;&lt;/i&gt;.&lt;/p&gt;
+&lt;p&gt;These two fixes add support for a better composition in the dynamic context &lt;i class=&#39;fa fa-smile-o fa-2x&#39;&gt;&lt;/i&gt;.&lt;/p&gt;
 
 &lt;p&gt;If you want to try, this &lt;a href=&quot;https://gist.github.com/BenjaminVanRyseghem/cd02f2dc61f350a6495f&quot;&gt;snippet&lt;/a&gt; gives you an example of how to build such unser interface.&lt;/p&gt;
 </description>
