@@ -65,47 +65,38 @@
 		<section id="main-content">
 			<div>
 				<article>
-					<h1>Open your UI</h1>
-					<p>The user&nbsp;interface we just implemented is ready to be opened.
-To open it in a window, the message <code>openWithSpec</code> needs to be sent to an instance of the previously implemented class <strong>MyUserInterface</strong>.</p>
+					<h1>Insert a Morph</h1>
+					<p><em>Spec</em> can interface easily with a Morph.</p>
 
-<div class="highlight"><pre><code class="smalltalk"><span class="nc">MyUserInterface</span> <span class="nb">new</span> <span class="nf">openWithSpec</span>
-</code></pre></div>
+<p>To insert a morph into a Spec widget, you need to add an instance side method similar to the accessors needed.</p>
 
-<p>A window should appears where you can site the list with ten elements and the button labbelled <em>I am a button</em>.</p>
+<p>This method, instead of returning a Spec model as the other accessor methods, will return a <code>MorphicGenericAdapter</code> wrapping the morph you want to insert.</p>
 
-<p>In addition, <em>Spec</em> provides support to open a model directly as a dialog window.
-For this, the method used to open the user&nbsp;interface must be <code>openDialogWithSpec</code>.</p>
+<p>There is a convenience method defined on <strong>Morph</strong> to wrap any morph into a <code>MorphicGenericAdapter</code> named <code>asSpecAdapter</code>.</p>
 
-<div class="highlight"><pre><code class="smalltalk"><span class="nc">MyUserInterface</span> <span class="nb">new</span> <span class="nf">openDialogWithSpec</span>
-</code></pre></div>
+<p>The following example shows how to insert a calendar morph into a Spec widget.</p>
 
-<p>The dialog window is opened with a toolbar contening a <strong>cancel</strong> button and an <strong>ok</strong> button.
-To set the action to perform when ok is pressed, the hook method <code>initializeDialogWindow:</code> requires to be implemented.
-The following example shows how to change the toolbar and to make it opens a debugger when ok is pressed.</p>
-
-<div class="highlight"><pre><code class="smalltalk"><span class="nf">initializeDialogWindow:</span> <span class="nv">aWindow</span>
+<div class="highlight"><pre><code class="smalltalk"><span class="nf">calendar</span>
+    <span class="o">|</span><span class="nv"> morph </span><span class="o">|</span>
     
-    <span class="nv">aWindow</span>
-        <span class="nf">toolbar:</span> <span class="nc">OkToolbar</span> <span class="nb">new</span><span class="p">;</span>
-        <span class="nf">okAction:</span> [ <span class="bp">self</span> <span class="nf">halt</span> ]<span class="p">.</span>
+    <span class="nv">morph</span> <span class="o">:=</span> <span class="nc">CalendarMorph</span> <span class="nf">on:</span> <span class="nc">Date</span> <span class="nf">today</span><span class="p">.</span>
+    <span class="o">^</span> <span class="nv">morph</span> <span class="nf">asSpecAdapter</span>
 </code></pre></div>
 
-<h2>Morphic specific</h2>
 
-<p>The morphic extension provides a new way to open a <em>Spec</em> model.
-Indeed thanks to the message <code>openWorldWithSpec</code>, the model is open taking 100% of the Pharo window.</p>
-
-<p>It is usefull to run a desktop application, simulating a native window by using the Pharo window.</p>
-
-<div class="highlight"><pre><code class="smalltalk"><span class="nc">MyUserInterface</span> <span class="nb">new</span> <span class="nf">openWorldWithSpec</span>
-</code></pre></div>
+<div class="alert alertbox">
+    <span class="fa-stack fa-lg alert-icon">
+      <i class="fa fa-exclamation-triangle fa-2x"></i>
+    </span>
+    <span class="alert-text"><p>Inserting a Morph into a Spec widget make your application Morphic specific where Spec is designed to be framework independent.</p>
+</span>
+</div>
 
 					<div class="section-nav">
 	<div class="btn-group">
-		<a class="btn btn-default nav-btn " href="/docs/layout/">Back
+		<a class="btn btn-default nav-btn " href="/docs/use-pharo-window/">Back
 		</a>
-		<a class="btn btn-default nav-btn " href="/docs/interactions/">Next
+		<a class="btn btn-default nav-btn " href="/docs/api/">Next
 		</a>
 	</div>
 	<div class="clear">
@@ -903,7 +894,7 @@ Indeed thanks to the message <code>openWorldWithSpec</code>, the model is open t
     
   
     
-      <li class="sidebar_item current"><a href="/docs/open/">Open your UI</a></li>
+      <li class="sidebar_item "><a href="/docs/open/">Open your UI</a></li>
     
   
     
@@ -1203,7 +1194,7 @@ Indeed thanks to the message <code>openWorldWithSpec</code>, the model is open t
     
   
     
-      <li class="sidebar_item "><a href="/docs/insert-morph/">Insert a Morph</a></li>
+      <li class="sidebar_item current"><a href="/docs/insert-morph/">Insert a Morph</a></li>
     
   
     
