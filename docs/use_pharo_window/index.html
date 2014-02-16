@@ -65,36 +65,39 @@
 		<section id="main-content">
 			<div>
 				<article>
-					<h1>Where to start?</h1>
-					<p>The whole framework is based on the class <strong>ComposableModel</strong>. 
-This class provides all the methods needed to create and to compose user&nbsp;interfaces.</p>
+					<h1>Use Pharo window</h1>
+					<p><em>Spec</em> provides a hook for any application to open in the Pharo window.
+This allows to simulate a native window application (with the restriction of a single window application).</p>
 
-<p>A Spec model requires three things: </p>
+<p>To do so, you simply need to open your application with the <code>openWorldWithSpec</code> message.</p>
 
-<ol>
-<li>to subclass <strong>ComposableModel</strong></li>
-<li>to implement <em>initializeWidgets</em></li>
-<li>to implement a layout method on class side </li>
-</ol>
+<p>By example opening a <strong>MessageBrowser</strong> usually results to a new window into the Pharo window.</p>
 
-<p>The creation a user&nbsp;interface starts with the creation of a new subclass of <strong>ComposableModel</strong>.
-The sub&nbsp;widgets of the user&nbsp;interface are stored as instance variables.</p>
-
-<div class="highlight"><pre><code class="smalltalk"><span class="nc">ComposableModel</span> <span class="nf">subclass:</span> <span class="ss">#MyUserInterface</span>
-    <span class="nf">instanceVariableNames:</span> <span class="s">&#39;theList theButton&#39;</span>
-    <span class="nf">classVariableNames:</span> <span class="s">&#39;&#39;</span>
-    <span class="nf">poolDictionaries:</span> <span class="s">&#39;&#39;</span>
-    <span class="nf">category:</span> <span class="s">&#39;MyExamples&#39;</span>
+<div class="highlight"><pre><code class="smalltalk">(<span class="nc">MessageBrowser</span>
+    <span class="nf">browseMessages:</span> <span class="nc">Object</span> <span class="nf">methods</span>
+    <span class="nf">refreshingBlock:</span> [] 
+    <span class="nf">named:</span> <span class="s">&#39;&#39;</span>) <span class="nf">openWithSpec</span>
 </code></pre></div>
 
-<p>As you may have guessed, <em>theList</em> will be a list widget and <em>theButton</em> will be a button widget.
-The instanciation and the customization of the sub widgets is done in the method <strong>initializeWidgets</strong>.</p>
+<p>This code produces a new window looking like
+<a name="fig_spec_pharo_browser"></a><p class="figure"><img src="/figures/SpecMessageBrowser.png" alt="fig_spec_pharo_browser" title="A MessageBrowser into Pharo"></p></p>
+
+<p>To open a similar <strong>MessageBrowser</strong> using the Pharo window, the following code can be executed</p>
+
+<div class="highlight"><pre><code class="smalltalk">(<span class="nc">MessageBrowser</span>
+    <span class="nf">browseMessages:</span> <span class="nc">Object</span> <span class="nf">methods</span>
+    <span class="nf">refreshingBlock:</span> [] 
+    <span class="nf">named:</span> <span class="s">&#39;&#39;</span>) <span class="nf">openWorldWithSpec</span>
+</code></pre></div>
+
+<p>It will resize the Pharo window and change its title as seen in the figure
+<a name="fig_world_pharo_browser"></a><p class="figure"><img src="/figures/WorldMessageBrowser.png" alt="fig_world_pharo_browser" title="A MessageBrowser using the Pharo window"></p></p>
 
 					<div class="section-nav">
 	<div class="btn-group">
-		<a class="btn btn-default nav-btn " href="/docs/installation/">Back
+		<a class="btn btn-default nav-btn " href="/docs/dynamic/">Back
 		</a>
-		<a class="btn btn-default nav-btn " href="/docs/initializing/">Next
+		<a class="btn btn-default nav-btn " href="/docs/api/">Next
 		</a>
 	</div>
 	<div class="clear">
@@ -633,7 +636,7 @@ The instanciation and the customization of the sub widgets is done in the method
     
   
     
-      <li class="sidebar_item current"><a href="/docs/starting/">Where to start?</a></li>
+      <li class="sidebar_item "><a href="/docs/starting/">Where to start?</a></li>
     
   
     
@@ -1085,7 +1088,7 @@ The instanciation and the customization of the sub widgets is done in the method
     
   
     
-      <li class="sidebar_item "><a href="/docs/use_pharo_window/">Use Pharo window</a></li>
+      <li class="sidebar_item current"><a href="/docs/use_pharo_window/">Use Pharo window</a></li>
     
   
     
