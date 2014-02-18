@@ -66,19 +66,21 @@
 			<div class="news">
 				<article class="article">
 	<h2>
-		Improvements in DynamicComposableModel
-		<a href="/dynamic/composition/2014/01/21/dynamic_composition.html" class="permalink" title="Permalink"><i class='fa fa-link'></i></a>
+		Menu Toolbar
+		<a href="/improvement/menu/toolbar/2014/02/19/Menu_Toolbar.html" class="permalink" title="Permalink"><i class='fa fa-link'></i></a>
 	</h2>
 	
 	<div class="post post-date">
-		21 Jan 2014
+		19 Feb 2014
 	</div>
 	
 	<span class="post post-categories">
 		
-		<span class="post-category"><a href="/news/categories/dynamic" class="post-category-link">dynamic</a></span>
+		<span class="post-category"><a href="/news/categories/improvement" class="post-category-link">improvement</a></span>
 		
-		<span class="post-category"><a href="/news/categories/composition" class="post-category-link">composition</a></span>
+		<span class="post-category"><a href="/news/categories/menu" class="post-category-link">menu</a></span>
+		
+		<span class="post-category"><a href="/news/categories/toolbar" class="post-category-link">toolbar</a></span>
 		
 	</span>
 	
@@ -97,21 +99,17 @@
 		</div>
 	</div>
 	<div class="post-content">
-		<p>Right now it is easy to prototype a UI in a workspace or to dynamically build a model on demand at run time, but this prototype can not be reused for composition.</p>
+		<p>Spec provides today a new missing feature: a menu toolbar.</p>
 
-<p>Because of this, the prototyping is quite limited.</p>
+<p>As recently suggested in the mailing list, a menu toolbar is often a requirement to build an application.
+In order to provide an easy way to add a menu toolbar, Spec reuse <strong>MenuModel</strong> to generate the toolbar entries.</p>
 
-<p>But the latest Spec commit<sup><a href="https://github.com/SpecForPharo/spec/commit/5d28c1f293bb1654e7395c18a2ea733fbd551d10"><i class='fa fa-github-alt'></i></a></sup> introduces few changes on <code>DynamicComposableModel</code> to tackle this issue.</p>
+<p>So now, a <strong>MenuModel</strong> can be used in two cases: to define a toolbar, or to define a contextual menu.</p>
 
-<p>The problem was double: no way to add an instanciated model as a sub widget, and the lookup for the layout was looking for a selector on class side.</p>
-
-<p>The first problem was actually just a method missing since the <code>DynamicComposableModel</code> class manage the widgets in a dictionary.</p>
-
-<p>The second problem was slighty more tedious. To work, it requires from the embedded sub widget to have a layout defined. A new instance variable <code>layout</code> has been introduce to hold the <strong>SpecLayout</strong> instance used to position the sub widgets. This way, when a layout is requested for the dynamic model, this layout is returned (<em>regardless of the selector requested</em>).</p>
-
-<p>These two fixes add support for a better composition in the dynamic context <i class='fa fa-smile-o fa-2x'></i>.</p>
-
-<p>If you want to try, this <a href="https://gist.github.com/BenjaminVanRyseghem/cd02f2dc61f350a6495f">snippet</a> gives you an example of how to build such unser interface.</p>
+<p>An example can be opened via</p>
+<div class="highlight"><pre><code class="text language-text" data-lang="text">ApplicationWithToolbar new openWithSpec
+</code></pre></div>
+<p><a name="fig_ApplicationWithToolbar"></a><p class="figure"><img src="/figures/ApplicationWithToolbar.png" alt="fig_ApplicationWithToolbar" title="An example of application with a toolbar"></p></p>
 
 	</div>
 </article>
@@ -141,6 +139,10 @@
 			
 				<h4>News</h4>
 			<ul class="news_title">
+				
+				<li class="sidebar_item Menu20Toolbar">
+					<a href="#Menu%20Toolbar">Menu Toolbar</a>
+				</li>
 				
 				<li class="sidebar_item PFTE20Release">
 					<a href="#PFTE%20Release">PFTE Release</a>

@@ -7,6 +7,25 @@
                 <atom:link href="http://spec.st/feed.xml" rel="self" type="application/rss+xml" />
                 
                         <item>
+                                <title>Menu Toolbar</title>
+                                <description>&lt;p&gt;Spec provides today a new missing feature: a menu toolbar.&lt;/p&gt;
+
+&lt;p&gt;As recently suggested in the mailing list, a menu toolbar is often a requirement to build an application.
+In order to provide an easy way to add a menu toolbar, Spec reuse &lt;strong&gt;MenuModel&lt;/strong&gt; to generate the toolbar entries.&lt;/p&gt;
+
+&lt;p&gt;So now, a &lt;strong&gt;MenuModel&lt;/strong&gt; can be used in two cases: to define a toolbar, or to define a contextual menu.&lt;/p&gt;
+
+&lt;p&gt;An example can be opened via&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;ApplicationWithToolbar new openWithSpec
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a name=&quot;fig_ApplicationWithToolbar&quot;&gt;&lt;/a&gt;&lt;p class=&quot;figure&quot;&gt;&lt;img src=&quot;/figures/ApplicationWithToolbar.png&quot; alt=&quot;fig_ApplicationWithToolbar&quot; title=&quot;An example of application with a toolbar&quot;&gt;&lt;/p&gt;&lt;/p&gt;
+</description>
+                                <pubDate>Wed, 19 Feb 2014 00:01:32 +0000</pubDate>
+                                <link>http://spec.st//improvement/menu/toolbar/2014/02/19/Menu_Toolbar.html</link>
+                                <guid isPermaLink="true">http://spec.st//improvement/menu/toolbar/2014/02/19/Menu_Toolbar.html</guid>
+                        </item>
+                
+                        <item>
                                 <title>PFTE Release</title>
                                 <description>&lt;p&gt;I am happy to announce that Johan Fabry and I finished the documentation of Spec for the Pharo For The Enterprise book.
 This documentation is up-to-date with the latest version of Spec, and is focused towards people wanting to use it and even extend it.
@@ -69,8 +88,8 @@ You can find the pier files on GitHub&lt;sup&gt;&lt;a href=&quot;https://github.
 &lt;p&gt;If you want to try, this &lt;a href=&quot;https://gist.github.com/BenjaminVanRyseghem/cd02f2dc61f350a6495f&quot;&gt;snippet&lt;/a&gt; gives you an example of how to build such unser interface.&lt;/p&gt;
 </description>
                                 <pubDate>Tue, 21 Jan 2014 11:52:52 +0000</pubDate>
-                                <link>http://spec.st//dynamic/composition/2014/01/21/dynamic_composition.html</link>
-                                <guid isPermaLink="true">http://spec.st//dynamic/composition/2014/01/21/dynamic_composition.html</guid>
+                                <link>http://spec.st//improvement/dynamic/composition/2014/01/21/dynamic_composition.html</link>
+                                <guid isPermaLink="true">http://spec.st//improvement/dynamic/composition/2014/01/21/dynamic_composition.html</guid>
                         </item>
                 
                         <item>
