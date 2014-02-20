@@ -4,7 +4,7 @@
   <title><![CDATA[Category: toolbar | ]]></title>
   <link href="/news/categories/toolbar/atom.xml" rel="self"/>
   <link href="/"/>
-  <updated>2014-02-19T11:04:13+00:00</updated>
+  <updated>2014-02-20T15:27:43+00:00</updated>
   <id>/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -26,8 +26,10 @@ In order to provide an easy way to add a menu toolbar, Spec reuse <strong>MenuMo
 <p>So now, a <strong>MenuModel</strong> can be used in two cases: to define a toolbar, or to define a contextual menu.</p>
 
 <p>An example can be opened via</p>
-<div class="highlight"><pre><code class="text language-text" data-lang="text">ApplicationWithToolbar new openWithSpec
-</code></pre></div>
+
+<p><div class="highlight"><pre><code class="smalltalk"><span class="nc">ApplicationWithToolbar</span> <span class="nb">new</span> <span class="nf">openWithSpec</span>
+</code></pre></div></p>
+
 <p><a name="fig_ApplicationWithToolbar"></a><p class="figure"><img src="%7B%7B%20site.url%20%7D%7D/figures/ApplicationWithToolbar.png" alt="fig_ApplicationWithToolbar" title="An example of application with a toolbar"></p></p>
 ]]></content>
   </entry>

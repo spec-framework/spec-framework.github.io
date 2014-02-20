@@ -16,8 +16,10 @@ In order to provide an easy way to add a menu toolbar, Spec reuse &lt;strong&gt;
 &lt;p&gt;So now, a &lt;strong&gt;MenuModel&lt;/strong&gt; can be used in two cases: to define a toolbar, or to define a contextual menu.&lt;/p&gt;
 
 &lt;p&gt;An example can be opened via&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text language-text&quot; data-lang=&quot;text&quot;&gt;ApplicationWithToolbar new openWithSpec
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;smalltalk&quot;&gt;&lt;span class=&quot;nc&quot;&gt;ApplicationWithToolbar&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;openWithSpec&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 &lt;p&gt;&lt;a name=&quot;fig_ApplicationWithToolbar&quot;&gt;&lt;/a&gt;&lt;p class=&quot;figure&quot;&gt;&lt;img src=&quot;/figures/ApplicationWithToolbar.png&quot; alt=&quot;fig_ApplicationWithToolbar&quot; title=&quot;An example of application with a toolbar&quot;&gt;&lt;/p&gt;&lt;/p&gt;
 </description>
                                 <pubDate>Wed, 19 Feb 2014 00:01:32 +0000</pubDate>
