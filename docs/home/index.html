@@ -4,7 +4,8 @@
 		<meta charset='utf-8'>
 		<meta http-equiv="X-UA-Compatible" content="chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<script src="/javascripts/jquery-1.10.2.min.js"></script>
+		<script src="/js/jquery-1.11.0.js"></script>
+		<script src="/js/bootstrap.js"></script>
 		
 		<link rel='stylesheet' type='text/css' href='/stylesheets/bootstrap.css'>
 		<link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen" />
@@ -18,6 +19,7 @@
 		<link rel='stylesheet' type='text/css' href='/stylesheets/ArchitectsDaughter.css'>
 		<link rel='stylesheet' type='text/css' href='/stylesheets/Vollkorn.css'>
 		<link rel='stylesheet' type='text/css' href='/stylesheets/Lobster.css'>
+		<link rel='stylesheet' type='text/css' href='/stylesheets/OpenSans.css'>
 		
 		<link rel="alternate" type="application/rss+xml" title="Spec" href="/feed.xml"> 
 		
@@ -31,33 +33,50 @@
 		<link rel="icon" type="image/png" href="/favicon.png">
 	</head>
 
+
 <body>
   <a name="remove_me" class="hash">
 <header>
-	<div class="grid">
-		<div class="unit one-third center-on-mobiles">
-			<div class="inner">
-				<h1>
-					<a href="/" class="spec-header">
-						<span class="title">Spec</span>
-						<img class="flake" src="/images/flake72.png" width="72" height="72" alt="">
-					</a>
-				</h1>
-				<ul class="nav nav-pills">
-  <li class="nav-item ">
-	  <a href="/" data-toggle="tab" class="nav-a">Overview</a>
+
+  <nav class="navbar navbar-static-top" role="banner">
+	<div class="container spec-container">
+
+	  <div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-navbar-collapse-1">
+		  <span class="sr-only">Toggle navigation</span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		</button>
+		<a href="/" class="navbar-brand">
+		  <span class="title">Spec</span>
+		  <img class="flake" src="/images/flake72.png" width="72" height="72" alt="">
+		</a>
+	  </div>
+
+	  <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
+		<ul class="nav navbar-nav">
+		    <li class="">
+	<a href="/" class="nav-a">Overview</a>
   </li>
-   <li class="nav-item active">
-	   <a href="/docs/home" data-toggle="tab" class="nav-a">Documentation</a>
-   </li>
-  <li class="nav-item ">
-	  <a href="/news" data-toggle="tab" class="nav-a">News</a>
+  <li class="active">
+	<a href="/docs/home" class="nav-a">Documentation</a>
   </li>
-</ul>
-				<a href="https://github.com/spec-framework" class="button"><small>Follow Spec on </small>GitHub</a></div>
-			</div>
-		</div>
+  <li class="">
+	<a href="/news" class="nav-a">News</a>
+  </li>
+		</ul>
+
+		<ul class="nav navbar nav-right">
+		  <li>
+			<a href="https://github.com/spec-framework" class="button"><small>Follow Spec on </small>GitHub</a>
+		  </li>
+		</ul>
+
+	  </div>
 	</div>
+  </nav>
+
 </header>
 
 
@@ -119,6 +138,16 @@ It takes a model and a layout description, runs it through an interpreter and a 
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -194,16 +223,6 @@ It takes a model and a layout description, runs it through an interpreter and a 
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -212,16 +231,6 @@ It takes a model and a layout description, runs it through an interpreter and a 
     
   
 
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
   
     
   
@@ -297,6 +306,16 @@ It takes a model and a layout description, runs it through an interpreter and a 
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 
 
   
@@ -305,6 +324,8 @@ It takes a model and a layout description, runs it through an interpreter and a 
     
   
 
+  
+    
   
     
   
@@ -388,8 +409,6 @@ It takes a model and a layout description, runs it through an interpreter and a 
   
     
   
-    
-  
 
 
   
@@ -580,22 +599,6 @@ It takes a model and a layout description, runs it through an interpreter and a 
     
   
 
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
   
     
   
@@ -605,6 +608,22 @@ It takes a model and a layout description, runs it through an interpreter and a 
   
     
       <li class="sidebar_item "><a href="/docs/example/">Example</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
     
   
     
@@ -680,6 +699,8 @@ It takes a model and a layout description, runs it through an interpreter and a 
     
   
 
+  
+    
   
     
   
@@ -763,8 +784,6 @@ It takes a model and a layout description, runs it through an interpreter and a 
   
     
   
-    
-  
 
 
   
@@ -773,12 +792,6 @@ It takes a model and a layout description, runs it through an interpreter and a 
     
   
 
-  
-    
-  
-    
-  
-    
   
     
   
@@ -858,6 +871,12 @@ It takes a model and a layout description, runs it through an interpreter and a 
   
     
   
+    
+  
+    
+  
+    
+  
 
 
   
@@ -866,18 +885,6 @@ It takes a model and a layout description, runs it through an interpreter and a 
     
   
 
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
   
     
   
@@ -951,6 +958,18 @@ It takes a model and a layout description, runs it through an interpreter and a 
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 
 
   
@@ -959,6 +978,28 @@ It takes a model and a layout description, runs it through an interpreter and a 
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -1022,28 +1063,6 @@ It takes a model and a layout description, runs it through an interpreter and a 
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -1052,16 +1071,6 @@ It takes a model and a layout description, runs it through an interpreter and a 
     
   
 
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
   
     
   
@@ -1137,6 +1146,16 @@ It takes a model and a layout description, runs it through an interpreter and a 
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 
 
   
@@ -1145,16 +1164,6 @@ It takes a model and a layout description, runs it through an interpreter and a 
     
   
 
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
   
     
       <li class="sidebar_item "><a href="/docs/dynamic/">Dynamic UI</a></li>
@@ -1230,6 +1239,16 @@ It takes a model and a layout description, runs it through an interpreter and a 
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 
 
   
@@ -1238,6 +1257,14 @@ It takes a model and a layout description, runs it through an interpreter and a 
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
   
     
       <li class="sidebar_item "><a href="/docs/use-pharo-window/">Using Pharo window</a></li>
@@ -1315,14 +1342,6 @@ It takes a model and a layout description, runs it through an interpreter and a 
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -1331,6 +1350,16 @@ It takes a model and a layout description, runs it through an interpreter and a 
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -1340,16 +1369,6 @@ It takes a model and a layout description, runs it through an interpreter and a 
   
     
       <li class="sidebar_item "><a href="/docs/insert-morph/">Inserting a Morph</a></li>
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
     
   
     
@@ -1451,6 +1470,14 @@ It takes a model and a layout description, runs it through an interpreter and a 
     
   
     
+  
+    
+  
+    
+  
+    
+  
+    
       <li class="sidebar_item "><a href="/docs/api/">Where to find what I want</a></li>
     
   
@@ -1508,14 +1535,6 @@ It takes a model and a layout description, runs it through an interpreter and a 
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -1524,14 +1543,6 @@ It takes a model and a layout description, runs it through an interpreter and a 
     
   
 
-  
-    
-  
-    
-  
-    
-  
-    
   
     
   
@@ -1609,6 +1620,14 @@ It takes a model and a layout description, runs it through an interpreter and a 
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
 
 
   
@@ -1617,6 +1636,14 @@ It takes a model and a layout description, runs it through an interpreter and a 
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -1634,14 +1661,6 @@ It takes a model and a layout description, runs it through an interpreter and a 
   
     
       <li class="sidebar_item "><a href="/docs/interpreter/">Spec Interpreter</a></li>
-    
-  
-    
-  
-    
-  
-    
-  
     
   
     
@@ -1721,21 +1740,21 @@ It takes a model and a layout description, runs it through an interpreter and a 
     
   
     
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
       <li class="sidebar_item "><a href="/docs/repositories/">Repositories</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
     
   
     
