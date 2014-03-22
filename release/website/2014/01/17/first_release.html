@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset='utf-8'>
+		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<script src="/js/jquery-1.11.0.js"></script>
 		<script src="/js/bootstrap.js"></script>
 		
-		<link rel='stylesheet' type='text/css' href='/stylesheets/bootstrap.css'>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css" media="screen" />
 		<link rel="stylesheet" type="text/css" href="/stylesheets/pygment_trac.css" media="screen" />
 		<link rel="stylesheet" type="text/css" href="/stylesheets/print.css" media="print" />
@@ -15,11 +15,12 @@
 		<link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome.css">
 		<link rel="stylesheet" type="text/css" href="/stylesheets/spec.css">
 		<link rel="stylesheet" type="text/css" href="/stylesheets/figures.css">
+		<link rel="stylesheet" type="text/css" href="/stylesheets/stickyfooter.css">
 		
-		<link rel='stylesheet' type='text/css' href='/stylesheets/ArchitectsDaughter.css'>
-		<link rel='stylesheet' type='text/css' href='/stylesheets/Vollkorn.css'>
-		<link rel='stylesheet' type='text/css' href='/stylesheets/Lobster.css'>
-		<link rel='stylesheet' type='text/css' href='/stylesheets/OpenSans.css'>
+		<link rel="stylesheet" type="text/css" href="/stylesheets/ArchitectsDaughter.css">
+		<link rel="stylesheet" type="text/css" href="/stylesheets/Vollkorn.css">
+		<link rel="stylesheet" type="text/css" href="/stylesheets/Lobster.css">
+		<link rel="stylesheet" type="text/css" href="/stylesheets/OpenSans.css">
 		
 		<link rel="alternate" type="application/rss+xml" title="Spec" href="/feed.xml"> 
 		
@@ -35,7 +36,9 @@
 
 
 <body>
-  <a name="remove_me" class="hash">
+  <div class="wrapper">
+
+	<a name="remove_me" class="hash">
 <header>
 
   <nav class="navbar navbar-static-top" role="banner">
@@ -80,7 +83,7 @@
 </header>
 
 
-  <div id="content-wrapper">
+	<div id="content-wrapper">
 	<div class="inner clearfix">
 		<section id="main-content">
 			<div class="news">
@@ -127,59 +130,52 @@
 
 	</div>
 </article>
-				<footer>
-  <div class="grid">
-    <div class="unit one-third center-on-mobiles">
-      <p class="footer-text">
-		  The contents of this website are &copy;&nbsp;2014 <a href="http://benjamin.vanryseghem.com">Benjamin Van Ryseghem</a><br/>
-		  under the terms of the <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a>.
-	  </p>
-    </div>
-  </div>
-</footer>
 			</div>		
 		</section>
 		<div id="commentWrapper">
-	<div id="comment">
-		<aside id="sidebar">
-			<ul>
-				<li class="sidebar_category ">
-					<a href="/news/">All News</a>
-				</li>
-				<li class="sidebar_category ">
-					<a href="/news/releases/">Spec Releases</a>
-				</li>
-			</ul>
-			
-				<h4>News</h4>
-			<ul class="news_title">
-				
-				<li class="sidebar_item Menu20Toolbar">
-					<a href="#Menu%20Toolbar">Menu Toolbar</a>
-				</li>
-				
-				<li class="sidebar_item PFTE20Release">
-					<a href="#PFTE%20Release">PFTE Release</a>
-				</li>
-				
-				<li class="sidebar_item El20Sprint20Chileno">
-					<a href="#El%20Sprint%20Chileno">El Sprint Chileno</a>
-				</li>
-				
-				<li class="sidebar_item Improvements20in20DynamicComposableModel">
-					<a href="#Improvements%20in%20DynamicComposableModel">Improvements in DynamicComposableModel</a>
-				</li>
-				
-				<li class="sidebar_item First20Release">
-					<a href="#First%20Release">First Release</a>
-				</li>
-				
-			</ul>
-			<div class="side-footer">
-				This site provides a <a href="http://spec.st/feed.xml" class="rss-anchor"><i class='fa fa-rss-square fa-2x'></i></a> channel.
-			</div>
-		</aside>
-	</div>
+  <div id="comment">
+	<aside id="sidebar">
+
+	  <div class="side-footer">
+		This site provides a <a href="http://spec.st/feed.xml" class="rss-anchor"><i class='fa fa-rss-square fa-2x'></i></a> channel.
+	  </div>	  
+
+	  <ul>
+		<li class="sidebar_category ">
+		  <a href="/news/">All News</a>
+		</li>
+		<li class="sidebar_category ">
+		  <a href="/news/releases/">Spec Releases</a>
+		</li>
+	  </ul>
+
+	  <h4>News</h4>
+	  <ul class="news_title">
+		
+		<li class="sidebar_item Menu20Toolbar">
+		  <a href="#Menu%20Toolbar">Menu Toolbar</a>
+		</li>
+		
+		<li class="sidebar_item PFTE20Release">
+		  <a href="#PFTE%20Release">PFTE Release</a>
+		</li>
+		
+		<li class="sidebar_item El20Sprint20Chileno">
+		  <a href="#El%20Sprint%20Chileno">El Sprint Chileno</a>
+		</li>
+		
+		<li class="sidebar_item Improvements20in20DynamicComposableModel">
+		  <a href="#Improvements%20in%20DynamicComposableModel">Improvements in DynamicComposableModel</a>
+		</li>
+		
+		<li class="sidebar_item First20Release">
+		  <a href="#First%20Release">First Release</a>
+		</li>
+		
+	  </ul>
+
+	</aside>
+  </div>
 </div>
 
 <script>
@@ -202,6 +198,7 @@ $(document).ready(function () {
 	});
 });
 </script>
+
 		<div class="clear"></div>
 	</div>
 </div>
@@ -263,6 +260,24 @@ $(function () {
 	});
 });
 </script>
+
+
+	<div class="push"></div>
+  </div>
+
+  <div class="footer">
+	<footer id="footer">
+  <div class="grid">
+    <div class="unit one-third center-on-mobiles">
+      <p class="footer-text">
+		  The contents of this website are &copy;&nbsp;2014 <a href="http://benjamin.vanryseghem.com">Benjamin Van Ryseghem</a><br/>
+		  under the terms of the <a href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)</a>.
+	  </p>
+    </div>
+  </div>
+</footer>
+
+  </div>
 
 </body>
 </html>
