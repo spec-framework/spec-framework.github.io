@@ -161,23 +161,23 @@
 	  <h4>News</h4>
 	  <ul class="news_title">
 		
-		<li class="sidebar_item Menu20Toolbar">
+		<li class="sidebar_item MenuToolbar">
 		  <a href="#Menu%20Toolbar">Menu Toolbar</a>
 		</li>
 		
-		<li class="sidebar_item PFTE20Release">
+		<li class="sidebar_item PFTERelease">
 		  <a href="#PFTE%20Release">PFTE Release</a>
 		</li>
 		
-		<li class="sidebar_item El20Sprint20Chileno">
+		<li class="sidebar_item ElSprintChileno">
 		  <a href="#El%20Sprint%20Chileno">El Sprint Chileno</a>
 		</li>
 		
-		<li class="sidebar_item Improvements20in20DynamicComposableModel">
+		<li class="sidebar_item ImprovementsinDynamicComposableModel">
 		  <a href="#Improvements%20in%20DynamicComposableModel">Improvements in DynamicComposableModel</a>
 		</li>
 		
-		<li class="sidebar_item First20Release">
+		<li class="sidebar_item FirstRelease">
 		  <a href="#First%20Release">First Release</a>
 		</li>
 		
@@ -221,6 +221,7 @@ $(function () {
 		var elt = parent.find(".current");
 		elt.removeClass('current');
 		if(hash){
+			hash = decodeURI(hash);
 			var id = "";
 			var iChars = "~`!#$%^&*+=-[]\\\';,/{}|\":<>?";
 			for ( var i = 0; i < hash.length; i++ ){
@@ -269,6 +270,7 @@ $(function () {
 	});
 });
 </script>
+
 
 
 	<div class="push"></div>
