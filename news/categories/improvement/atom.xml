@@ -4,7 +4,7 @@
   <title><![CDATA[Category: improvement | ]]></title>
   <link href="/news/categories/improvement/atom.xml" rel="self"/>
   <link href="/"/>
-  <updated>2014-03-23T11:28:01+00:00</updated>
+  <updated>2014-03-25T08:53:46+00:00</updated>
   <id>/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Menu Toolbar]]></title>
     <link href="/improvement/menu/toolbar/2014/02/19/Menu_Toolbar.html"/>
-    <updated>2014-02-19T00:01:32Z</updated>
+    <updated>2014-02-19T00:01:32+00:00</updated>
     <id>/improvement/menu/toolbar/2014/02/19/Menu_Toolbar</id>
     <content type="html"><![CDATA[<p>Spec provides today a new missing feature: a menu toolbar.</p>
 
@@ -37,7 +37,7 @@ In order to provide an easy way to add a menu toolbar, Spec reuse <strong>MenuMo
   <entry>
     <title type="html"><![CDATA[Improvements in DynamicComposableModel]]></title>
     <link href="/improvement/dynamic/composition/2014/01/21/dynamic_composition.html"/>
-    <updated>2014-01-21T11:52:52Z</updated>
+    <updated>2014-01-21T11:52:52+00:00</updated>
     <id>/improvement/dynamic/composition/2014/01/21/dynamic_composition</id>
     <content type="html"><![CDATA[<p>Right now it is easy to prototype a UI in a workspace or to dynamically build a model on demand at run time, but this prototype can not be reused for composition.</p>
 

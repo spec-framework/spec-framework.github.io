@@ -4,7 +4,7 @@
   <title><![CDATA[Category: release | ]]></title>
   <link href="/news/categories/release/atom.xml" rel="self"/>
   <link href="/"/>
-  <updated>2014-03-23T11:28:01+00:00</updated>
+  <updated>2014-03-25T08:53:46+00:00</updated>
   <id>/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[PFTE Release]]></title>
     <link href="/documentation/release/chile/2014/02/12/PFTE-Chapter.html"/>
-    <updated>2014-02-12T17:27:32Z</updated>
+    <updated>2014-02-12T17:27:32+00:00</updated>
     <id>/documentation/release/chile/2014/02/12/PFTE-Chapter</id>
     <content type="html"><![CDATA[<p>I am happy to announce that <a href="benjamin.vanryseghem.com">Benjamin Van Ryseghem</a> and I finished the documentation of Spec for the Pharo For The Enterprise book.
 This documentation is up-to-date with the latest version of Spec, and is focused towards people wanting to use it and even extend it.
@@ -38,7 +38,7 @@ You can find the pier files on GitHub<sup><a href="https://github.com/spec-frame
   <entry>
     <title type="html"><![CDATA[First Release]]></title>
     <link href="/release/website/2014/01/17/first_release.html"/>
-    <updated>2014-01-17T20:41:09Z</updated>
+    <updated>2014-01-17T20:41:09+00:00</updated>
     <id>/release/website/2014/01/17/first_release</id>
     <content type="html"><![CDATA[<p>I am glad to announce this super website dedicated to Spec and the things related to this cool framework <i class="fa fa-smile-o"></i>.</p>
 

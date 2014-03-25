@@ -4,7 +4,7 @@
   <title><![CDATA[Category: documentation | ]]></title>
   <link href="/news/categories/documentation/atom.xml" rel="self"/>
   <link href="/"/>
-  <updated>2014-03-23T11:28:01+00:00</updated>
+  <updated>2014-03-25T08:53:46+00:00</updated>
   <id>/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[PFTE Release]]></title>
     <link href="/documentation/release/chile/2014/02/12/PFTE-Chapter.html"/>
-    <updated>2014-02-12T17:27:32Z</updated>
+    <updated>2014-02-12T17:27:32+00:00</updated>
     <id>/documentation/release/chile/2014/02/12/PFTE-Chapter</id>
     <content type="html"><![CDATA[<p>I am happy to announce that <a href="benjamin.vanryseghem.com">Benjamin Van Ryseghem</a> and I finished the documentation of Spec for the Pharo For The Enterprise book.
 This documentation is up-to-date with the latest version of Spec, and is focused towards people wanting to use it and even extend it.

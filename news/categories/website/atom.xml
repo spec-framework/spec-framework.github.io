@@ -4,7 +4,7 @@
   <title><![CDATA[Category: website | ]]></title>
   <link href="/news/categories/website/atom.xml" rel="self"/>
   <link href="/"/>
-  <updated>2014-03-23T11:28:01+00:00</updated>
+  <updated>2014-03-25T08:53:46+00:00</updated>
   <id>/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[First Release]]></title>
     <link href="/release/website/2014/01/17/first_release.html"/>
-    <updated>2014-01-17T20:41:09Z</updated>
+    <updated>2014-01-17T20:41:09+00:00</updated>
     <id>/release/website/2014/01/17/first_release</id>
     <content type="html"><![CDATA[<p>I am glad to announce this super website dedicated to Spec and the things related to this cool framework <i class="fa fa-smile-o"></i>.</p>
 
