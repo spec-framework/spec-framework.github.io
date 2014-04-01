@@ -90,6 +90,58 @@
 				
   <article class="article">
 	
+	<a name="Fix%20splitters" class="hash"></a>
+	<h2>
+		<a href="/fix/splitters/2014/05/01/fix_splitter.html">
+			Fix splitters
+			
+		</a>
+	</h2>
+	
+	<div class="post post-date">
+		01 May 2014
+	</div>
+	
+	<span class="post post-categories">
+		
+		<span class="post-category"><a href="/news/categories/fix" class="post-category-link">fix</a></span>
+		
+		<span class="post-category"><a href="/news/categories/splitters" class="post-category-link">splitters</a></span>
+		
+	</span>
+	
+	<div class="post post-meta">
+		<div id="post_author">
+			<div class="post-avatar">
+				<a href="https://github.com/BenjaminVanRyseghem" class="post-author">
+					<img src="https://github.com/BenjaminVanRyseghem.png" class="avatar" alt="BenjaminVanRyseghem"/>
+				</a>
+			</div>
+			<div class="post-authorname">
+				<a href="https://github.com/BenjaminVanRyseghem" class="post-author">
+					BenjaminVanRyseghem
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="post-content">
+		<p>Glad to announce that with the help of <a href="http://seandenigris.com">Sean P. DeNigris</a> the problem
+of splitters in Spec has been tackled.</p>
+
+<p>The problem was revealed when multiple morphs were present after a splitter.
+In this configuration the two morphs moved in a really strange way.</p>
+
+<p>The fix<sup><a href="https://github.com/spec-framework/spec/commit/b59dcf9e9cd0ca3bc2850f4b54aaeb394b9517a4"><i class='fa fa-github-alt'></i></a></sup> provides a 
+new algorithm to retrieve the morphs which should be attached to each splitters.</p>
+
+<p>The fix should be into Pharo as soon as the <a href="https://pharo.fogbugz.com/default.asp?13163">slice</a> is integrated.</p>
+
+	</div>
+	<hr>
+</article>
+
+  <article class="article">
+	
 	<a name="Menu%20Toolbar" class="hash"></a>
 	<h2>
 		<a href="/improvement/menu/toolbar/2014/02/19/Menu_Toolbar.html">
@@ -388,6 +440,10 @@ You can find the pier files on GitHub<sup><a href="https://github.com/spec-frame
 
 	  <h4>News</h4>
 	  <ul class="news_title">
+		
+		<li class="sidebar_item Fixsplitters">
+		  <a href="#Fix%20splitters">Fix splitters</a>
+		</li>
 		
 		<li class="sidebar_item MenuToolbar">
 		  <a href="#Menu%20Toolbar">Menu Toolbar</a>

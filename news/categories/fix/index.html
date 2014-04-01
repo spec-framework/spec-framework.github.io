@@ -87,59 +87,32 @@
 	<div class="inner clearfix">
 		<section id="main-content">
 			<div class="news">
-				<article class="article">
-	<h2>
-		Improvements in DynamicComposableModel
-		<a href="/improvement/dynamic/composition/2014/01/21/dynamic_composition.html" class="permalink" title="Permalink"><i class='fa fa-link'></i></a>
+				
+	
+	
+	  	
+		<div class="archive-year">2014</div>
+	
+
+   <article class="article">
+	<h2 class="archive-title">
+		<a href="/fix/splitters/2014/05/01/fix_splitter.html">Fix splitters</a>
 	</h2>
-	
-	<div class="post post-date">
-		21 Jan 2014
+
+	<div class="post-date">
+		01 May 2014
 	</div>
-	
-	<span class="post post-categories">
+
+	<span class="post-categories">
 		
-		<span class="post-category"><a href="/news/categories/improvement" class="post-category-link">improvement</a></span>
+			<span class="post-category active "><a href="/news/categories/fix" class="post-category-link">fix</a></span>
 		
-		<span class="post-category"><a href="/news/categories/dynamic" class="post-category-link">dynamic</a></span>
-		
-		<span class="post-category"><a href="/news/categories/composition" class="post-category-link">composition</a></span>
+			<span class="post-category "><a href="/news/categories/splitters" class="post-category-link">splitters</a></span>
 		
 	</span>
-	
-	<div class="post post-meta">
-		<div id="post_author">
-			<div class="post-avatar">
-				<a href="https://github.com/BenjaminVanRyseghem" class="post-author">
-					<img src="https://github.com/BenjaminVanRyseghem.png" class="avatar" alt="BenjaminVanRyseghem"/>
-				</a>
-			</div>
-			<div class="post-authorname">
-				<a href="https://github.com/BenjaminVanRyseghem" class="post-author">
-					BenjaminVanRyseghem
-				</a>
-			</div>
-		</div>
-	</div>
-	<div class="post-content">
-		<p>Right now it is easy to prototype a UI in a workspace or to dynamically build a model on demand at run time, but this prototype can not be reused for composition.</p>
-
-<p>Because of this, the prototyping is quite limited.</p>
-
-<p>But the latest Spec commit<sup><a href="https://github.com/SpecForPharo/spec/commit/5d28c1f293bb1654e7395c18a2ea733fbd551d10"><i class='fa fa-github-alt'></i></a></sup> introduces few changes on <code>DynamicComposableModel</code> to tackle this issue.</p>
-
-<p>The problem was double: no way to add an instanciated model as a sub widget, and the lookup for the layout was looking for a selector on class side.</p>
-
-<p>The first problem was actually just a method missing since the <code>DynamicComposableModel</code> class manage the widgets in a dictionary.</p>
-
-<p>The second problem was slighty more tedious. To work, it requires from the embedded sub widget to have a layout defined. A new instance variable <code>layout</code> has been introduce to hold the <strong>SpecLayout</strong> instance used to position the sub widgets. This way, when a layout is requested for the dynamic model, this layout is returned (<em>regardless of the selector requested</em>).</p>
-
-<p>These two fixes add support for a better composition in the dynamic context <i class='fa fa-smile-o fa-2x'></i>.</p>
-
-<p>If you want to try, this <a href="https://gist.github.com/BenjaminVanRyseghem/cd02f2dc61f350a6495f">snippet</a> gives you an example of how to build such unser interface.</p>
-
-	</div>
 </article>
+
+
 			</div>		
 		</section>
 		<div id="commentWrapper">
@@ -162,28 +135,28 @@
 	  <h4>News</h4>
 	  <ul class="news_title">
 		
-		<li class="sidebar_item ">
-		  <a href="/fix/splitters/2014/05/01/fix_splitter.html">Fix splitters</a>
+		<li class="sidebar_item Fixsplitters">
+		  <a href="#Fix%20splitters">Fix splitters</a>
 		</li>
 		
-		<li class="sidebar_item ">
-		  <a href="/improvement/menu/toolbar/2014/02/19/Menu_Toolbar.html">Menu Toolbar</a>
+		<li class="sidebar_item MenuToolbar">
+		  <a href="#Menu%20Toolbar">Menu Toolbar</a>
 		</li>
 		
-		<li class="sidebar_item ">
-		  <a href="/documentation/release/chile/2014/02/12/PFTE-Chapter.html">PFTE Release</a>
+		<li class="sidebar_item PFTERelease">
+		  <a href="#PFTE%20Release">PFTE Release</a>
 		</li>
 		
-		<li class="sidebar_item ">
-		  <a href="/sprint/chile/2014/01/24/sprint_chileno.html">El Sprint Chileno</a>
+		<li class="sidebar_item ElSprintChileno">
+		  <a href="#El%20Sprint%20Chileno">El Sprint Chileno</a>
 		</li>
 		
-		<li class="sidebar_item current">
-		  <a href="/improvement/dynamic/composition/2014/01/21/dynamic_composition.html">Improvements in DynamicComposableModel</a>
+		<li class="sidebar_item ImprovementsinDynamicComposableModel">
+		  <a href="#Improvements%20in%20DynamicComposableModel">Improvements in DynamicComposableModel</a>
 		</li>
 		
-		<li class="sidebar_item ">
-		  <a href="/release/website/2014/01/17/first_release.html">First Release</a>
+		<li class="sidebar_item FirstRelease">
+		  <a href="#First%20Release">First Release</a>
 		</li>
 		
 	  </ul>

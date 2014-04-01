@@ -7,6 +7,24 @@
                 <atom:link href="http://spec.st/feed.xml" rel="self" type="application/rss+xml" />
                 
                         <item>
+                                <title>Fix splitters</title>
+                                <description>&lt;p&gt;Glad to announce that with the help of &lt;a href=&quot;http://seandenigris.com&quot;&gt;Sean P. DeNigris&lt;/a&gt; the problem
+of splitters in Spec has been tackled.&lt;/p&gt;
+
+&lt;p&gt;The problem was revealed when multiple morphs were present after a splitter.
+In this configuration the two morphs moved in a really strange way.&lt;/p&gt;
+
+&lt;p&gt;The fix&lt;sup&gt;&lt;a href=&quot;https://github.com/spec-framework/spec/commit/b59dcf9e9cd0ca3bc2850f4b54aaeb394b9517a4&quot;&gt;&lt;i class=&#39;fa fa-github-alt&#39;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/sup&gt; provides a 
+new algorithm to retrieve the morphs which should be attached to each splitters.&lt;/p&gt;
+
+&lt;p&gt;The fix should be into Pharo as soon as the &lt;a href=&quot;https://pharo.fogbugz.com/default.asp?13163&quot;&gt;slice&lt;/a&gt; is integrated.&lt;/p&gt;
+</description>
+                                <pubDate>Thu, 01 May 2014 14:46:32 +0000</pubDate>
+                                <link>http://spec.st//fix/splitters/2014/05/01/fix_splitter.html</link>
+                                <guid isPermaLink="true">http://spec.st//fix/splitters/2014/05/01/fix_splitter.html</guid>
+                        </item>
+                
+                        <item>
                                 <title>Menu Toolbar</title>
                                 <description>&lt;p&gt;Spec provides today a new missing feature: a menu toolbar.&lt;/p&gt;
 
