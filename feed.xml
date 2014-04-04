@@ -7,6 +7,21 @@
                 <atom:link href="http://spec.st/feed.xml" rel="self" type="application/rss+xml" />
                 
                         <item>
+                                <title>New Section&amp;#x3a; Tutorials</title>
+                                <description>&lt;p&gt;The discussions about Spec in the mailing list, 
+I came out with the idea that a &lt;code&gt;tutorial&lt;/code&gt; section 
+could be useful &lt;i class=&#39;fa fa-smile-o&#39;&gt;&lt;/i&gt;.&lt;/p&gt;
+
+&lt;p&gt;The first tutorial is about &lt;a href=&quot;/docs/drag_n_drop/&quot;&gt;drag and drop&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Hope it will be hopeful.&lt;/p&gt;
+</description>
+                                <pubDate>Sun, 04 May 2014 20:24:32 +0000</pubDate>
+                                <link>http://spec.st//tuto/drag/drop/2014/05/04/new_tuto_dnd.html</link>
+                                <guid isPermaLink="true">http://spec.st//tuto/drag/drop/2014/05/04/new_tuto_dnd.html</guid>
+                        </item>
+                
+                        <item>
                                 <title>Fix splitters</title>
                                 <description>&lt;p&gt;Glad to announce that with the help of &lt;a href=&quot;http://seandenigris.com&quot;&gt;Sean P. DeNigris&lt;/a&gt; the problem
 of splitters in Spec has been tackled.&lt;/p&gt;
