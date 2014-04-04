@@ -88,80 +88,78 @@
 		<section id="main-content">
 			<div>
 				<article>
-					<h1>Instantiating sub&nbsp;widgets</h1>
-					<p>The method <code>initializeWidgets</code> is used to instantiate the different widgets that are part of the UI and store them in their respective instance variables.
-The configuration and default values of each widget are specified here as well.
-This focus in this method is to specify what the widgets will look like and what their self-contained behavior is.
-The behavior to update model state, e.g. when pressing a <code>Save</code> button, is described in this method as well.
-It is explicitly <strong>not</strong> the responsibility of this method to define the interactions <strong>between</strong> the widgets.</p>
+					<h1>Drag'n'Drop between two lists</h1>
+					<p>The goal of this tutorial is to detailled the steps for creating two lists whose elements can be moved from one list to the others.</p>
 
-<p>In general the <code>initializeWidgets</code> method should follow the pattern:</p>
+<h2>Instantiation</h2>
 
-<ul>
-<li>widgets instantiation</li>
-<li>widgets configuration specification</li>
-<li>specification of order of focus</li>
-</ul>
+<p>The first step is the creation of the two collections which will be used as data for the lists.</p>
 
-<p>The last step is not mandatory but <strong>highly</strong> recommended.
-Indeed, without this final step keyboard navigation will not work at all.</p>
-
-<p>The code in figure <em>pattern</em> shows an example of an <code>initializeWidgets</code> method.
-It first instantiates a button and a list widget, storing each in an instance variable.
-It second configures the button it by setting its label.
-Third it specifies the focus order of all the widgets: first the button and then the list.</p>
-
-<div class="highlight"><pre><code class="smalltalk"><span class="nf">initializeWidgets</span>
-
-    <span class="nv">theButton</span> <span class="o">:=</span> <span class="bp">self</span> <span class="nf">newButton</span><span class="p">.</span>
-    <span class="nv">theList</span> <span class="o">:=</span> <span class="bp">self</span> <span class="nf">newList</span><span class="p">.</span>
-
-    <span class="nv">theButton</span> <span class="nf">label:</span> <span class="s">&#39;I am a button&#39;</span><span class="p">.</span>
-    <span class="nv">theList</span> <span class="nf">items:</span> <span class="ss">#(</span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span> <span class="m">6</span> <span class="m">7</span> <span class="m">8</span> <span class="m">9</span> <span class="m">0</span><span class="ss">)</span><span class="p">.</span>
-    
-    <span class="bp">self</span> <span class="nf">focusOrder</span>
-        <span class="nf">add:</span> <span class="nv">theButton</span><span class="p">;</span>
-        <span class="nf">add:</span> <span class="nv">theList</span><span class="p">.</span>
+<div class="highlight"><pre><code class="smalltalk"><span class="nv">collection1</span> <span class="o">:=</span> <span class="ss">#(</span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span><span class="ss">)</span><span class="p">.</span>
+<span class="nv">collection2</span> <span class="o">:=</span> <span class="ss">#(a</span> <span class="ss">b</span> <span class="ss">c</span> <span class="ss">d</span> <span class="ss">e)</span><span class="p">.</span>
 </code></pre></div>
 
+<p>The two <code>ListModel</code> widgets can then be created</p>
 
-<div class="hint_box alertbox">
-      <div class="hint_box_row">
-    <div class="hint_box_icon fa-stack fa-lg alert-icon">
-      <i class="fa fa-exclamation-triangle fa-2x"></i>
-    </div>
-    <div class="hint_box_text alert-text"><p>Specifying this method is <strong>mandatory</strong>, as without it the UI would have no widgets</p>
-</div>
+<div class="highlight"><pre><code class="smalltalk"><span class="nv">list1</span> <span class="o">:=</span> <span class="nc">ListModel</span> <span class="nb">new</span>
+    <span class="nf">items:</span> <span class="nv">collection1</span><span class="p">;</span>
+    <span class="nf">yourself</span><span class="p">.</span>
+    
+<span class="nv">list2</span> <span class="o">:=</span> <span class="nc">ListModel</span> <span class="nb">new</span>
+    <span class="nf">items:</span> <span class="nv">collection2</span><span class="p">;</span>
+    <span class="nf">yourself</span><span class="p">.</span>    
+</code></pre></div>
 
-<p></div></div></p>
+<h2>Drag and Drop settings</h2>
 
-<h2>Widget instantiation</h2>
+<p>In this section, we will see the settings needed for activating the
+drag and drop mechanism.</p>
 
-<p>The instantiation of a widget can be done in two ways: through the use of an creation method or through the use of the <code>instantiate:</code> method.</p>
+<p>The settings will be only explicited for the list <code>list1</code>,
+but a symetrical implementation for <code>list2</code> is required.</p>
 
-<p>Considering the first option, the framework provides unary messages for the creation of all basic widgets.
-The format of these messages is <code>new[Widget]</code>, for example <code>newButton</code> creates a button widget, and <code>newList</code> creates a list widget, as we have seen above.
-The complete list of available widget creation methods can be found in the class <strong>ComposableModel</strong> in the protocol <em>widgets</em>.</p>
+<p>For the sake of brievety, this code will not be exposed here.</p>
 
-<p>Considering the second option, to reuse any composite widgets, i.e. a subclass of <strong>ComposableModel</strong>, the widget needs to be initialized using the <code>instantiate:</code> method.
-For example, to reuse a <strong>MessageBrowser</strong> widget, the code is <code>self instantiate: MessageBrowser</code>.</p>
+<div class="highlight"><pre><code class="smalltalk"><span class="nf">list1</span> 
+    <span class="nf">dragEnabled:</span> <span class="nv">true</span>; <span class="c">&quot;activates the drag from this model&quot;</span> 
+    <span class="nf">dropEnabled:</span> <span class="nv">true</span>; <span class="c">&quot;activates the drop to this model&quot;</span>
+    <span class="err">wantDropBlock:</span> [ <span class="o">:</span><span class="nv">draggedItem</span> <span class="o">:</span><span class="nv">event</span> <span class="o">:</span><span class="nv">source</span> <span class="o">|</span> 
+     <span class="c">&quot;this block is used to filter the possible objects that could be dropped to this model&quot;</span>
+        <span class="nv">draggedItem</span> <span class="nf">isTransferable</span> <span class="nf">and:</span> [ <span class="nv">draggedItem</span> <span class="nf">source</span> <span class="nf">model</span> <span class="nf">model</span> <span class="nf">=</span> <span class="nv">list2</span> ]
+        <span class="c">&quot;the first statement is to ensure only dragged items are expected (and no dragged windows), </span>
+<span class="c">            when the second statement allows dragged items only if they come from `list2`&quot;</span>
+     ]<span class="p">;</span>
+    <span class="nf">acceptDropBlock:</span> [ <span class="o">:</span><span class="nv">transfer</span> <span class="o">:</span><span class="nv">event</span> <span class="o">:</span><span class="nv">source</span> <span class="o">:</span><span class="nv">receiver</span> <span class="o">:</span><span class="nv">index</span> <span class="o">|</span> 
+    <span class="c">&quot;this block is performed when a object is effectively dropped&quot;</span>
+        <span class="o">|</span><span class="nv"> sourceList </span><span class="o">|</span>
+        <span class="c">&quot;This is used to retreive the model where the dropped object comes from&quot;</span>
+        <span class="nv">sourceList</span> <span class="o">:=</span> <span class="nv">transfer</span> <span class="nf">source</span> <span class="nf">model</span> <span class="nf">model</span><span class="p">.</span> 
+        <span class="c">&quot;For each dropped element&quot;</span>
+        <span class="nv">transfer</span> <span class="nf">passenger</span> 
+            <span class="nf">do:</span> [ <span class="o">:</span><span class="nv">e</span> <span class="o">|</span> 
+                <span class="c">&quot;the element in inserted before the targeted list item&quot;</span>
+                <span class="nv">list1</span> <span class="nf">listItems</span> <span class="nf">add:</span> <span class="nv">e</span> <span class="nf">first</span> <span class="nf">beforeIndex:</span> <span class="nv">index</span><span class="p">.</span> 
+                <span class="c">&quot;and removed from the source list&quot;</span>
+                <span class="nv">sourceList</span> <span class="nf">listItems</span> <span class="nf">remove:</span> <span class="nv">e</span> <span class="nf">first</span> ]<span class="p">.</span>
+        <span class="c">&quot;Finally both lists are updated&quot;</span>
+        <span class="nv">list1</span> <span class="nf">updateList</span><span class="p">.</span> 
+        <span class="nv">sourceList</span> <span class="nf">updateList</span> ]<span class="p">.</span> 
+</code></pre></div>
 
-<div class="hint_box hint">
-      <div class="hint_box_row">
-    <div class="hint_box_icon fa-stack fa-lg hint-icon">
-      <i class="fa fa-square fa-stack-2x"></i>
-      <i class="fa fa-info fa-stack-1x hint-overlay"></i>
-    </div>
-    <div class="hint_box_text hint-text"><p>Do not forger to generate the accessors for your instance variables.</p>
-</div>
+<p>The totality of the code can be found here<sup><a href="https://gist.github.com/BenjaminVanRyseghem/9974654"><i class='fa fa-github-alt'></i></a></sup>.</p>
 
-<p></div></div></p>
+<h2>Conclusion</h2>
+
+<p>The tutorial covers the basics of the drag and drop mechanism supported by Spec,
+and provides an example of how to use it.</p>
+
+<p>I want to personally thank Thierry Goubier and Martin Walk whose <a href="http://forum.world.st/Drag-and-drop-items-between-list-views-td4752285.html">discussion</a> on the mailing-list inspired me for this tutorial.</p>
 
 					<div class="section-nav">
 	<div class="btn-group">
-		<a class="btn btn-default nav-btn " href="/docs/installation/">Back
+		<a class="btn btn-default nav-btn " href="/docs/interpreter/">Back
 		</a>
-		<a class="btn btn-default nav-btn " href="/docs/layout/">Next
+		<a class="btn btn-default nav-btn " href="/docs/repositories_/">Next
 		</a>
 	</div>
 	<div class="clear">
@@ -899,7 +897,7 @@ For example, to reuse a <strong>MessageBrowser</strong> widget, the code is <cod
     
   
     
-      <li class="sidebar_item current"><a href="/docs/initializing/">Instantiating sub&nbsp;widgets</a></li>
+      <li class="sidebar_item "><a href="/docs/initializing/">Instantiating sub&nbsp;widgets</a></li>
     
   
     
@@ -1951,7 +1949,7 @@ For example, to reuse a <strong>MessageBrowser</strong> widget, the code is <cod
     
   
     
-      <li class="sidebar_item "><a href="/docs/drag_n_drop/">Drag'n'Drop between two lists</a></li>
+      <li class="sidebar_item current"><a href="/docs/drag_n_drop/">Drag'n'Drop between two lists</a></li>
     
   
     
