@@ -36,6 +36,27 @@
                         </item>
                 
                         <item>
+                                <title>Spec license change</title>
+                                <description>&lt;p&gt;Today, Spec is changing its license.&lt;/p&gt;
+
+&lt;p&gt;Until today, Spec was released under the MIT license.&lt;/p&gt;
+
+&lt;p&gt;But after a disagreement with the Pharo direction, and in order to keep control of Spec future
+it has been decided to change Spec license.&lt;/p&gt;
+
+&lt;p&gt;Now Spec is released under a dual license:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;GPL v3 license when shipped as part of a programming language, its core libraries and frameworks, or its Integrated Development Environment. For more information about the lincense, see &lt;a href=&quot;https://github.com/spec-framework/spec/blob/master/LICENSE-GPL3&quot;&gt;LICENSE-GPL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;MIT license for other cases. For more information about the license, see &lt;a href=&quot;https://github.com/spec-framework/spec/blob/master/LICENSE-MIT&quot;&gt;LICENSE-MIT&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+                                <pubDate>Fri, 15 Aug 2014 21:52:09 +0000</pubDate>
+                                <link>http://spec.st//license/gpl/mit/2014/08/15/Spec_change_license.html</link>
+                                <guid isPermaLink="true">http://spec.st//license/gpl/mit/2014/08/15/Spec_change_license.html</guid>
+                        </item>
+                
+                        <item>
                                 <title>New Section Tutorials</title>
                                 <description>&lt;p&gt;The discussions about Spec in the mailing list, 
 I came out with the idea that a &lt;code&gt;tutorial&lt;/code&gt; section 
