@@ -90,6 +90,67 @@
 				
   <article class="article">
 	
+	<a name="Spec%202.0.0%20release" class="hash"></a>
+	<h2>
+		<a href="/release/2014/08/30/Spec2.0.0.html">
+			Spec 2.0.0 release
+			
+		</a>
+	</h2>
+	
+	<div class="post post-date">
+		30 Aug 2014
+	</div>
+	
+	<span class="post post-categories">
+		
+		<span class="post-category"><a href="/news/categories/release" class="post-category-link">release</a></span>
+		
+	</span>
+	
+	<div class="post post-meta">
+		<div id="post_author">
+			<div class="post-avatar">
+				<a href="https://github.com/BenjaminVanRyseghem" class="post-author">
+					<img src="https://github.com/BenjaminVanRyseghem.png" class="avatar" alt="BenjaminVanRyseghem"/>
+				</a>
+			</div>
+			<div class="post-authorname">
+				<a href="https://github.com/BenjaminVanRyseghem" class="post-author">
+					BenjaminVanRyseghem
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="post-content">
+		<p>I am glad to announce a new major release for Spec <i class="fa fa-smile-o"></i>.</p>
+
+<h2>New release of Spec</h2>
+
+<h3>Backward compatibility breaker</h3>
+
+<ul>
+<li>ListModel menus: now the <code>ListModel</code> instances use an instance of <code>MenuModel</code> as argument instead of a Morphic object. An example is provided in <code>ListModel class&gt;&gt;#example</code></li>
+</ul>
+
+<h3>Changes</h3>
+
+<ul>
+<li>Removes unrelated to Spec core packages (i.e. <code>Spec-Tools</code>)</li>
+<li>Adds <code>SpecTableLayout</code>, thanks @webwarrior-ws </li>
+<li>Removes hardcoded colours, thanks @Uko </li>
+</ul>
+
+<p>In addition, some bug fixes and clean ups.</p>
+
+<p>This version has been tested with Pharo 4.0 - build 167</p>
+
+	</div>
+	<hr>
+</article>
+
+  <article class="article">
+	
 	<a name="New%20Section%20Tutorials" class="hash"></a>
 	<h2>
 		<a href="/tuto/drag/drop/2014/05/04/new_tuto_dnd.html">
@@ -239,8 +300,7 @@ In order to provide an easy way to add a menu toolbar, Spec reuse <strong>MenuMo
 
 <p>An example can be opened via</p>
 
-<div class="highlight"><pre><code class="smalltalk"><span class="nc">ApplicationWithToolbar</span> <span class="nb">new</span> <span class="nf">openWithSpec</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="nc">ApplicationWithToolbar</span> <span class="nb">new</span> <span class="nf">openWithSpec</span></code></pre></div>
 
 <p><a name="fig_ApplicationWithToolbar"></a><p class="figure"><img src="/figures/ApplicationWithToolbar.png" alt="fig_ApplicationWithToolbar" title="An example of application with a toolbar"></p></p>
 
@@ -491,6 +551,10 @@ You can find the pier files on GitHub<sup><a href="https://github.com/spec-frame
 
 	  <h4>News</h4>
 	  <ul class="news_title">
+		
+		<li class="sidebar_item Spec2.0.0release">
+		  <a href="#Spec%202.0.0%20release">Spec 2.0.0 release</a>
+		</li>
 		
 		<li class="sidebar_item NewSectionTutorials">
 		  <a href="#New%20Section%20Tutorials">New Section Tutorials</a>

@@ -110,10 +110,9 @@ Note that the lookup for the spec method to use starts on instance side, which a
 The example following presents such a layout.
 It returns a layout in which just one widget is added: the widget contained in <code>theList</code> instance variable.</p>
 
-<div class="highlight"><pre><code class="smalltalk">    <span class="o">^</span> <span class="nc">SpecLayout</span> <span class="nf">composed</span>
+<div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="o">^</span> <span class="nc">SpecLayout</span> <span class="nf">composed</span>
         <span class="nf">add:</span> <span class="ss">#theList</span><span class="p">;</span>
-        <span class="nf">yourself</span>
-</code></pre></div>
+        <span class="nf">yourself</span></code></pre></div>
 
 
 <p>The symbol <code>theList</code> refers to an instance side method returning a widget.
@@ -152,31 +151,29 @@ To conclude, this section ends with a little <a href="#specify_layout">explanati
 <p>Often the layout of user interfaces can be described in rows and columns, and <strong>Spec</strong> provides for an easy way to specify such layouts.
 The following example shows how to build a row of widgets.</p>
 
-<div class="highlight"><pre><code class="smalltalk"><span class="o">^</span> <span class="nc">SpecLayout</span> <span class="nf">composed</span>
+<div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="o">^</span> <span class="nc">SpecLayout</span> <span class="nf">composed</span>
     <span class="nf">newRow:</span> [ <span class="o">:</span><span class="nv">row</span> <span class="o">|</span>
         <span class="nv">row</span>
             <span class="nf">add:</span> <span class="ss">#theList</span><span class="p">;</span>
             <span class="nf">add:</span> <span class="ss">#theButton</span>
     ]<span class="p">;</span>
-    <span class="nf">yourself</span>
-</code></pre></div>
+    <span class="nf">yourself</span></code></pre></div>
 
 <p>Having the widgets rendered as a column is similar, as shown in this example</p>
 
-<div class="highlight"><pre><code class="smalltalk"><span class="o">^</span> <span class="nc">SpecLayout</span> <span class="nf">composed</span>
+<div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="o">^</span> <span class="nc">SpecLayout</span> <span class="nf">composed</span>
     <span class="nf">newColumn:</span> [ <span class="o">:</span><span class="nv">column</span> <span class="o">|</span>
         <span class="nv">column</span>
             <span class="nf">add:</span> <span class="ss">#theList</span><span class="p">;</span>
             <span class="nf">add:</span> <span class="ss">#theButton</span>
     ]<span class="p">;</span>
-    <span class="nf">yourself</span>
-</code></pre></div>
+    <span class="nf">yourself</span></code></pre></div>
 
 <p>Rows and columns can be combined to build more complex layouts, and splitters between cells can be added.
 The example shows how to create a 3 columns layout, containing three buttons in each column.
 This example also shows the <code>addSplitter</code> message, which adds a splitter between the element added before it and the element added after.</p>
 
-<div class="highlight"><pre><code class="smalltalk"><span class="o">^</span> <span class="nc">SpecLayout</span> <span class="nf">composed</span>
+<div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="o">^</span> <span class="nc">SpecLayout</span> <span class="nf">composed</span>
     <span class="nf">newRow:</span> [ <span class="o">:</span><span class="nv">row</span> <span class="o">|</span>
         <span class="nv">row</span>
             <span class="nf">newColumn:</span> [ <span class="o">:</span><span class="nv">column</span> <span class="o">|</span> 
@@ -200,8 +197,7 @@ This example also shows the <code>addSplitter</code> message, which adds a split
                     <span class="nf">add:</span> <span class="ss">#button9</span> 
             ]<span class="p">;</span>
     ]<span class="p">;</span>
-    <span class="nf">yourself</span>
-</code></pre></div>
+    <span class="nf">yourself</span></code></pre></div>
 
 <p><a name="pixels" class="hash"></a></p>
 
@@ -210,23 +206,21 @@ This example also shows the <code>addSplitter</code> message, which adds a split
 <p>The height of rows as well as the width of columns can be specified, to prevent them to take all the available space.
 The first example shows how to specify the height of a row in pixels while the second example is about how to specify the column width.</p>
 
-<div class="highlight"><pre><code class="smalltalk"><span class="o">^</span> <span class="nc">SpecLayout</span> <span class="nf">composed</span>
+<div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="o">^</span> <span class="nc">SpecLayout</span> <span class="nf">composed</span>
     <span class="nf">newRow:</span> [ <span class="o">:</span><span class="nv">row</span> <span class="o">|</span>
         <span class="nv">row</span>
             <span class="nf">add:</span> <span class="ss">#theList</span><span class="p">;</span>
             <span class="nf">add:</span> <span class="ss">#theButton</span>
     ] <span class="nf">height:</span> <span class="m">30</span><span class="p">;</span>
-    <span class="nf">yourself</span>
-</code></pre></div>
+    <span class="nf">yourself</span></code></pre></div>
 
-<div class="highlight"><pre><code class="smalltalk"><span class="o">^</span> <span class="nc">SpecLayout</span> <span class="nf">composed</span>
+<div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="o">^</span> <span class="nc">SpecLayout</span> <span class="nf">composed</span>
     <span class="nf">newColumn:</span> [ <span class="o">:</span><span class="nv">column</span> <span class="o">|</span>
         <span class="nv">column</span>
             <span class="nf">add:</span> <span class="ss">#theList</span><span class="p">;</span>
             <span class="nf">add:</span> <span class="ss">#theButton</span>
     ] <span class="nf">width:</span> <span class="m">30</span><span class="p">;</span>
-    <span class="nf">yourself</span>
-</code></pre></div>
+    <span class="nf">yourself</span></code></pre></div>
 
 <p>Note that it is generally considered a bad habit to hardcode the size of the widgets.
 Methods are available on <em>ComposableModel</em> providing sensible default sizes, like the width of a button.
@@ -240,10 +234,9 @@ When specifying custom widget sizes, care should be taken to take in account the
 As a result of this, the widget size will change accordingly when the container is resized.
 To do so, the proportional position of the four sides of a widget can be specified, as shown in this example.</p>
 
-<div class="highlight"><pre><code class="smalltalk"><span class="o">^</span> <span class="nc">SpecLayout</span> <span class="nf">composed</span>
+<div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="o">^</span> <span class="nc">SpecLayout</span> <span class="nf">composed</span>
     <span class="nf">add:</span> <span class="ss">#theButton</span> <span class="nf">top:</span> <span class="m">0.25</span> <span class="nf">bottom:</span> <span class="m">0.25</span> <span class="nf">left:</span> <span class="m">0.25</span> <span class="nf">right:</span> <span class="m">0.25</span><span class="p">;</span>
-    <span class="nf">yourself</span>
-</code></pre></div>
+    <span class="nf">yourself</span></code></pre></div>
 
 <p>For each edge, the proportion indicates at what percentage of the overall container the edge should be placed.
 Zero percent is the container edge, 100 percent is the opposite container edge.
@@ -273,10 +266,9 @@ Note that this approach is similar to the ProportionalLayout of <strong>Morphic<
 <p>The following example shows how to add a widget as a toolbar.
 It specifies that the widget in the <code>toolbar</code> instance variable should take all the window width, but should be only 30 pixels in height.</p>
 
-<div class="highlight"><pre><code class="smalltalk"><span class="o">^</span> <span class="nc">SpecLayout</span> <span class="nf">composed</span>
+<div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="o">^</span> <span class="nc">SpecLayout</span> <span class="nf">composed</span>
     <span class="nf">add:</span> <span class="ss">#toolbar</span> <span class="nf">origin:</span> <span class="m">0</span><span class="nf">@</span><span class="m">0</span> <span class="nf">corner:</span> <span class="m">1</span><span class="nf">@</span><span class="m">0</span> <span class="nf">offsetOrigin:</span> <span class="m">0</span><span class="nf">@</span><span class="m">0</span> <span class="nf">offsetCorner:</span> <span class="m">0</span><span class="nf">@</span><span class="m">30</span><span class="p">;</span>
-    <span class="nf">yourself</span>
-</code></pre></div>
+    <span class="nf">yourself</span></code></pre></div>
 
 <p><a name="specify_layout" class="hash"></a></p>
 
@@ -293,10 +285,9 @@ By example, for the <code>add:</code> method the variant is  <code>add:withSpec:
 <p>For example, consider a widget <strong>MyWidget</strong> defining a first layout method <code>firstLayout</code> as the default layout and another layout method called <code>anotherLayout</code>.
 The following example shows how to add an instance of <strong>MyUserInterface</strong> using its <code>anotherLayout</code> layout method.</p>
 
-<div class="highlight"><pre><code class="smalltalk"><span class="o">^</span> <span class="nc">SpecLayout</span> <span class="nf">composed</span>
+<div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="o">^</span> <span class="nc">SpecLayout</span> <span class="nf">composed</span>
     <span class="nf">add:</span> <span class="ss">#MyUserInterface</span> <span class="nf">withSpec:</span> <span class="ss">#anotherLayout</span><span class="p">;</span>
-    <span class="nf">yourself</span>
-</code></pre></div>
+    <span class="nf">yourself</span></code></pre></div>
 
 					<div class="section-nav">
 	<div class="btn-group">
@@ -326,6 +317,8 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
     
   
 
+  
+    
   
     
   
@@ -429,8 +422,6 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
   
     
   
-    
-  
 
 
   
@@ -439,6 +430,32 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -518,32 +535,6 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -552,16 +543,6 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
     
   
 
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
   
     
   
@@ -587,6 +568,16 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
   
     
       <li class="sidebar_item "><a href="/docs/installation/">Installation</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
     
   
     
@@ -1013,6 +1004,42 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
     
   
     
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
       <li class="sidebar_item "><a href="/docs/starting/">Where to start?</a></li>
     
   
@@ -1076,42 +1103,6 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -1120,8 +1111,6 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
     
   
 
-  
-    
   
     
   
@@ -1225,6 +1214,8 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
   
     
   
+    
+  
 
 
   
@@ -1233,6 +1224,22 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -1248,22 +1255,6 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
   
     
       <li class="sidebar_item current"><a href="/docs/layout/">Defining the layout</a></li>
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
     
   
     
@@ -1479,6 +1470,12 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
     
   
     
+  
+    
+  
+    
+  
+    
       <li class="sidebar_item "><a href="/docs/interactions/">Sub&nbsp;widgets interaction</a></li>
     
   
@@ -1558,12 +1555,6 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
   
     
   
-    
-  
-    
-  
-    
-  
 
 
   
@@ -1572,6 +1563,10 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
     
   
 
+  
+    
+  
+    
   
     
       <li class="sidebar_item "><a href="/docs/dynamic/">Dynamic UI</a></li>
@@ -1673,10 +1668,6 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
   
     
   
-    
-  
-    
-  
 
 
   
@@ -1685,6 +1676,32 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -1764,32 +1781,6 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -1798,6 +1789,10 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
     
   
 
+  
+    
+  
+    
   
     
   
@@ -1899,10 +1894,6 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
   
     
   
-    
-  
-    
-  
 
 
 </ul>
@@ -1918,34 +1909,6 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
     
   
 
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
   
     
       <li class="sidebar_item "><a href="/docs/api/">Where to find what I want</a></li>
@@ -2023,6 +1986,34 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 
 
   
@@ -2031,6 +2022,12 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
     
   
 
+  
+    
+  
+    
+  
+    
   
     
   
@@ -2130,12 +2127,6 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
   
     
   
-    
-  
-    
-  
-    
-  
 
 
   
@@ -2144,6 +2135,8 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
     
   
 
+  
+    
   
     
   
@@ -2247,8 +2240,6 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
   
     
   
-    
-  
 
 
 </ul>
@@ -2268,27 +2259,27 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
     
   
     
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
       <li class="sidebar_item "><a href="/docs/drag_n_drop/">Drag'n'Drop between two lists</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
     
   
     
@@ -2388,43 +2379,43 @@ The following example shows how to add an instance of <strong>MyUserInterface</s
     
   
     
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
       <li class="sidebar_item "><a href="/docs/repositories/">Repositories</a></li>
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
     
   
     

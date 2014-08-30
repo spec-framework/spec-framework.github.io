@@ -108,12 +108,11 @@ There are three types of public API methods: getters, setters and registration m
 <p>The pragma for getters is always <code>&lt;api: #inspect&gt;</code>.
 For example, the following code shows how the <em>action</em>  method in <strong>ButtonModel</strong> is implemented.</p>
 
-<div class="highlight"><pre><code class="smalltalk"><span class="nf">action</span>
+<div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="nf">action</span>
     &lt;<span class="k">api:</span> #inspect&gt;
     <span class="c">&quot;get the block performed when the button is clicked&quot;</span>
 
-    <span class="o">^</span> <span class="nv">actionHolder</span> <span class="nf">value</span>
-</code></pre></div>
+    <span class="o">^</span> <span class="nv">actionHolder</span> <span class="nf">value</span></code></pre></div>
 
 <p><a name="setters" class="hash"></a></p>
 
@@ -141,12 +140,11 @@ The possible types are as follows:</p>
 
 <p>For example, the following code shows how <em>actions:</em> is implemented in <strong>ButtonModel</strong>.</p>
 
-<div class="highlight"><pre><code class="smalltalk"><span class="nf">action:</span> <span class="nv">aBlock</span>
+<div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="nf">action:</span> <span class="nv">aBlock</span>
     &lt;<span class="k">api:</span> #block getter: #getAction registration: #whenActionChangedDo:&gt;
     <span class="c">&quot;set the block performed when the button is clicked&quot;</span>
 
-    <span class="nv">actionHolder</span> <span class="nf">value:</span> <span class="nv">aBlock</span>
-</code></pre></div>
+    <span class="nv">actionHolder</span> <span class="nf">value:</span> <span class="nv">aBlock</span></code></pre></div>
 
 <p><a name="events" class="hash"></a></p>
 
@@ -155,12 +153,11 @@ The possible types are as follows:</p>
 <p>The pragma for registration methods information always is <em>&lt;api: #event&gt;</em>.
 For example, the incoming code shows how the method <em>whenActionChangedDo:</em> is implemented in <strong>ButtonModel</strong>.</p>
 
-<div class="highlight"><pre><code class="smalltalk"><span class="nf">whenActionChangedDo:</span> <span class="nv">aBlock</span> 
+<div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="nf">whenActionChangedDo:</span> <span class="nv">aBlock</span> 
     &lt;<span class="k">api:</span> #event&gt;
     <span class="c">&quot;Set the block performed when the action to perform is changed&quot;</span>
 
-    <span class="nv">actionHolder</span> <span class="nf">whenChangedDo:</span> <span class="nv">aBlock</span>
-</code></pre></div>
+    <span class="nv">actionHolder</span> <span class="nf">whenChangedDo:</span> <span class="nv">aBlock</span></code></pre></div>
 
 <p><a name="behavior" class="hash"></a></p>
 
@@ -170,13 +167,12 @@ For example, the incoming code shows how the method <em>whenActionChangedDo:</em
 The pragma for these methods is <em>&lt;api: #do&gt;</em>.
 The next example shows how <em>resetSelection</em> is implemented in <strong>ListModel</strong>.</p>
 
-<div class="highlight"><pre><code class="smalltalk"><span class="nf">resetSelection</span>
+<div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="nf">resetSelection</span>
     &lt;<span class="k">api:</span> #do&gt;
     <span class="c">&quot;Unselect every items&quot;</span>
 
     <span class="nv">selectionHolder</span> <span class="nf">reset</span><span class="p">.</span>
-    <span class="nv">multiSelectionHolder</span> <span class="nf">removeAll</span>
-</code></pre></div>
+    <span class="nv">multiSelectionHolder</span> <span class="nf">removeAll</span></code></pre></div>
 
 					<div class="section-nav">
 	<div class="btn-group">
@@ -206,6 +202,8 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
     
   
 
+  
+    
   
     
   
@@ -309,8 +307,6 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
   
     
   
-    
-  
 
 
   
@@ -319,6 +315,32 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -398,32 +420,6 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -432,16 +428,6 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
     
   
 
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
   
     
   
@@ -467,6 +453,16 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
   
     
       <li class="sidebar_item "><a href="/docs/installation/">Installation</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
     
   
     
@@ -893,6 +889,42 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
     
   
     
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
       <li class="sidebar_item "><a href="/docs/starting/">Where to start?</a></li>
     
   
@@ -956,42 +988,6 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -1000,8 +996,6 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
     
   
 
-  
-    
   
     
   
@@ -1105,6 +1099,8 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
   
     
   
+    
+  
 
 
   
@@ -1113,6 +1109,22 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -1128,22 +1140,6 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
   
     
       <li class="sidebar_item "><a href="/docs/layout/">Defining the layout</a></li>
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
     
   
     
@@ -1359,6 +1355,12 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
     
   
     
+  
+    
+  
+    
+  
+    
       <li class="sidebar_item "><a href="/docs/interactions/">Sub&nbsp;widgets interaction</a></li>
     
   
@@ -1438,12 +1440,6 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
   
     
   
-    
-  
-    
-  
-    
-  
 
 
   
@@ -1452,6 +1448,10 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
     
   
 
+  
+    
+  
+    
   
     
       <li class="sidebar_item "><a href="/docs/dynamic/">Dynamic UI</a></li>
@@ -1553,10 +1553,6 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
   
     
   
-    
-  
-    
-  
 
 
   
@@ -1565,6 +1561,32 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -1644,32 +1666,6 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -1678,6 +1674,10 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
     
   
 
+  
+    
+  
+    
   
     
   
@@ -1779,10 +1779,6 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
   
     
   
-    
-  
-    
-  
 
 
 </ul>
@@ -1798,34 +1794,6 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
     
   
 
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
   
     
       <li class="sidebar_item current"><a href="/docs/api/">Where to find what I want</a></li>
@@ -1903,6 +1871,34 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 
 
   
@@ -1911,6 +1907,12 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
     
   
 
+  
+    
+  
+    
+  
+    
   
     
   
@@ -2010,12 +2012,6 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
   
     
   
-    
-  
-    
-  
-    
-  
 
 
   
@@ -2024,6 +2020,8 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
     
   
 
+  
+    
   
     
   
@@ -2127,8 +2125,6 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
   
     
   
-    
-  
 
 
 </ul>
@@ -2148,27 +2144,27 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
     
   
     
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
       <li class="sidebar_item "><a href="/docs/drag_n_drop/">Drag'n'Drop between two lists</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
     
   
     
@@ -2268,43 +2264,43 @@ The next example shows how <em>resetSelection</em> is implemented in <strong>Lis
     
   
     
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
       <li class="sidebar_item "><a href="/docs/repositories/">Repositories</a></li>
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
     
   
     

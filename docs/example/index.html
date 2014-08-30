@@ -114,11 +114,10 @@ Finally a protocol browser is made by reusing a protocol viewer and adding a tex
 Each sub widget is stored into an instance variable of the newly created class.
 The following snippet shows the definition of this ModelList class.</p>
 
-<div class="highlight"><pre><code class="smalltalk"><span class="nc">ComposableModel</span> <span class="nf">subclass:</span> <span class="ss">#ModelList</span>
+<div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="nc">ComposableModel</span> <span class="nf">subclass:</span> <span class="ss">#ModelList</span>
     <span class="nf">instanceVariableNames:</span> <span class="s">&#39;list&#39;</span>
     <span class="nf">classVariableNames:</span> <span class="s">&#39;&#39;</span>
-    <span class="nf">category:</span> <span class="s">&#39;Spec-Examples&#39;</span>
-</code></pre></div>
+    <span class="nf">category:</span> <span class="s">&#39;Spec-Examples&#39;</span></code></pre></div>
 
 <p>The first required step then is to instantiate and define the sub widgets.
 This step is done in the method 
@@ -126,33 +125,31 @@ This step is done in the method
 More details on the use of the 
 <code>initializeWidgets</code> method are given <a href="/docs/initializing/">here</a>.</p>
 
-<div class="highlight"><pre><code class="smalltalk"><span class="nf">initializeWidgets</span>
+<div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="nf">initializeWidgets</span>
 
     <span class="nv">list</span> <span class="o">:=</span> <span class="bp">self</span> <span class="nf">newList</span><span class="p">.</span>
     
     <span class="nv">list</span> <span class="nf">items:</span> (<span class="nc">AbstractWidgetModel</span> <span class="nf">allSubclasses</span> 
         <span class="nf">sorted:</span> [<span class="o">:</span><span class="nv">a</span> <span class="o">:</span><span class="nv">b</span> <span class="o">|</span> <span class="nv">a</span> <span class="nf">name</span> <span class="nf">&lt;</span> <span class="nv">b</span> <span class="nf">name</span> ])<span class="p">.</span>
         
-    <span class="bp">self</span> <span class="nf">focusOrder</span> <span class="nf">add:</span> <span class="nv">list</span>
-</code></pre></div>
+    <span class="bp">self</span> <span class="nf">focusOrder</span> <span class="nf">add:</span> <span class="nv">list</span></code></pre></div>
 
 <p>The second required step is to define a layout, which is done on the class side.
 Since there is here only one sub widget, the layout is quite simple, as shown in the following code.
 It simply returns a layout that contains only the list.
 More details on the use of this method are given <a href="/docs/layout/">here</a>.</p>
 
-<div class="highlight"><pre><code class="smalltalk"><span class="nc">ModelList</span> <span class="nf">class&gt;&gt;</span><span class="ss">#defaultSpec</span>
+<div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="nc">ModelList</span> <span class="nf">class&gt;&gt;</span><span class="ss">#defaultSpec</span>
     <span class="nf">&lt;</span><span class="err">spec:</span> <span class="ss">#default</span><span class="nf">&gt;</span>
     
     <span class="o">^</span> <span class="nc">SpecLayout</span> <span class="nf">composed</span>
         <span class="nf">add:</span> <span class="ss">#list</span><span class="p">;</span>
-        <span class="nf">yourself</span>
-</code></pre></div>
+        <span class="nf">yourself</span></code></pre></div>
 
 <p>The three last methods to define on ModelList are a getter, a method to display the UI title and a method to register to list selection changes.
 This code shows the implementation of these three methods and their protocols:</p>
 
-<div class="highlight"><pre><code class="smalltalk"><span class="c">&quot;accessing&quot;</span>
+<div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="c">&quot;accessing&quot;</span>
 <span class="nf">list</span>
     <span class="o">^</span> <span class="nv">list</span>
     
@@ -164,8 +161,7 @@ This code shows the implementation of these three methods and their protocols:</
 <span class="c">&quot;protocol-events&quot;</span>
 <span class="nf">whenSelectedItemChanged:</span> <span class="nv">aBlock</span>
 
-    <span class="nf">list</span> <span class="nf">whenSelectedItemChanged:</span> <span class="nv">aBlock</span>
-</code></pre></div>
+    <span class="nf">list</span> <span class="nf">whenSelectedItemChanged:</span> <span class="nv">aBlock</span></code></pre></div>
 
 <p>The first UI is now done.
 The result can be seen by executing the following snippet of code: 
@@ -179,16 +175,15 @@ The result can be seen by executing the following snippet of code:
 This UI combines two sub widgets: a list and a label.
 The class definition is similar to the code above:</p>
 
-<div class="highlight"><pre><code class="smalltalk"><span class="nc">ComposableModel</span> <span class="nf">subclass:</span> <span class="ss">#ProtocolList</span>
+<div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="nc">ComposableModel</span> <span class="nf">subclass:</span> <span class="ss">#ProtocolList</span>
     <span class="nf">instanceVariableNames:</span> <span class="s">&#39;label protocols&#39;</span>
     <span class="nf">classVariableNames:</span> <span class="s">&#39;&#39;</span>
-    <span class="nf">category:</span> <span class="s">&#39;Spec-Examples&#39;</span>
-</code></pre></div>
+    <span class="nf">category:</span> <span class="s">&#39;Spec-Examples&#39;</span></code></pre></div>
 
 <p>The 
 <code>initializeWidgets</code> method for this UI is quite similar to the method in ModelList:</p>
 
-<div class="highlight"><pre><code class="smalltalk"><span class="nf">initializeWidgets</span>
+<div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="nf">initializeWidgets</span>
 
     <span class="nv">protocols</span> <span class="o">:=</span> <span class="bp">self</span> <span class="nf">newList</span><span class="p">.</span>
     <span class="nv">label</span> <span class="o">:=</span> <span class="bp">self</span> <span class="nf">newLabel</span><span class="p">.</span>
@@ -196,14 +191,13 @@ The class definition is similar to the code above:</p>
     <span class="nv">label</span> <span class="nf">text:</span> <span class="s">&#39;Protocol&#39;</span><span class="p">.</span>
     <span class="nv">protocols</span>   <span class="nf">displayBlock:</span> [ <span class="o">:</span><span class="nv">m</span> <span class="o">|</span> <span class="nv">m</span> <span class="nf">selector</span> ]<span class="p">.</span>
     
-    <span class="bp">self</span> <span class="nf">focusOrder</span> <span class="nf">add:</span> <span class="nv">protocols</span>
-</code></pre></div>
+    <span class="bp">self</span> <span class="nf">focusOrder</span> <span class="nf">add:</span> <span class="nv">protocols</span></code></pre></div>
 
 <p>The layout method is quite different though.
 Now the sub widgets need to be placed more specifically than in the previous example.
 The following code shows how to build a column with the label on top and the list taking all the space that is left.</p>
 
-<div class="highlight"><pre><code class="smalltalk"><span class="nf">defaultSpec</span>
+<div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="nf">defaultSpec</span>
     &lt;<span class="k">spec:</span> #default&gt;
 
     <span class="o">^</span> <span class="nc">SpecLayout</span> <span class="nf">composed</span>
@@ -212,13 +206,12 @@ The following code shows how to build a column with the label on top and the lis
                 <span class="nf">add:</span> <span class="ss">#label</span>
                 <span class="nf">height:</span> <span class="bp">self</span> <span class="nf">toolbarHeight</span><span class="p">;</span>
                 <span class="nf">add:</span> <span class="ss">#protocols</span> ]<span class="p">;</span>
-        <span class="nf">yourself</span>
-</code></pre></div>
+        <span class="nf">yourself</span></code></pre></div>
 
 <p>The remaining methods are getters, sub widget delegation methods, a method to display the title, and a method to register to list selection changes.
 The following code shows the implementations of these methods as well as their protocol.</p>
 
-<div class="highlight"><pre><code class="smalltalk"><span class="c">&quot;accessing&quot;</span>
+<div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="c">&quot;accessing&quot;</span>
 <span class="nf">label</span>
     <span class="o">^</span> <span class="nv">label</span>
     
@@ -249,8 +242,7 @@ The following code shows the implementations of these methods as well as their p
 <span class="c">&quot;protocol-events&quot;</span>
 <span class="nf">whenSelectedItemChanged:</span> <span class="nv">aBlock</span>
 
-    <span class="nf">protocols</span> <span class="nf">whenSelectedItemChanged:</span> <span class="nv">aBlock</span>
-</code></pre></div>
+    <span class="nf">protocols</span> <span class="nf">whenSelectedItemChanged:</span> <span class="nv">aBlock</span></code></pre></div>
 
 <p>The 
 <strong>ProtocolList</strong> UI can be seen by evaluating <code>ProtocolList new openWithSpec</code>.</p>
@@ -279,18 +271,17 @@ When a model class is selected, the methods in the protocol
 The following code in shows the definition of the class 
 <strong>ProtocolViewer</strong>.</p>
 
-<div class="highlight"><pre><code class="smalltalk"><span class="nc">ComposableModel</span> <span class="nf">subclass:</span> <span class="ss">#ProtocolViewer</span>
+<div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="nc">ComposableModel</span> <span class="nf">subclass:</span> <span class="ss">#ProtocolViewer</span>
     <span class="nf">instanceVariableNames:</span> <span class="s">&#39;models protocols events&#39;</span>
     <span class="nf">classVariableNames:</span> <span class="s">&#39;&#39;</span>
-    <span class="nf">category:</span> <span class="s">&#39;Spec-Examples&#39;</span>
-</code></pre></div>
+    <span class="nf">category:</span> <span class="s">&#39;Spec-Examples&#39;</span></code></pre></div>
 
 <p>The 
 <code>initializeWidgets</code> method now uses a different way to initialize the sub-widgets of the UI. 
 This is because it does not use basic widgets but instead reuses the user interfaces we defines previously.
 The remainder of the method is quite similar to the previous implementation:</p>
 
-<div class="highlight"><pre><code class="smalltalk"><span class="nf">initializeWidgets</span>
+<div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="nf">initializeWidgets</span>
 
     <span class="nv">models</span> <span class="o">:=</span> <span class="bp">self</span> <span class="nf">instantiate:</span> <span class="nc">ModelList</span><span class="p">.</span>
     <span class="nv">protocols</span> <span class="o">:=</span> <span class="bp">self</span> <span class="nf">instantiate:</span> <span class="nc">ProtocolList</span><span class="p">.</span>
@@ -302,13 +293,12 @@ The remainder of the method is quite similar to the previous implementation:</p>
     <span class="bp">self</span> <span class="nf">focusOrder</span> 
         <span class="nf">add:</span> <span class="nv">models</span><span class="p">;</span>
         <span class="nf">add:</span> <span class="nv">protocols</span><span class="p">;</span>
-        <span class="nf">add:</span> <span class="nv">events</span>
-</code></pre></div>
+        <span class="nf">add:</span> <span class="nv">events</span></code></pre></div>
 
 <p>The layout puts the sub widgets in one column, with all sub widgets taking the same amount of space.
 The implementation of this layout is:</p>
 
-<div class="highlight"><pre><code class="smalltalk"><span class="nf">defaultSpec</span>
+<div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="nf">defaultSpec</span>
     &lt;<span class="k">spec:</span> #default&gt;
     
     <span class="o">^</span> <span class="nc">SpecLayout</span> <span class="nf">composed</span>
@@ -317,8 +307,7 @@ The implementation of this layout is:</p>
                 <span class="nf">add:</span> <span class="ss">#models</span><span class="p">;</span> 
                 <span class="nf">add:</span> <span class="ss">#protocols</span><span class="p">;</span> 
                 <span class="nf">add:</span> <span class="ss">#events</span> ]<span class="p">;</span>
-        <span class="nf">yourself</span>
-</code></pre></div>
+        <span class="nf">yourself</span></code></pre></div>
 
 <p>To describe the interactions between the sub widgets, the method 
 <code>initializePresenter</code> needs to be defined.
@@ -329,7 +318,7 @@ More details on the
 <code>initializePresenter</code> method are given in 
 <a href="/docs/interactions/">Sub widgets interaction</a>.</p>
 
-<div class="highlight"><pre><code class="smalltalk"><span class="nf">initializePresenter</span>
+<div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="nf">initializePresenter</span>
 
     <span class="nv">models</span> <span class="nf">whenSelectedItemChanged:</span> [ <span class="o">:</span><span class="nv">class</span> <span class="o">|</span>
         <span class="bp">self</span> <span class="nf">resetProtocolSelection</span><span class="p">.</span>
@@ -343,13 +332,12 @@ More details on the
                 <span class="nv">events</span> <span class="nf">items:</span> (<span class="bp">self</span> <span class="nf">methodsIn:</span> <span class="nv">class</span> <span class="nf">for:</span> <span class="s">&#39;protocol-events&#39;</span>) ] ]<span class="p">.</span>
     
     <span class="nv">protocols</span> <span class="nf">whenSelectedItemChanged:</span> [ <span class="o">:</span><span class="nv">method</span> <span class="o">|</span> <span class="nv">method</span> <span class="nf">ifNotNil:</span> [ <span class="bp">self</span> <span class="nf">resetEventSelection</span> ] ]<span class="p">.</span>
-    <span class="nv">events</span> <span class="nf">whenSelectedItemChanged:</span> [ <span class="o">:</span><span class="nv">method</span> <span class="o">|</span> <span class="nv">method</span> <span class="nf">ifNotNil:</span> [ <span class="bp">self</span> <span class="nf">resetProtocolSelection</span> ] ]<span class="p">.</span>
-</code></pre></div>
+    <span class="nv">events</span> <span class="nf">whenSelectedItemChanged:</span> [ <span class="o">:</span><span class="nv">method</span> <span class="o">|</span> <span class="nv">method</span> <span class="nf">ifNotNil:</span> [ <span class="bp">self</span> <span class="nf">resetProtocolSelection</span> ] ]<span class="p">.</span></code></pre></div>
 
 <p>The remaining methods are getters, methods to delegate to sub widgets, one method to compute the methods in a specific class for a specific protocol, and methods to register to sub widget events.
 Those methods are given in this code:</p>
 
-<div class="highlight"><pre><code class="smalltalk"><span class="c">&quot;accessing&quot;</span>
+<div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="c">&quot;accessing&quot;</span>
 <span class="nf">events</span>
     <span class="o">^</span> <span class="nv">events</span>
 
@@ -395,8 +383,7 @@ Those methods are given in this code:</p>
 <span class="c">&quot;protocol-events&quot;</span>
 <span class="nf">whenProtocolChangedDo:</span> <span class="nv">aBlock</span>
 
-    <span class="nf">protocols</span> <span class="nf">whenSelectedItemChanged:</span> <span class="nv">aBlock</span>
-</code></pre></div>
+    <span class="nf">protocols</span> <span class="nf">whenSelectedItemChanged:</span> <span class="nv">aBlock</span></code></pre></div>
 
 <p>As previously, the result can be seen by executing the following snippet of code: 
 <code>ProtocolViewer new openWithSpec</code>.</p>
@@ -409,16 +396,15 @@ Those methods are given in this code:</p>
 <strong>ProtocolViewer</strong> with a different layout and adds a text zone to edit the source code of the selected method.
 The class definition is:</p>
 
-<div class="highlight"><pre><code class="smalltalk"><span class="nc">ComposableModel</span> <span class="nf">subclass:</span> <span class="ss">#ProtocolEditor</span>
+<div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="nc">ComposableModel</span> <span class="nf">subclass:</span> <span class="ss">#ProtocolEditor</span>
     <span class="nf">instanceVariableNames:</span> <span class="s">&#39;viewer text&#39;</span>
     <span class="nf">classVariableNames:</span> <span class="s">&#39;&#39;</span>
-    <span class="nf">category:</span> <span class="s">&#39;Spec-Examples&#39;</span>
-</code></pre></div>
+    <span class="nf">category:</span> <span class="s">&#39;Spec-Examples&#39;</span></code></pre></div>
 
 <p>The 
 <code>initializeWidgets</code> implementation is shown in the code:</p>
 
-<div class="highlight"><pre><code class="smalltalk"><span class="nf">initializeWidgets</span>
+<div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="nf">initializeWidgets</span>
 
     <span class="nv">text</span> <span class="o">:=</span> <span class="bp">self</span> <span class="nf">newText</span><span class="p">.</span>
     <span class="nv">viewer</span> <span class="o">:=</span> <span class="bp">self</span> <span class="nf">instantiate:</span> <span class="nc">ProtocolViewer</span><span class="p">.</span>
@@ -427,15 +413,14 @@ The class definition is:</p>
 
     <span class="bp">self</span> <span class="nf">focusOrder</span> 
         <span class="nf">add:</span> <span class="nv">viewer</span><span class="p">;</span>
-        <span class="nf">add:</span> <span class="nv">text</span>
-</code></pre></div>
+        <span class="nf">add:</span> <span class="nv">text</span></code></pre></div>
 
 <p>The layout is more complex than the previous layouts.
 Now the user interface mainly lays out widgets that are contained in its <code>viewer</code> sub widget (the list of models and the two protocol browsers).
 The layout is based on a column whose first row is divided in columns.
 The implementation of this method is shown in the following code:</p>
 
-<div class="highlight"><pre><code class="smalltalk"><span class="nf">defaultSpec</span>
+<div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="nf">defaultSpec</span>
     &lt;<span class="k">spec:</span> #default&gt;
     
     <span class="o">^</span> <span class="nc">SpecLayout</span> <span class="nf">composed</span>
@@ -450,15 +435,14 @@ The implementation of this method is shown in the following code:</p>
                                 <span class="nf">add:</span> <span class="ss">#(viewer</span> <span class="ss">events)</span> ] ]<span class="p">;</span>
                 <span class="nf">add:</span> <span class="ss">#text</span>
         ]<span class="p">;</span>
-        <span class="nf">yourself</span>
-</code></pre></div>
+        <span class="nf">yourself</span></code></pre></div>
 
 <p>The 
 <code>initalizePresenter</code> method is used to make the text zone react to a selection in the lists.
 When a method is seleted, the text zone updates its contents to show the source code  of the selected method.
 The implementation of this method is detailled in the following code.</p>
 
-<div class="highlight"><pre><code class="smalltalk"><span class="nf">initializePresenter</span>
+<div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="nf">initializePresenter</span>
 
     <span class="nv">viewer</span> <span class="nf">whenClassChanged:</span> [ <span class="o">:</span><span class="nv">class</span> <span class="o">|</span> <span class="nv">text</span> <span class="nf">behavior:</span> <span class="nv">class</span> ]<span class="p">.</span>
 
@@ -469,13 +453,12 @@ The implementation of this method is detailled in the following code.</p>
     <span class="nv">viewer</span> <span class="nf">whenEventChangedDo:</span> [ <span class="o">:</span><span class="nv">item</span> <span class="o">|</span> 
         <span class="nv">item</span> 
             <span class="nf">ifNil:</span> [ <span class="nv">text</span> <span class="nf">text:</span> <span class="s">&#39;&#39;</span> ]
-            <span class="nf">ifNotNil:</span> [ <span class="nv">text</span> <span class="nf">text:</span> <span class="nv">item</span> <span class="nf">sourceCode</span> ] ]
-</code></pre></div>
+            <span class="nf">ifNotNil:</span> [ <span class="nv">text</span> <span class="nf">text:</span> <span class="nv">item</span> <span class="nf">sourceCode</span> ] ]</code></pre></div>
 
 <p>The other methods are two getters, a method to set the default size, and a method to set the UI title.
 Their implemenations are detailled in:</p>
 
-<div class="highlight"><pre><code class="smalltalk"><span class="c">&quot;accessing&quot;</span>
+<div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="c">&quot;accessing&quot;</span>
 <span class="nf">text</span>
     <span class="o">^</span> <span class="nv">text</span>
 
@@ -491,8 +474,7 @@ Their implemenations are detailled in:</p>
 <span class="c">&quot;protocol&quot;</span>
 <span class="nf">title</span>
 
-    <span class="err">^</span> <span class="err">&#39;</span><span class="nf">Protocols</span> <span class="nf">browser</span><span class="err">&#39;</span>
-</code></pre></div>
+    <span class="err">^</span> <span class="err">&#39;</span><span class="nf">Protocols</span> <span class="nf">browser</span><span class="err">&#39;</span></code></pre></div>
 
 <p>This finishes the protocol browser.
 The final user interface can be opened with the following snippet: 
@@ -530,6 +512,8 @@ The result can be seen in figure
     
   
 
+  
+    
   
     
   
@@ -633,8 +617,6 @@ The result can be seen in figure
   
     
   
-    
-  
 
 
   
@@ -643,6 +625,32 @@ The result can be seen in figure
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -722,32 +730,6 @@ The result can be seen in figure
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -756,16 +738,6 @@ The result can be seen in figure
     
   
 
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
   
     
   
@@ -791,6 +763,16 @@ The result can be seen in figure
   
     
       <li class="sidebar_item "><a href="/docs/installation/">Installation</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
     
   
     
@@ -1217,6 +1199,42 @@ The result can be seen in figure
     
   
     
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
       <li class="sidebar_item "><a href="/docs/starting/">Where to start?</a></li>
     
   
@@ -1280,42 +1298,6 @@ The result can be seen in figure
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -1324,8 +1306,6 @@ The result can be seen in figure
     
   
 
-  
-    
   
     
   
@@ -1429,6 +1409,8 @@ The result can be seen in figure
   
     
   
+    
+  
 
 
   
@@ -1437,6 +1419,22 @@ The result can be seen in figure
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -1452,22 +1450,6 @@ The result can be seen in figure
   
     
       <li class="sidebar_item "><a href="/docs/layout/">Defining the layout</a></li>
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
     
   
     
@@ -1683,6 +1665,12 @@ The result can be seen in figure
     
   
     
+  
+    
+  
+    
+  
+    
       <li class="sidebar_item "><a href="/docs/interactions/">Sub&nbsp;widgets interaction</a></li>
     
   
@@ -1762,12 +1750,6 @@ The result can be seen in figure
   
     
   
-    
-  
-    
-  
-    
-  
 
 
   
@@ -1776,6 +1758,10 @@ The result can be seen in figure
     
   
 
+  
+    
+  
+    
   
     
       <li class="sidebar_item "><a href="/docs/dynamic/">Dynamic UI</a></li>
@@ -1877,10 +1863,6 @@ The result can be seen in figure
   
     
   
-    
-  
-    
-  
 
 
   
@@ -1889,6 +1871,32 @@ The result can be seen in figure
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -1968,32 +1976,6 @@ The result can be seen in figure
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -2002,6 +1984,10 @@ The result can be seen in figure
     
   
 
+  
+    
+  
+    
   
     
   
@@ -2103,10 +2089,6 @@ The result can be seen in figure
   
     
   
-    
-  
-    
-  
 
 
 </ul>
@@ -2122,34 +2104,6 @@ The result can be seen in figure
     
   
 
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
   
     
       <li class="sidebar_item "><a href="/docs/api/">Where to find what I want</a></li>
@@ -2227,6 +2181,34 @@ The result can be seen in figure
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 
 
   
@@ -2235,6 +2217,12 @@ The result can be seen in figure
     
   
 
+  
+    
+  
+    
+  
+    
   
     
   
@@ -2334,12 +2322,6 @@ The result can be seen in figure
   
     
   
-    
-  
-    
-  
-    
-  
 
 
   
@@ -2348,6 +2330,8 @@ The result can be seen in figure
     
   
 
+  
+    
   
     
   
@@ -2451,8 +2435,6 @@ The result can be seen in figure
   
     
   
-    
-  
 
 
 </ul>
@@ -2472,27 +2454,27 @@ The result can be seen in figure
     
   
     
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
       <li class="sidebar_item "><a href="/docs/drag_n_drop/">Drag'n'Drop between two lists</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
     
   
     
@@ -2592,43 +2574,43 @@ The result can be seen in figure
     
   
     
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
       <li class="sidebar_item "><a href="/docs/repositories/">Repositories</a></li>
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
     
   
     

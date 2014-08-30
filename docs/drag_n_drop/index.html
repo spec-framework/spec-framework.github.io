@@ -95,20 +95,18 @@
 
 <p>The first step is the creation of the two collections which will be used as data for the lists.</p>
 
-<div class="highlight"><pre><code class="smalltalk"><span class="nv">collection1</span> <span class="o">:=</span> <span class="ss">#(</span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span><span class="ss">)</span><span class="p">.</span>
-<span class="nv">collection2</span> <span class="o">:=</span> <span class="ss">#(a</span> <span class="ss">b</span> <span class="ss">c</span> <span class="ss">d</span> <span class="ss">e)</span><span class="p">.</span>
-</code></pre></div>
+<div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="nv">collection1</span> <span class="o">:=</span> <span class="ss">#(</span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span><span class="ss">)</span><span class="p">.</span>
+<span class="nv">collection2</span> <span class="o">:=</span> <span class="ss">#(a</span> <span class="ss">b</span> <span class="ss">c</span> <span class="ss">d</span> <span class="ss">e)</span><span class="p">.</span></code></pre></div>
 
 <p>The two <code>ListModel</code> widgets can then be created</p>
 
-<div class="highlight"><pre><code class="smalltalk"><span class="nv">list1</span> <span class="o">:=</span> <span class="nc">ListModel</span> <span class="nb">new</span>
+<div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="nv">list1</span> <span class="o">:=</span> <span class="nc">ListModel</span> <span class="nb">new</span>
     <span class="nf">items:</span> <span class="nv">collection1</span><span class="p">;</span>
     <span class="nf">yourself</span><span class="p">.</span>
     
 <span class="nv">list2</span> <span class="o">:=</span> <span class="nc">ListModel</span> <span class="nb">new</span>
     <span class="nf">items:</span> <span class="nv">collection2</span><span class="p">;</span>
-    <span class="nf">yourself</span><span class="p">.</span>    
-</code></pre></div>
+    <span class="nf">yourself</span><span class="p">.</span></code></pre></div>
 
 <h2>Drag and Drop settings</h2>
 
@@ -120,7 +118,7 @@ but a symetrical implementation for <code>list2</code> is required.</p>
 
 <p>For the sake of brievety, this code will not be exposed here.</p>
 
-<div class="highlight"><pre><code class="smalltalk"><span class="nf">list1</span> 
+<div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="nf">list1</span> 
     <span class="nf">dragEnabled:</span> <span class="nv">true</span>; <span class="c">&quot;activates the drag from this model&quot;</span> 
     <span class="nf">dropEnabled:</span> <span class="nv">true</span>; <span class="c">&quot;activates the drop to this model&quot;</span>
     <span class="err">wantDropBlock:</span> [ <span class="o">:</span><span class="nv">draggedItem</span> <span class="o">:</span><span class="nv">event</span> <span class="o">:</span><span class="nv">source</span> <span class="o">|</span> 
@@ -143,8 +141,7 @@ but a symetrical implementation for <code>list2</code> is required.</p>
                 <span class="nv">sourceList</span> <span class="nf">listItems</span> <span class="nf">remove:</span> <span class="nv">e</span> <span class="nf">first</span> ]<span class="p">.</span>
         <span class="c">&quot;Finally both lists are updated&quot;</span>
         <span class="nv">list1</span> <span class="nf">updateList</span><span class="p">.</span> 
-        <span class="nv">sourceList</span> <span class="nf">updateList</span> ]<span class="p">.</span> 
-</code></pre></div>
+        <span class="nv">sourceList</span> <span class="nf">updateList</span> ]<span class="p">.</span></code></pre></div>
 
 <p>The totality of the code can be found here<sup><a href="https://gist.github.com/BenjaminVanRyseghem/9974654"><i class='fa fa-github-alt'></i></a></sup>.</p>
 
@@ -183,6 +180,8 @@ and provides an example of how to use it.</p>
     
   
 
+  
+    
   
     
   
@@ -286,8 +285,6 @@ and provides an example of how to use it.</p>
   
     
   
-    
-  
 
 
   
@@ -296,6 +293,32 @@ and provides an example of how to use it.</p>
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -375,32 +398,6 @@ and provides an example of how to use it.</p>
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -409,16 +406,6 @@ and provides an example of how to use it.</p>
     
   
 
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
   
     
   
@@ -444,6 +431,16 @@ and provides an example of how to use it.</p>
   
     
       <li class="sidebar_item "><a href="/docs/installation/">Installation</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
     
   
     
@@ -870,6 +867,42 @@ and provides an example of how to use it.</p>
     
   
     
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
       <li class="sidebar_item "><a href="/docs/starting/">Where to start?</a></li>
     
   
@@ -933,42 +966,6 @@ and provides an example of how to use it.</p>
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -977,8 +974,6 @@ and provides an example of how to use it.</p>
     
   
 
-  
-    
   
     
   
@@ -1082,6 +1077,8 @@ and provides an example of how to use it.</p>
   
     
   
+    
+  
 
 
   
@@ -1090,6 +1087,22 @@ and provides an example of how to use it.</p>
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -1105,22 +1118,6 @@ and provides an example of how to use it.</p>
   
     
       <li class="sidebar_item "><a href="/docs/layout/">Defining the layout</a></li>
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
     
   
     
@@ -1336,6 +1333,12 @@ and provides an example of how to use it.</p>
     
   
     
+  
+    
+  
+    
+  
+    
       <li class="sidebar_item "><a href="/docs/interactions/">Sub&nbsp;widgets interaction</a></li>
     
   
@@ -1415,12 +1418,6 @@ and provides an example of how to use it.</p>
   
     
   
-    
-  
-    
-  
-    
-  
 
 
   
@@ -1429,6 +1426,10 @@ and provides an example of how to use it.</p>
     
   
 
+  
+    
+  
+    
   
     
       <li class="sidebar_item "><a href="/docs/dynamic/">Dynamic UI</a></li>
@@ -1530,10 +1531,6 @@ and provides an example of how to use it.</p>
   
     
   
-    
-  
-    
-  
 
 
   
@@ -1542,6 +1539,32 @@ and provides an example of how to use it.</p>
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -1621,32 +1644,6 @@ and provides an example of how to use it.</p>
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -1655,6 +1652,10 @@ and provides an example of how to use it.</p>
     
   
 
+  
+    
+  
+    
   
     
   
@@ -1756,10 +1757,6 @@ and provides an example of how to use it.</p>
   
     
   
-    
-  
-    
-  
 
 
 </ul>
@@ -1775,34 +1772,6 @@ and provides an example of how to use it.</p>
     
   
 
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
   
     
       <li class="sidebar_item "><a href="/docs/api/">Where to find what I want</a></li>
@@ -1880,6 +1849,34 @@ and provides an example of how to use it.</p>
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 
 
   
@@ -1888,6 +1885,12 @@ and provides an example of how to use it.</p>
     
   
 
+  
+    
+  
+    
+  
+    
   
     
   
@@ -1987,12 +1990,6 @@ and provides an example of how to use it.</p>
   
     
   
-    
-  
-    
-  
-    
-  
 
 
   
@@ -2001,6 +1998,8 @@ and provides an example of how to use it.</p>
     
   
 
+  
+    
   
     
   
@@ -2104,8 +2103,6 @@ and provides an example of how to use it.</p>
   
     
   
-    
-  
 
 
 </ul>
@@ -2125,27 +2122,27 @@ and provides an example of how to use it.</p>
     
   
     
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
       <li class="sidebar_item current"><a href="/docs/drag_n_drop/">Drag'n'Drop between two lists</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
     
   
     
@@ -2245,43 +2242,43 @@ and provides an example of how to use it.</p>
     
   
     
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
       <li class="sidebar_item "><a href="/docs/repositories/">Repositories</a></li>
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
     
   
     

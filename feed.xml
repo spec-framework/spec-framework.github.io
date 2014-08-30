@@ -7,6 +7,35 @@
                 <atom:link href="http://spec.st/feed.xml" rel="self" type="application/rss+xml" />
                 
                         <item>
+                                <title>Spec 2.0.0 release</title>
+                                <description>&lt;p&gt;I am glad to announce a new major release for Spec &lt;i class=&quot;fa fa-smile-o&quot;&gt;&lt;/i&gt;.&lt;/p&gt;
+
+&lt;h2&gt;New release of Spec&lt;/h2&gt;
+
+&lt;h3&gt;Backward compatibility breaker&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ListModel menus: now the &lt;code&gt;ListModel&lt;/code&gt; instances use an instance of &lt;code&gt;MenuModel&lt;/code&gt; as argument instead of a Morphic object. An example is provided in &lt;code&gt;ListModel class&amp;gt;&amp;gt;#example&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Changes&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Removes unrelated to Spec core packages (i.e. &lt;code&gt;Spec-Tools&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Adds &lt;code&gt;SpecTableLayout&lt;/code&gt;, thanks @webwarrior-ws &lt;/li&gt;
+&lt;li&gt;Removes hardcoded colours, thanks @Uko &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In addition, some bug fixes and clean ups.&lt;/p&gt;
+
+&lt;p&gt;This version has been tested with Pharo 4.0 - build 167&lt;/p&gt;
+</description>
+                                <pubDate>Sat, 30 Aug 2014 14:58:09 +0000</pubDate>
+                                <link>http://spec.st//release/2014/08/30/Spec2.0.0.html</link>
+                                <guid isPermaLink="true">http://spec.st//release/2014/08/30/Spec2.0.0.html</guid>
+                        </item>
+                
+                        <item>
                                 <title>New Section Tutorials</title>
                                 <description>&lt;p&gt;The discussions about Spec in the mailing list, 
 I came out with the idea that a &lt;code&gt;tutorial&lt;/code&gt; section 
@@ -50,8 +79,7 @@ In order to provide an easy way to add a menu toolbar, Spec reuse &lt;strong&gt;
 
 &lt;p&gt;An example can be opened via&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;smalltalk&quot;&gt;&lt;span class=&quot;nc&quot;&gt;ApplicationWithToolbar&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;openWithSpec&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-smalltalk&quot; data-lang=&quot;smalltalk&quot;&gt;&lt;span class=&quot;nc&quot;&gt;ApplicationWithToolbar&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;openWithSpec&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;a name=&quot;fig_ApplicationWithToolbar&quot;&gt;&lt;/a&gt;&lt;p class=&quot;figure&quot;&gt;&lt;img src=&quot;/figures/ApplicationWithToolbar.png&quot; alt=&quot;fig_ApplicationWithToolbar&quot; title=&quot;An example of application with a toolbar&quot;&gt;&lt;/p&gt;&lt;/p&gt;
 </description>

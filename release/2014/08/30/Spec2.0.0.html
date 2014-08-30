@@ -89,19 +89,17 @@
 			<div class="news">
 				<article class="article">
 	<h2>
-		Fix splitters
-		<a href="/fix/splitters/2014/05/01/fix_splitter.html" class="permalink" title="Permalink"><i class='fa fa-link'></i></a>
+		Spec 2.0.0 release
+		<a href="/release/2014/08/30/Spec2.0.0.html" class="permalink" title="Permalink"><i class='fa fa-link'></i></a>
 	</h2>
 	
 	<div class="post post-date">
-		01 May 2014
+		30 Aug 2014
 	</div>
 	
 	<span class="post post-categories">
 		
-		<span class="post-category"><a href="/news/categories/fix" class="post-category-link">fix</a></span>
-		
-		<span class="post-category"><a href="/news/categories/splitters" class="post-category-link">splitters</a></span>
+		<span class="post-category"><a href="/news/categories/release" class="post-category-link">release</a></span>
 		
 	</span>
 	
@@ -120,16 +118,27 @@
 		</div>
 	</div>
 	<div class="post-content">
-		<p>Glad to announce that with the help of <a href="http://seandenigris.com">Sean P. DeNigris</a> the problem
-of splitters in Spec has been tackled.</p>
+		<p>I am glad to announce a new major release for Spec <i class="fa fa-smile-o"></i>.</p>
 
-<p>The problem was revealed when multiple morphs were present after a splitter.
-In this configuration the two morphs moved in a really strange way.</p>
+<h2>New release of Spec</h2>
 
-<p>The fix<sup><a href="https://github.com/spec-framework/spec/commit/b59dcf9e9cd0ca3bc2850f4b54aaeb394b9517a4"><i class='fa fa-github-alt'></i></a></sup> provides a 
-new algorithm to retrieve the morphs which should be attached to each splitters.</p>
+<h3>Backward compatibility breaker</h3>
 
-<p>The fix should be into Pharo as soon as the <a href="https://pharo.fogbugz.com/default.asp?13163">slice</a> is integrated.</p>
+<ul>
+<li>ListModel menus: now the <code>ListModel</code> instances use an instance of <code>MenuModel</code> as argument instead of a Morphic object. An example is provided in <code>ListModel class&gt;&gt;#example</code></li>
+</ul>
+
+<h3>Changes</h3>
+
+<ul>
+<li>Removes unrelated to Spec core packages (i.e. <code>Spec-Tools</code>)</li>
+<li>Adds <code>SpecTableLayout</code>, thanks @webwarrior-ws </li>
+<li>Removes hardcoded colours, thanks @Uko </li>
+</ul>
+
+<p>In addition, some bug fixes and clean ups.</p>
+
+<p>This version has been tested with Pharo 4.0 - build 167</p>
 
 	</div>
 </article>
@@ -155,7 +164,7 @@ new algorithm to retrieve the morphs which should be attached to each splitters.
 	  <h4>News</h4>
 	  <ul class="news_title">
 		
-		<li class="sidebar_item ">
+		<li class="sidebar_item current">
 		  <a href="/release/2014/08/30/Spec2.0.0.html">Spec 2.0.0 release</a>
 		</li>
 		
@@ -163,7 +172,7 @@ new algorithm to retrieve the morphs which should be attached to each splitters.
 		  <a href="/tuto/drag/drop/2014/05/04/new_tuto_dnd.html">New Section Tutorials</a>
 		</li>
 		
-		<li class="sidebar_item current">
+		<li class="sidebar_item ">
 		  <a href="/fix/splitters/2014/05/01/fix_splitter.html">Fix splitters</a>
 		</li>
 		
