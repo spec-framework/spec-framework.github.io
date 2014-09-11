@@ -10,18 +10,18 @@
                                 <title>Spec 2.0.0 release</title>
                                 <description>&lt;p&gt;I am glad to announce a new major release for Spec &lt;i class=&quot;fa fa-smile-o&quot;&gt;&lt;/i&gt;.&lt;/p&gt;
 
-&lt;h2&gt;Backward compatibility breaker&lt;/h2&gt;
+&lt;h2 id=&quot;backward-compatibility-breaker&quot;&gt;Backward compatibility breaker&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;ListModel menus: now the &lt;code&gt;ListModel&lt;/code&gt; instances use an instance of &lt;code&gt;MenuModel&lt;/code&gt; as argument instead of a Morphic object. An example is provided in &lt;code&gt;ListModel class&amp;gt;&amp;gt;#example&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;ListModel menus: now the &lt;code&gt;ListModel&lt;/code&gt; instances use an instance of &lt;code&gt;MenuModel&lt;/code&gt; as argument instead of a Morphic object. An example is provided in &lt;code&gt;ListModel class&amp;gt;&amp;gt;#example&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2&gt;Changes&lt;/h2&gt;
+&lt;h2 id=&quot;changes&quot;&gt;Changes&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Removes unrelated to Spec core packages (i.e. &lt;code&gt;Spec-Tools&lt;/code&gt;)&lt;/li&gt;
-&lt;li&gt;Adds &lt;code&gt;SpecTableLayout&lt;/code&gt;, thanks @webwarrior-ws &lt;/li&gt;
-&lt;li&gt;Removes hardcoded colours, thanks @Uko &lt;/li&gt;
+  &lt;li&gt;Removes unrelated to Spec core packages (i.e. &lt;code&gt;Spec-Tools&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;Adds &lt;code&gt;SpecTableLayout&lt;/code&gt;, thanks @webwarrior-ws &lt;/li&gt;
+  &lt;li&gt;Removes hardcoded colours, thanks @Uko &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;In addition, some bug fixes and clean ups.&lt;/p&gt;
@@ -45,8 +45,8 @@ it has been decided to change Spec license.&lt;/p&gt;
 &lt;p&gt;Now Spec is released under a dual license:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;GPL v3 license when shipped as part of a programming language, its core libraries and frameworks, or its Integrated Development Environment. For more information about the lincense, see &lt;a href=&quot;https://github.com/spec-framework/spec/blob/master/LICENSE-GPL3&quot;&gt;LICENSE-GPL&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;MIT license for other cases. For more information about the license, see &lt;a href=&quot;https://github.com/spec-framework/spec/blob/master/LICENSE-MIT&quot;&gt;LICENSE-MIT&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;GPL v3 license when shipped as part of a programming language, its core libraries and frameworks, or its Integrated Development Environment. For more information about the lincense, see &lt;a href=&quot;https://github.com/spec-framework/spec/blob/master/LICENSE-GPL3&quot;&gt;LICENSE-GPL&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;MIT license for other cases. For more information about the license, see &lt;a href=&quot;https://github.com/spec-framework/spec/blob/master/LICENSE-MIT&quot;&gt;LICENSE-MIT&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
                                 <pubDate>Fri, 15 Aug 2014 21:52:09 +0000</pubDate>
@@ -58,7 +58,7 @@ it has been decided to change Spec license.&lt;/p&gt;
                                 <title>New Section Tutorials</title>
                                 <description>&lt;p&gt;The discussions about Spec in the mailing list, 
 I came out with the idea that a &lt;code&gt;tutorial&lt;/code&gt; section 
-could be useful &lt;i class=&#39;fa fa-smile-o&#39;&gt;&lt;/i&gt;.&lt;/p&gt;
+could be useful &lt;i class=&quot;fa fa-smile-o&quot;&gt;&lt;/i&gt;.&lt;/p&gt;
 
 &lt;p&gt;The first tutorial is about &lt;a href=&quot;/docs/drag_n_drop/&quot;&gt;drag and drop&lt;/a&gt;.&lt;/p&gt;
 
@@ -77,7 +77,7 @@ of splitters in Spec has been tackled.&lt;/p&gt;
 &lt;p&gt;The problem was revealed when multiple morphs were present after a splitter.
 In this configuration the two morphs moved in a really strange way.&lt;/p&gt;
 
-&lt;p&gt;The fix&lt;sup&gt;&lt;a href=&quot;https://github.com/spec-framework/spec/commit/b59dcf9e9cd0ca3bc2850f4b54aaeb394b9517a4&quot;&gt;&lt;i class=&#39;fa fa-github-alt&#39;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/sup&gt; provides a 
+&lt;p&gt;The fix&lt;sup&gt;&lt;a href=&quot;https://github.com/spec-framework/spec/commit/b59dcf9e9cd0ca3bc2850f4b54aaeb394b9517a4&quot;&gt;&lt;i class=&quot;fa fa-github-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/sup&gt; provides a 
 new algorithm to retrieve the morphs which should be attached to each splitters.&lt;/p&gt;
 
 &lt;p&gt;The fix should be into Pharo as soon as the &lt;a href=&quot;https://pharo.fogbugz.com/default.asp?13163&quot;&gt;slice&lt;/a&gt; is integrated.&lt;/p&gt;
@@ -100,7 +100,7 @@ In order to provide an easy way to add a menu toolbar, Spec reuse &lt;strong&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-smalltalk&quot; data-lang=&quot;smalltalk&quot;&gt;&lt;span class=&quot;nc&quot;&gt;ApplicationWithToolbar&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;openWithSpec&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;a name=&quot;fig_ApplicationWithToolbar&quot;&gt;&lt;/a&gt;&lt;p class=&quot;figure&quot;&gt;&lt;img src=&quot;/figures/ApplicationWithToolbar.png&quot; alt=&quot;fig_ApplicationWithToolbar&quot; title=&quot;An example of application with a toolbar&quot;&gt;&lt;/p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a name=&quot;fig_ApplicationWithToolbar&quot;&gt;&lt;/a&gt;&amp;lt;p class=&quot;figure&quot;&amp;gt;&lt;img src=&quot;/figures/ApplicationWithToolbar.png&quot; alt=&quot;fig_ApplicationWithToolbar&quot; title=&quot;An example of application with a toolbar&quot; /&gt;&amp;lt;/p&amp;gt;&lt;/p&gt;
 </description>
                                 <pubDate>Wed, 19 Feb 2014 00:01:32 +0000</pubDate>
                                 <link>http://spec.st//improvement/menu/toolbar/2014/02/19/Menu_Toolbar.html</link>
@@ -118,9 +118,9 @@ We hope that this text will help all the people that are building UIs in Pharo, 
 &lt;p&gt;The easiest way to read the chapter is from the continuous integration server, which produces a html file of the chapter &lt;a href=&quot;https://ci.inria.fr/pharo-contribution/job/PharoForTheEnterprise/lastSuccessfulBuild/artifact/Spec/Spec.pier.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;We tried our best to make it understandable and complete, but if you have any doubts or comments please do not hesitate to let us know !!
-You can find the pier files on GitHub&lt;sup&gt;&lt;a href=&quot;https://github.com/spec-framework/documentation&quot;&gt;&lt;i class=&#39;fa fa-github-alt&#39;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/sup&gt;, where you can also report issues or propose fixes.&lt;/p&gt;
+You can find the pier files on GitHub&lt;sup&gt;&lt;a href=&quot;https://github.com/spec-framework/documentation&quot;&gt;&lt;i class=&quot;fa fa-github-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/sup&gt;, where you can also report issues or propose fixes.&lt;/p&gt;
 
-&lt;p&gt;Now it&amp;#39;s time to build some cool user interfaces! &lt;i class=&#39;fa fa-smile-o fa-2x&#39;&gt;&lt;/i&gt;&lt;/p&gt;
+&lt;p&gt;Now it’s time to build some cool user interfaces! &lt;i class=&quot;fa fa-smile-o fa-2x&quot;&gt;&lt;/i&gt;&lt;/p&gt;
 
 &lt;p&gt;PS from Ben: I would like to personally thank &lt;a href=&quot;http://seandenigris.com&quot;&gt;Sean P. DeNigris&lt;/a&gt; for his surprise pull requests.&lt;/p&gt;
 </description>
@@ -131,7 +131,7 @@ You can find the pier files on GitHub&lt;sup&gt;&lt;a href=&quot;https://github.
                 
                         <item>
                                 <title>El Sprint Chileno</title>
-                                <description>&lt;p&gt;After a cool sprint yesterday, a couple of &lt;em&gt;Spec&lt;/em&gt; issues has been tackled &lt;i class=&#39;fa fa-smile-o fa-2x&#39;&gt;&lt;/i&gt;.&lt;/p&gt;
+                                <description>&lt;p&gt;After a cool sprint yesterday, a couple of &lt;em&gt;Spec&lt;/em&gt; issues has been tackled &lt;i class=&quot;fa fa-smile-o fa-2x&quot;&gt;&lt;/i&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://pharo.fogbugz.com/default.asp?12695&quot;&gt;&lt;strong&gt;Case 12695&lt;/strong&gt;&lt;/a&gt;: Fix &lt;em&gt;InputWidget&lt;/em&gt; example and add a new one. These examples are showing how to set up a window modality. Thanks Samir Saleh and &lt;a href=&quot;http://seandenigris.com&quot;&gt;Sean P. DeNigris&lt;/a&gt; for this fix.&lt;/p&gt;
 
@@ -140,8 +140,8 @@ You can find the pier files on GitHub&lt;sup&gt;&lt;a href=&quot;https://github.
 &lt;p&gt;&lt;a href=&quot;https://pharo.fogbugz.com/default.asp?12684&quot;&gt;&lt;strong&gt;Case 12684&lt;/strong&gt;&lt;/a&gt;: Renaming &lt;strong&gt;NewValueHolder&lt;/strong&gt; into &lt;strong&gt;ReactiveVariable&lt;/strong&gt;. But since Pharo 3 is already in beta phase, changing the API was not possible. So instead two hooks were introduced to allow the integration of code from Spec bleeding edge to Pharo 3. For new code (and all code in future versions of Pharo), use the following two hook methods:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;asReactiveVariable&lt;/code&gt;: use wherever you would have used &lt;code&gt;asValueHolder&lt;/code&gt;, which will soon be deprecated. For now, it returns a &lt;strong&gt;NewValueHolder&lt;/strong&gt;. In the future it will return a (polymorphic) &lt;strong&gt;ReactiveVariable&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;selectionReactiveVariable&lt;/code&gt;: as above, returns a &lt;strong&gt;SelectionValueHolder&lt;/strong&gt; for now. This extension method allows the two different packages to coexist without having direct references from the Spec model.&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;asReactiveVariable&lt;/code&gt;: use wherever you would have used &lt;code&gt;asValueHolder&lt;/code&gt;, which will soon be deprecated. For now, it returns a &lt;strong&gt;NewValueHolder&lt;/strong&gt;. In the future it will return a (polymorphic) &lt;strong&gt;ReactiveVariable&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;selectionReactiveVariable&lt;/code&gt;: as above, returns a &lt;strong&gt;SelectionValueHolder&lt;/strong&gt; for now. This extension method allows the two different packages to coexist without having direct references from the Spec model.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;Thanks a lot &lt;a href=&quot;http://seandenigris.com&quot;&gt;Sean P. DeNigris&lt;/a&gt; for you help and energy.&lt;/p&gt;
@@ -157,7 +157,7 @@ You can find the pier files on GitHub&lt;sup&gt;&lt;a href=&quot;https://github.
 
 &lt;p&gt;Because of this, the prototyping is quite limited.&lt;/p&gt;
 
-&lt;p&gt;But the latest Spec commit&lt;sup&gt;&lt;a href=&quot;https://github.com/SpecForPharo/spec/commit/5d28c1f293bb1654e7395c18a2ea733fbd551d10&quot;&gt;&lt;i class=&#39;fa fa-github-alt&#39;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/sup&gt; introduces few changes on &lt;code&gt;DynamicComposableModel&lt;/code&gt; to tackle this issue.&lt;/p&gt;
+&lt;p&gt;But the latest Spec commit&lt;sup&gt;&lt;a href=&quot;https://github.com/SpecForPharo/spec/commit/5d28c1f293bb1654e7395c18a2ea733fbd551d10&quot;&gt;&lt;i class=&quot;fa fa-github-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/sup&gt; introduces few changes on &lt;code&gt;DynamicComposableModel&lt;/code&gt; to tackle this issue.&lt;/p&gt;
 
 &lt;p&gt;The problem was double: no way to add an instanciated model as a sub widget, and the lookup for the layout was looking for a selector on class side.&lt;/p&gt;
 
@@ -165,7 +165,7 @@ You can find the pier files on GitHub&lt;sup&gt;&lt;a href=&quot;https://github.
 
 &lt;p&gt;The second problem was slighty more tedious. To work, it requires from the embedded sub widget to have a layout defined. A new instance variable &lt;code&gt;layout&lt;/code&gt; has been introduce to hold the &lt;strong&gt;SpecLayout&lt;/strong&gt; instance used to position the sub widgets. This way, when a layout is requested for the dynamic model, this layout is returned (&lt;em&gt;regardless of the selector requested&lt;/em&gt;).&lt;/p&gt;
 
-&lt;p&gt;These two fixes add support for a better composition in the dynamic context &lt;i class=&#39;fa fa-smile-o fa-2x&#39;&gt;&lt;/i&gt;.&lt;/p&gt;
+&lt;p&gt;These two fixes add support for a better composition in the dynamic context &lt;i class=&quot;fa fa-smile-o fa-2x&quot;&gt;&lt;/i&gt;.&lt;/p&gt;
 
 &lt;p&gt;If you want to try, this &lt;a href=&quot;https://gist.github.com/BenjaminVanRyseghem/cd02f2dc61f350a6495f&quot;&gt;snippet&lt;/a&gt; gives you an example of how to build such unser interface.&lt;/p&gt;
 </description>

@@ -98,9 +98,8 @@ In this section we will explain how to create such a new basic widget.</p>
 This will reveal the different actors in the process and provide a clearer understanding of their responsibilities.
 We then present the three steps of widget creation: writing a new model, writing an adapter, and updating or creating an individual UI framework binding.</p>
 
-<p><a name="one_step" class="hash"></a></p>
-
-<h2>One step in the building process of a widget <a href="#one_step" class="permalink" title="Permalink"><i class='fa fa-link'></i></a></h2>
+<p><a name="one_step" class="hash"></a>
+## One step in the building process of a widget <a href="#one_step" class="permalink" title="Permalink"><i class="fa fa-link"></i></a></p>
 
 <p>The UI building process does not make a distinction between basic and composed widgets.
 Hence, at a specific point in the building process of a basic widget the default spec method of the widget is called, just as if it would be a composed widget.
@@ -114,11 +113,10 @@ This is this framework-specific widget that will be added to the widget containe
 
 <p>Figure <a href="#model_adapter_uielement">1.1</a> shows the relationship between those objects.</p>
 
-<p><a name="model_adapter_uielement"></a><p class="figure"><img src="/figures/Model-Adapter-UIElement.png" alt="model_adapter_uielement" title="Relationship between the model, the adapter, and the UI element"></p></p>
+<p><a name="model_adapter_uielement"></a>&lt;p class="figure"&gt;<img src="/figures/Model-Adapter-UIElement.png" alt="model_adapter_uielement" title="Relationship between the model, the adapter, and the UI element" />&lt;/p&gt;</p>
 
-<p><a name="the_model" class="hash"></a></p>
-
-<h2>The Model <a href="#the_model" class="permalink" title="Permalink"><i class='fa fa-link'></i></a></h2>
+<p><a name="the_model" class="hash"></a>
+## The Model <a href="#the_model" class="permalink" title="Permalink"><i class="fa fa-link"></i></a></p>
 
 <p>The new model needs to be a subclass of 
 <strong>AbstractWidgetModel</strong> and its name should be composed of the new basic widget concept, e.g. list or button, and of the word 
@@ -127,15 +125,15 @@ The responsibility of the model is to store all the state of the widget.
 Examples of widget-specific state are:</p>
 
 <ul>
-<li> the index of a list</li>
-<li> the label of a button</li>
-<li> the action block for when a text is validated in a text field</li>
+  <li>the index of a list</li>
+  <li>the label of a button</li>
+  <li>the action block for when a text is validated in a text field</li>
 </ul>
 
 <p>The state is wrapped in reactive variables and kept in instance variables.
 For example, the code following shows how to wrap the state 
 <code>0</code> in a reactive variable and keep it as an instance variable.
-reactive variables are needed because they are later used to propagate state changes and thus create the interaction flow of the user interface, as discussed in the page <a href="/docs/interactions/">Sub&nbsp;widgets interaction</a>.</p>
+reactive variables are needed because they are later used to propagate state changes and thus create the interaction flow of the user interface, as discussed in the page <a href="/docs/interactions/">Sub widgets interaction</a>.</p>
 
 <div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="nv">index</span> <span class="o">:=</span> <span class="m">0</span> <span class="nf">asValueHolder</span><span class="p">.</span></code></pre></div>
 
@@ -148,24 +146,21 @@ The first two should classified in the protocol named
 
 <div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="c">&quot;in protocol: protocol&quot;</span>
 <span class="nf">index</span>
-    <span class="o">^</span><span class="nv">index</span> <span class="nf">value</span>
+	<span class="o">^</span><span class="nv">index</span> <span class="nf">value</span>
  
 <span class="c">&quot;in protocol: protocol&quot;</span>
 <span class="nf">index:</span> <span class="nv">anInteger</span>
-    <span class="nf">index</span> <span class="nf">value:</span> <span class="nv">anInteger</span>
+   	<span class="nf">index</span> <span class="nf">value:</span> <span class="nv">anInteger</span>
    
 <span class="c">&quot;in protocol: protocol-events&quot;</span>
 <span class="nf">whenIndexChanged:</span> <span class="nv">aBlock</span>
-    <span class="nf">index</span> <span class="nf">whenChangedDo:</span> <span class="nv">aBlock</span></code></pre></div>
-
-
+   	<span class="nf">index</span> <span class="nf">whenChangedDo:</span> <span class="nv">aBlock</span></code></pre></div>
 
 <p>The last step to define a new model is to implement a method 
 <code>adapterName</code> at the class side.
 The method should be in the protocol named 
 *spec* and should return a symbol.
 The symbol should be composed of the basic concept of the widget, e.g. list or button, and the word <strong>Adapter</strong> like <strong>ListAdapter</strong>.</p>
-
 
 <p>The communication from the UI model to the adapter is performed using the dependents mechanism.
 This mechanism is used to to handle the fact that a same model can have multiple UI elements concurrently displayed.
@@ -188,7 +183,7 @@ For example, the method <code>#filterWith:</code> sent by <strong>TreeModel</str
 
 
 <a name="the_adapter" class="hash"></a>
-<h2>The Adapter <a href="#the_adapter" class="permalink" title="Permalink"><i class='fa fa-link'></i></a></h2>
+<h2>The Adapter <a href="#the_adapter" class="permalink" title="Permalink"><i class="fa fa-link"></i></a></h2>
 
 
 <p>An adapter must be a subclass of <strong>AbstractAdapter</strong>.
@@ -206,20 +201,20 @@ This method has the responsibility to instantiate the corresponding UI element.<
 <div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="nf">defaultSpec</span>
     <span class="err">&lt;</span><span class="nv">spec</span><span class="nf">&gt;</span>
 
-    <span class="o">^</span> <span class="ss">#(PluggableButtonMorph</span>
-            <span class="ss">#color:</span>                             <span class="ss">#(model</span> <span class="ss">color)</span>
-            <span class="ss">#on:getState:action:label:menu:</span>     <span class="ss">#model</span> <span class="ss">#state</span> <span class="ss">#action</span> <span class="ss">#label</span> <span class="ss">nil</span>
-            <span class="ss">#getEnabledSelector:</span>                <span class="ss">#enabled</span>
-            <span class="ss">#getMenuSelector:</span>                   <span class="ss">#menu:</span>
-            <span class="ss">#hResizing:</span>                         <span class="ss">#spaceFill</span>
-            <span class="ss">#vResizing:</span>                         <span class="ss">#spaceFill</span>
-            <span class="ss">#borderWidth:</span>                       <span class="ss">#(model</span> <span class="ss">borderWidth)</span>
-            <span class="ss">#borderColor:</span>                       <span class="ss">#(model</span> <span class="ss">borderColor)</span>
-            <span class="ss">#askBeforeChanging:</span>                 <span class="ss">#(model</span> <span class="ss">askBeforeChanging)</span>
-            <span class="ss">#setBalloonText:</span>                    <span class="ss">#(model</span> <span class="ss">help)</span>
-            <span class="ss">#dragEnabled:</span>                       <span class="ss">#(model</span> <span class="ss">dragEnabled)</span>
-            <span class="ss">#dropEnabled:</span>                       <span class="ss">#(model</span> <span class="ss">dropEnabled)</span>    
-            <span class="ss">#eventHandler:</span>                      <span class="ss">#(EventHandler</span> <span class="ss">on:send:to:</span> <span class="ss">keyStroke</span> <span class="ss">keyStroke:fromMorph:</span> <span class="ss">model))</span></code></pre></div>
+	<span class="o">^</span> <span class="ss">#(PluggableButtonMorph</span>
+			<span class="ss">#color:</span>								<span class="ss">#(model</span> <span class="ss">color)</span>
+	    	<span class="ss">#on:getState:action:label:menu:</span> 	<span class="ss">#model</span> <span class="ss">#state</span> <span class="ss">#action</span> <span class="ss">#label</span> <span class="ss">nil</span>
+			<span class="ss">#getEnabledSelector:</span> 				<span class="ss">#enabled</span>
+			<span class="ss">#getMenuSelector:</span>					<span class="ss">#menu:</span>
+			<span class="ss">#hResizing:</span> 						<span class="ss">#spaceFill</span>
+			<span class="ss">#vResizing:</span> 						<span class="ss">#spaceFill</span>
+			<span class="ss">#borderWidth:</span>						<span class="ss">#(model</span> <span class="ss">borderWidth)</span>
+			<span class="ss">#borderColor:</span>						<span class="ss">#(model</span> <span class="ss">borderColor)</span>
+			<span class="ss">#askBeforeChanging:</span>					<span class="ss">#(model</span> <span class="ss">askBeforeChanging)</span>
+			<span class="ss">#setBalloonText:</span>					<span class="ss">#(model</span> <span class="ss">help)</span>
+			<span class="ss">#dragEnabled:</span>						<span class="ss">#(model</span> <span class="ss">dragEnabled)</span>
+			<span class="ss">#dropEnabled:</span>						<span class="ss">#(model</span> <span class="ss">dropEnabled)</span>	
+			<span class="ss">#eventHandler:</span>						<span class="ss">#(EventHandler</span> <span class="ss">on:send:to:</span> <span class="ss">keyStroke</span> <span class="ss">keyStroke:fromMorph:</span> <span class="ss">model))</span></code></pre></div>
 
 
 
@@ -246,12 +241,12 @@ This method executes the block provided as argument, which will only happen afte
 
 <div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="nf">emphasis:</span> <span class="nv">aTextEmphasis</span>
 
-    <span class="bp">self</span> <span class="nf">widgetDo:</span> [ <span class="o">:</span><span class="nv">w</span> <span class="o">|</span> <span class="nv">w</span> <span class="nf">emphasis:</span> <span class="nv">aTextEmphasis</span> ]</code></pre></div>
+	<span class="bp">self</span> <span class="nf">widgetDo:</span> [ <span class="o">:</span><span class="nv">w</span> <span class="o">|</span> <span class="nv">w</span> <span class="nf">emphasis:</span> <span class="nv">aTextEmphasis</span> ]</code></pre></div>
 
 
 
 <a name="the_binding" class="hash"></a>
-<h2>The UI Framework binding <a href="#the_binding" class="permalink" title="Permalink"><i class='fa fa-link'></i></a></h2>
+<h2>The UI Framework binding <a href="#the_binding" class="permalink" title="Permalink"><i class="fa fa-link"></i></a></h2>
 
 
 
@@ -266,7 +261,7 @@ It requires to update two methods:
 <code>initializeBindings</code> in the framework specific adapter class, e.g. 
 <strong>MorphicAdapterBindings</strong> for Morphic.</p>
 
-<p>The method <code>SpecAdapterBindings>>#initializeBinding</code> is present only to expose the whole set of adapters required.
+<p>The method <code>SpecAdapterBindings&gt;&gt;#initializeBinding</code> is present only to expose the whole set of adapters required.
 It fills a dictionary as shown in the code:</p>
 
 
@@ -274,31 +269,31 @@ It fills a dictionary as shown in the code:</p>
        <span class="c">&quot;This implementation is stupid, but it exposes all the containers which need to be bound&quot;</span>
        
        <span class="nv">bindings</span>
-           <span class="nf">at:</span> <span class="ss">#ButtonAdapter</span>            <span class="nf">put:</span> <span class="ss">#ButtonAdapter</span><span class="p">;</span>
-           <span class="nf">at:</span> <span class="ss">#CheckBoxAdapter</span>          <span class="nf">put:</span> <span class="ss">#CheckBoxAdapter</span><span class="p">;</span>
-           <span class="nf">at:</span> <span class="ss">#ContainerAdapter</span>         <span class="nf">put:</span> <span class="ss">#ContainerAdapter</span><span class="p">;</span>
-           <span class="nf">at:</span> <span class="ss">#DiffAdapter</span>              <span class="nf">put:</span> <span class="ss">#MorphicDiffAdapter</span><span class="p">;</span>
-           <span class="nf">at:</span> <span class="ss">#ImageAdapter</span>             <span class="nf">put:</span> <span class="ss">#ImageAdapter</span><span class="p">;</span>
-           <span class="nf">at:</span> <span class="ss">#LabelAdapter</span>             <span class="nf">put:</span> <span class="ss">#LabelAdapter</span><span class="p">;</span>
-           <span class="nf">at:</span> <span class="ss">#ListAdapter</span>              <span class="nf">put:</span> <span class="ss">#ListAdapter</span><span class="p">;</span>
-           <span class="nf">at:</span> <span class="ss">#IconListAdapter</span>          <span class="nf">put:</span> <span class="ss">#IconListAdapter</span><span class="p">;</span>
-           <span class="nf">at:</span> <span class="ss">#DropListAdapter</span>          <span class="nf">put:</span> <span class="ss">#DropListAdapter</span><span class="p">;</span>
-           <span class="nf">at:</span> <span class="ss">#MultiColumnListAdapter</span>   <span class="nf">put:</span> <span class="ss">#MultiColumnListAdapter</span><span class="p">;</span>
-           <span class="nf">at:</span> <span class="ss">#MenuAdapter</span>              <span class="nf">put:</span> <span class="ss">#MenuAdapter</span><span class="p">;</span>
-           <span class="nf">at:</span> <span class="ss">#MenuGroupAdapter</span>         <span class="nf">put:</span> <span class="ss">#MenuGroupAdapter</span><span class="p">;</span>
-           <span class="nf">at:</span> <span class="ss">#MenuItemAdapter</span>          <span class="nf">put:</span> <span class="ss">#MenuItemAdapter</span><span class="p">;</span>  
-           <span class="nf">at:</span> <span class="ss">#NewListAdapter</span>           <span class="nf">put:</span> <span class="ss">#NewListAdapter</span><span class="p">;</span>
-           <span class="nf">at:</span> <span class="ss">#RadioButtonAdapter</span>       <span class="nf">put:</span> <span class="ss">#RadioButtonAdapter</span><span class="p">;</span>
-           <span class="nf">at:</span> <span class="ss">#SliderAdapter</span>            <span class="nf">put:</span> <span class="ss">#SliderAdapter</span><span class="p">;</span>
-           <span class="nf">at:</span> <span class="ss">#TabManagerAdapter</span>        <span class="nf">put:</span> <span class="ss">#TabManagerAdapter</span><span class="p">;</span>
-           <span class="nf">at:</span> <span class="ss">#TabAdapter</span>               <span class="nf">put:</span> <span class="ss">#TabAdapter</span><span class="p">;</span>
-           <span class="nf">at:</span> <span class="ss">#TextAdapter</span>              <span class="nf">put:</span> <span class="ss">#TextAdapter</span><span class="p">;</span>
-           <span class="nf">at:</span> <span class="ss">#TextInputFieldAdapter</span>    <span class="nf">put:</span> <span class="ss">#TextInputFieldAdapter</span><span class="p">;</span>
-           <span class="nf">at:</span> <span class="ss">#TreeAdapter</span>              <span class="nf">put:</span> <span class="ss">#TreeAdapter</span><span class="p">;</span>
-           <span class="nf">at:</span> <span class="ss">#TreeColumnAdapter</span>        <span class="nf">put:</span> <span class="ss">#TreeColumnAdapter</span><span class="p">;</span>
-           <span class="nf">at:</span> <span class="ss">#TreeNodeAdapter</span>          <span class="nf">put:</span> <span class="ss">#TreeNodeAdapter</span><span class="p">;</span>          
-           <span class="nf">at:</span> <span class="ss">#WindowAdapter</span>            <span class="nf">put:</span> <span class="ss">#WindowAdapter</span><span class="p">;</span>
-           <span class="nf">at:</span> <span class="ss">#DialogWindowAdapter</span>      <span class="nf">put:</span> <span class="ss">#DialogWindowAdapter</span><span class="p">;</span>
+	       <span class="nf">at:</span> <span class="ss">#ButtonAdapter</span>            <span class="nf">put:</span> <span class="ss">#ButtonAdapter</span><span class="p">;</span>
+	       <span class="nf">at:</span> <span class="ss">#CheckBoxAdapter</span>          <span class="nf">put:</span> <span class="ss">#CheckBoxAdapter</span><span class="p">;</span>
+	       <span class="nf">at:</span> <span class="ss">#ContainerAdapter</span>         <span class="nf">put:</span> <span class="ss">#ContainerAdapter</span><span class="p">;</span>
+	       <span class="nf">at:</span> <span class="ss">#DiffAdapter</span>              <span class="nf">put:</span> <span class="ss">#MorphicDiffAdapter</span><span class="p">;</span>
+	       <span class="nf">at:</span> <span class="ss">#ImageAdapter</span>             <span class="nf">put:</span> <span class="ss">#ImageAdapter</span><span class="p">;</span>
+	       <span class="nf">at:</span> <span class="ss">#LabelAdapter</span>             <span class="nf">put:</span> <span class="ss">#LabelAdapter</span><span class="p">;</span>
+	       <span class="nf">at:</span> <span class="ss">#ListAdapter</span>              <span class="nf">put:</span> <span class="ss">#ListAdapter</span><span class="p">;</span>
+	       <span class="nf">at:</span> <span class="ss">#IconListAdapter</span>          <span class="nf">put:</span> <span class="ss">#IconListAdapter</span><span class="p">;</span>
+	       <span class="nf">at:</span> <span class="ss">#DropListAdapter</span>          <span class="nf">put:</span> <span class="ss">#DropListAdapter</span><span class="p">;</span>
+	       <span class="nf">at:</span> <span class="ss">#MultiColumnListAdapter</span>   <span class="nf">put:</span> <span class="ss">#MultiColumnListAdapter</span><span class="p">;</span>
+	       <span class="nf">at:</span> <span class="ss">#MenuAdapter</span>              <span class="nf">put:</span> <span class="ss">#MenuAdapter</span><span class="p">;</span>
+	       <span class="nf">at:</span> <span class="ss">#MenuGroupAdapter</span>         <span class="nf">put:</span> <span class="ss">#MenuGroupAdapter</span><span class="p">;</span>
+	       <span class="nf">at:</span> <span class="ss">#MenuItemAdapter</span>          <span class="nf">put:</span> <span class="ss">#MenuItemAdapter</span><span class="p">;</span>  
+	       <span class="nf">at:</span> <span class="ss">#NewListAdapter</span>           <span class="nf">put:</span> <span class="ss">#NewListAdapter</span><span class="p">;</span>
+	       <span class="nf">at:</span> <span class="ss">#RadioButtonAdapter</span>       <span class="nf">put:</span> <span class="ss">#RadioButtonAdapter</span><span class="p">;</span>
+	       <span class="nf">at:</span> <span class="ss">#SliderAdapter</span>            <span class="nf">put:</span> <span class="ss">#SliderAdapter</span><span class="p">;</span>
+	       <span class="nf">at:</span> <span class="ss">#TabManagerAdapter</span>        <span class="nf">put:</span> <span class="ss">#TabManagerAdapter</span><span class="p">;</span>
+	       <span class="nf">at:</span> <span class="ss">#TabAdapter</span>               <span class="nf">put:</span> <span class="ss">#TabAdapter</span><span class="p">;</span>
+	       <span class="nf">at:</span> <span class="ss">#TextAdapter</span>              <span class="nf">put:</span> <span class="ss">#TextAdapter</span><span class="p">;</span>
+	       <span class="nf">at:</span> <span class="ss">#TextInputFieldAdapter</span>    <span class="nf">put:</span> <span class="ss">#TextInputFieldAdapter</span><span class="p">;</span>
+	       <span class="nf">at:</span> <span class="ss">#TreeAdapter</span>              <span class="nf">put:</span> <span class="ss">#TreeAdapter</span><span class="p">;</span>
+	       <span class="nf">at:</span> <span class="ss">#TreeColumnAdapter</span>        <span class="nf">put:</span> <span class="ss">#TreeColumnAdapter</span><span class="p">;</span>
+	       <span class="nf">at:</span> <span class="ss">#TreeNodeAdapter</span>          <span class="nf">put:</span> <span class="ss">#TreeNodeAdapter</span><span class="p">;</span>          
+	       <span class="nf">at:</span> <span class="ss">#WindowAdapter</span>            <span class="nf">put:</span> <span class="ss">#WindowAdapter</span><span class="p">;</span>
+	       <span class="nf">at:</span> <span class="ss">#DialogWindowAdapter</span>      <span class="nf">put:</span> <span class="ss">#DialogWindowAdapter</span><span class="p">;</span>
            <span class="nf">yourself</span></code></pre></div>
 
 
@@ -359,14 +354,14 @@ The next example shows how to do so.</p>
 
 <div class="hint_box hint">
       <div class="hint_box_row">
-    <div class="hint_box_icon fa-stack fa-lg hint-icon">
-      <i class="fa fa-square fa-stack-2x"></i>
-      <i class="fa fa-info fa-stack-1x hint-overlay"></i>
-    </div>
-    <div class="hint_box_text hint-text"><p>The <strong>SpecInterpreter</strong> bindings are reset after each execution.</p>
+	<div class="hint_box_icon fa-stack fa-lg hint-icon">
+	  <i class="fa fa-square fa-stack-2x"></i>
+	  <i class="fa fa-info fa-stack-1x hint-overlay"></i>
+	</div>
+	<div class="hint_box_text hint-text"><p>The <strong>SpecInterpreter</strong> bindings are reset after each execution.</p>
 </div>
-
-<p></div></div></p>
+</div></div>
+</p></p></p></p>
 
 					<div class="section-nav">
 	<div class="btn-group">

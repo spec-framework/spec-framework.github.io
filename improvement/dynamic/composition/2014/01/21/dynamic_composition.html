@@ -126,7 +126,7 @@
 
 <p>Because of this, the prototyping is quite limited.</p>
 
-<p>But the latest Spec commit<sup><a href="https://github.com/SpecForPharo/spec/commit/5d28c1f293bb1654e7395c18a2ea733fbd551d10"><i class='fa fa-github-alt'></i></a></sup> introduces few changes on <code>DynamicComposableModel</code> to tackle this issue.</p>
+<p>But the latest Spec commit<sup><a href="https://github.com/SpecForPharo/spec/commit/5d28c1f293bb1654e7395c18a2ea733fbd551d10"><i class="fa fa-github-alt"></i></a></sup> introduces few changes on <code>DynamicComposableModel</code> to tackle this issue.</p>
 
 <p>The problem was double: no way to add an instanciated model as a sub widget, and the lookup for the layout was looking for a selector on class side.</p>
 
@@ -134,7 +134,7 @@
 
 <p>The second problem was slighty more tedious. To work, it requires from the embedded sub widget to have a layout defined. A new instance variable <code>layout</code> has been introduce to hold the <strong>SpecLayout</strong> instance used to position the sub widgets. This way, when a layout is requested for the dynamic model, this layout is returned (<em>regardless of the selector requested</em>).</p>
 
-<p>These two fixes add support for a better composition in the dynamic context <i class='fa fa-smile-o fa-2x'></i>.</p>
+<p>These two fixes add support for a better composition in the dynamic context <i class="fa fa-smile-o fa-2x"></i>.</p>
 
 <p>If you want to try, this <a href="https://gist.github.com/BenjaminVanRyseghem/cd02f2dc61f350a6495f">snippet</a> gives you an example of how to build such unser interface.</p>
 

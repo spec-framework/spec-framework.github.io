@@ -4,7 +4,7 @@
   <title><![CDATA[Category: chile | ]]></title>
   <link href="/news/categories/chile/atom.xml" rel="self"/>
   <link href="/"/>
-  <updated>2014-08-30T13:45:16+00:00</updated>
+  <updated>2014-09-11T14:04:24+00:00</updated>
   <id>/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -27,9 +27,9 @@ We hope that this text will help all the people that are building UIs in Pharo, 
 <p>The easiest way to read the chapter is from the continuous integration server, which produces a html file of the chapter <a href="https://ci.inria.fr/pharo-contribution/job/PharoForTheEnterprise/lastSuccessfulBuild/artifact/Spec/Spec.pier.html">here</a>.</p>
 
 <p>We tried our best to make it understandable and complete, but if you have any doubts or comments please do not hesitate to let us know !!
-You can find the pier files on GitHub<sup><a href="https://github.com/spec-framework/documentation"><i class='fa fa-github-alt'></i></a></sup>, where you can also report issues or propose fixes.</p>
+You can find the pier files on GitHub<sup><a href="https://github.com/spec-framework/documentation"><i class="fa fa-github-alt"></i></a></sup>, where you can also report issues or propose fixes.</p>
 
-<p>Now it&#39;s time to build some cool user interfaces! <i class='fa fa-smile-o fa-2x'></i></p>
+<p>Now it’s time to build some cool user interfaces! <i class="fa fa-smile-o fa-2x"></i></p>
 
 <p>PS from Ben: I would like to personally thank <a href="http://seandenigris.com">Sean P. DeNigris</a> for his surprise pull requests.</p>
 ]]></content>
@@ -40,7 +40,7 @@ You can find the pier files on GitHub<sup><a href="https://github.com/spec-frame
     <link href="/sprint/chile/2014/01/24/sprint_chileno.html"/>
     <updated>2014-01-24T15:26:32+00:00</updated>
     <id>/sprint/chile/2014/01/24/sprint_chileno</id>
-    <content type="html"><![CDATA[<p>After a cool sprint yesterday, a couple of <em>Spec</em> issues has been tackled <i class='fa fa-smile-o fa-2x'></i>.</p>
+    <content type="html"><![CDATA[<p>After a cool sprint yesterday, a couple of <em>Spec</em> issues has been tackled <i class="fa fa-smile-o fa-2x"></i>.</p>
 
 <p><a href="https://pharo.fogbugz.com/default.asp?12695"><strong>Case 12695</strong></a>: Fix <em>InputWidget</em> example and add a new one. These examples are showing how to set up a window modality. Thanks Samir Saleh and <a href="http://seandenigris.com">Sean P. DeNigris</a> for this fix.</p>
 
@@ -49,8 +49,8 @@ You can find the pier files on GitHub<sup><a href="https://github.com/spec-frame
 <p><a href="https://pharo.fogbugz.com/default.asp?12684"><strong>Case 12684</strong></a>: Renaming <strong>NewValueHolder</strong> into <strong>ReactiveVariable</strong>. But since Pharo 3 is already in beta phase, changing the API was not possible. So instead two hooks were introduced to allow the integration of code from Spec bleeding edge to Pharo 3. For new code (and all code in future versions of Pharo), use the following two hook methods:</p>
 
 <ul>
-<li><code>asReactiveVariable</code>: use wherever you would have used <code>asValueHolder</code>, which will soon be deprecated. For now, it returns a <strong>NewValueHolder</strong>. In the future it will return a (polymorphic) <strong>ReactiveVariable</strong></li>
-<li><code>selectionReactiveVariable</code>: as above, returns a <strong>SelectionValueHolder</strong> for now. This extension method allows the two different packages to coexist without having direct references from the Spec model.</li>
+  <li><code>asReactiveVariable</code>: use wherever you would have used <code>asValueHolder</code>, which will soon be deprecated. For now, it returns a <strong>NewValueHolder</strong>. In the future it will return a (polymorphic) <strong>ReactiveVariable</strong></li>
+  <li><code>selectionReactiveVariable</code>: as above, returns a <strong>SelectionValueHolder</strong> for now. This extension method allows the two different packages to coexist without having direct references from the Spec model.</li>
 </ul>
 
 <p>Thanks a lot <a href="http://seandenigris.com">Sean P. DeNigris</a> for you help and energy.</p>

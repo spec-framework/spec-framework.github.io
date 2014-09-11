@@ -4,7 +4,7 @@
   <title><![CDATA[Category: documentation | ]]></title>
   <link href="/news/categories/documentation/atom.xml" rel="self"/>
   <link href="/"/>
-  <updated>2014-08-30T13:45:16+00:00</updated>
+  <updated>2014-09-11T14:04:24+00:00</updated>
   <id>/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -27,9 +27,9 @@ We hope that this text will help all the people that are building UIs in Pharo, 
 <p>The easiest way to read the chapter is from the continuous integration server, which produces a html file of the chapter <a href="https://ci.inria.fr/pharo-contribution/job/PharoForTheEnterprise/lastSuccessfulBuild/artifact/Spec/Spec.pier.html">here</a>.</p>
 
 <p>We tried our best to make it understandable and complete, but if you have any doubts or comments please do not hesitate to let us know !!
-You can find the pier files on GitHub<sup><a href="https://github.com/spec-framework/documentation"><i class='fa fa-github-alt'></i></a></sup>, where you can also report issues or propose fixes.</p>
+You can find the pier files on GitHub<sup><a href="https://github.com/spec-framework/documentation"><i class="fa fa-github-alt"></i></a></sup>, where you can also report issues or propose fixes.</p>
 
-<p>Now it&#39;s time to build some cool user interfaces! <i class='fa fa-smile-o fa-2x'></i></p>
+<p>Now it’s time to build some cool user interfaces! <i class="fa fa-smile-o fa-2x"></i></p>
 
 <p>PS from Ben: I would like to personally thank <a href="http://seandenigris.com">Sean P. DeNigris</a> for his surprise pull requests.</p>
 ]]></content>

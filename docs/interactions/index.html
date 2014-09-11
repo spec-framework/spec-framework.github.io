@@ -89,7 +89,7 @@
 			<div>
 				<article>
 					<h1>Sub&nbsp;widgets interaction</h1>
-					<p>The only missing part of this user&nbsp;interface is the interaction between the sub&nbsp;widgets.
+					<p>The only missing part of this user interface is the interaction between the sub widgets.
 The interaction is described in the method <code>initializePresenter</code>.</p>
 
 <p>By linking the behavior of the different widgets it specifies the overall presentation, i.e. how the overall UI responds to interactions by the user.</p>
@@ -105,35 +105,32 @@ In addition to this primitive  <code>whenChangedDo:</code> method, the basic wid
 <p>The following example shows how to use one of the registration methods of the list widget to change the label of the button according to the selection in the list.</p>
 
 <div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="nv">theList</span> <span class="nf">whenSelectedItemChanged:</span> [ <span class="o">:</span><span class="nv">item</span> <span class="o">|</span> 
-    <span class="nv">item</span> 
-        <span class="nf">ifNil:</span> [ <span class="nv">theButton</span> <span class="nf">text:</span> <span class="s">&#39;No selected item&#39;</span> ]
-        <span class="nf">ifNotNil:</span> [ <span class="nv">theButton</span> <span class="nf">text:</span> <span class="s">&#39;An item is selected&#39;</span>] ]</code></pre></div>
+	<span class="nv">item</span> 
+		<span class="nf">ifNil:</span> [ <span class="nv">theButton</span> <span class="nf">text:</span> <span class="s">&#39;No selected item&#39;</span> ]
+		<span class="nf">ifNotNil:</span> [ <span class="nv">theButton</span> <span class="nf">text:</span> <span class="s">&#39;An item is selected&#39;</span>] ]</code></pre></div>
 
-
-The whole event API of the basic widgets is described on this <a href="/docs/api">page</a>.
+<p>The whole event API of the basic widgets is described on this <a href="/docs/api">page</a>.</p>
 
 <div class="hint_box hint">
       <div class="hint_box_row">
-    <div class="hint_box_icon fa-stack fa-lg hint-icon">
-      <i class="fa fa-square fa-stack-2x"></i>
-      <i class="fa fa-info fa-stack-1x hint-overlay"></i>
-    </div>
-    <div class="hint_box_text hint-text"><p>If a programmer wants his or her widgets to be reused,
+	<div class="hint_box_icon fa-stack fa-lg hint-icon">
+	  <i class="fa fa-square fa-stack-2x"></i>
+	  <i class="fa fa-info fa-stack-1x hint-overlay"></i>
+	</div>
+	<div class="hint_box_text hint-text"><p>If a programmer wants his or her widgets to be reused,
 they should provide a comprehensive API.</p>
 </div>
-
-<p></div></div></p>
+</div></div>
 
 <div class="hint_box hint">
       <div class="hint_box_row">
-    <div class="hint_box_icon fa-stack fa-lg hint-icon">
-      <i class="fa fa-square fa-stack-2x"></i>
-      <i class="fa fa-info fa-stack-1x hint-overlay"></i>
-    </div>
-    <div class="hint_box_text hint-text"><p>This method is optional. Without it, the different widgets in the UI will simply not respond to changes in each others' state.</p>
+	<div class="hint_box_icon fa-stack fa-lg hint-icon">
+	  <i class="fa fa-square fa-stack-2x"></i>
+	  <i class="fa fa-info fa-stack-1x hint-overlay"></i>
+	</div>
+	<div class="hint_box_text hint-text"><p>This method is optional. Without it, the different widgets in the UI will simply not respond to changes in each others' state.</p>
 </div>
-
-<p></div></div></p>
+</div></div>
 
 					<div class="section-nav">
 	<div class="btn-group">

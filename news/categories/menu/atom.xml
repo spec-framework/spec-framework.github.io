@@ -4,7 +4,7 @@
   <title><![CDATA[Category: menu | ]]></title>
   <link href="/news/categories/menu/atom.xml" rel="self"/>
   <link href="/"/>
-  <updated>2014-08-30T13:45:16+00:00</updated>
+  <updated>2014-09-11T14:04:24+00:00</updated>
   <id>/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -29,7 +29,7 @@ In order to provide an easy way to add a menu toolbar, Spec reuse <strong>MenuMo
 
 <p><div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="nc">ApplicationWithToolbar</span> <span class="nb">new</span> <span class="nf">openWithSpec</span></code></pre></div></p>
 
-<p><a name="fig_ApplicationWithToolbar"></a><p class="figure"><img src="%7B%7B%20site.url%20%7D%7D/figures/ApplicationWithToolbar.png" alt="fig_ApplicationWithToolbar" title="An example of application with a toolbar"></p></p>
+<p><a name="fig_ApplicationWithToolbar"></a>&lt;p class="figure"&gt;<img src="/figures/ApplicationWithToolbar.png" alt="fig_ApplicationWithToolbar" title="An example of application with a toolbar" />&lt;/p&gt;</p>
 ]]></content>
   </entry>
   

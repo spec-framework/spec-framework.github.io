@@ -101,18 +101,18 @@ tmp <span class="nv">$ </span>git clone https://github.com/SpecForPharo/spec.git
 <span class="nv">repo</span> <span class="o">:=</span> <span class="nc">MCFileTreeRepository</span> <span class="nb">new</span> <span class="nf">directory:</span> <span class="s">&#39;/tmp/spec&#39;</span> <span class="nf">asFileReference</span><span class="p">.</span>
 
 <span class="nv">currentVersions</span> <span class="o">:=</span> <span class="nc">MCWorkingCopy</span> <span class="nf">allManagers</span>
-    <span class="nf">select:</span> [ <span class="o">:</span><span class="nv">e</span> <span class="o">|</span> (<span class="nv">e</span> <span class="nf">ancestry</span> <span class="nf">ancestors</span>) <span class="nf">notEmpty</span> ]
-    <span class="nf">thenCollect:</span> [ <span class="o">:</span><span class="nv">e</span> <span class="o">|</span> <span class="nv">e</span> <span class="nf">ancestry</span> <span class="nf">ancestors</span> <span class="nf">first</span> <span class="nf">name</span> ]<span class="p">.</span>
+	<span class="nf">select:</span> [ <span class="o">:</span><span class="nv">e</span> <span class="o">|</span> (<span class="nv">e</span> <span class="nf">ancestry</span> <span class="nf">ancestors</span>) <span class="nf">notEmpty</span> ]
+	<span class="nf">thenCollect:</span> [ <span class="o">:</span><span class="nv">e</span> <span class="o">|</span> <span class="nv">e</span> <span class="nf">ancestry</span> <span class="nf">ancestors</span> <span class="nf">first</span> <span class="nf">name</span> ]<span class="p">.</span>
 <span class="nv">names</span> <span class="o">:=</span> <span class="nv">repo</span> <span class="nf">packageDescriptionsFromReadableFileNames</span><span class="p">.</span>
 <span class="nv">toLoad</span> <span class="o">:=</span> <span class="nv">names</span> <span class="nf">select:</span> [ <span class="o">:</span><span class="nv">e</span> <span class="o">||</span><span class="nv"> currentVersion </span><span class="o">|</span> 
-    <span class="nv">currentVersion</span> <span class="o">:=</span> <span class="nv">e</span> <span class="nf">first</span> <span class="nf">,</span> <span class="s">&#39;-&#39;</span><span class="nf">,</span> <span class="nv">e</span> <span class="nf">second</span> <span class="nf">,</span> <span class="s">&#39;.&#39;</span><span class="nf">,</span> <span class="nv">e</span> <span class="nf">third</span> <span class="nf">asString</span><span class="p">.</span>
-    (<span class="nv">currentVersions</span> <span class="nf">includes:</span> <span class="nv">currentVersion</span>) <span class="nf">not</span> ]<span class="p">.</span>
+	<span class="nv">currentVersion</span> <span class="o">:=</span> <span class="nv">e</span> <span class="nf">first</span> <span class="nf">,</span> <span class="s">&#39;-&#39;</span><span class="nf">,</span> <span class="nv">e</span> <span class="nf">second</span> <span class="nf">,</span> <span class="s">&#39;.&#39;</span><span class="nf">,</span> <span class="nv">e</span> <span class="nf">third</span> <span class="nf">asString</span><span class="p">.</span>
+	(<span class="nv">currentVersions</span> <span class="nf">includes:</span> <span class="nv">currentVersion</span>) <span class="nf">not</span> ]<span class="p">.</span>
 
 <span class="nv">toLoad</span> <span class="nf">do:</span> [ <span class="o">:</span><span class="nv">name</span> <span class="o">||</span><span class="nv"> version </span><span class="o">|</span>
-    <span class="nv">version</span> <span class="o">:=</span> <span class="nv">repo</span> <span class="nf">versionFromFileNamed:</span> <span class="nv">name</span> <span class="nf">first,</span> <span class="s">&#39;.package&#39;</span><span class="p">.</span>
-    [ <span class="nv">version</span> <span class="nf">load</span> ]
-        <span class="nf">on:</span> <span class="nc">MCMergeOrLoadWarning</span>
-        <span class="nf">do:</span> [ <span class="o">:</span><span class="nv">ex</span> <span class="o">|</span> [ <span class="nv">ex</span> <span class="nf">load</span>  ] <span class="nf">on:</span> <span class="nc">MCNoChangesException</span> <span class="nf">do:</span> [] ] ]<span class="p">.</span></code></pre></div>
+	<span class="nv">version</span> <span class="o">:=</span> <span class="nv">repo</span> <span class="nf">versionFromFileNamed:</span> <span class="nv">name</span> <span class="nf">first,</span> <span class="s">&#39;.package&#39;</span><span class="p">.</span>
+	[ <span class="nv">version</span> <span class="nf">load</span> ]
+		<span class="nf">on:</span> <span class="nc">MCMergeOrLoadWarning</span>
+		<span class="nf">do:</span> [ <span class="o">:</span><span class="nv">ex</span> <span class="o">|</span> [ <span class="nv">ex</span> <span class="nf">load</span>  ] <span class="nf">on:</span> <span class="nc">MCNoChangesException</span> <span class="nf">do:</span> [] ] ]<span class="p">.</span></code></pre></div>
 
 <p>Your image contains now the latest stable version of <em>Spec</em>.</p>
 
