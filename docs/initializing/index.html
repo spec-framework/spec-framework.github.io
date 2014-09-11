@@ -98,9 +98,9 @@ It is explicitly <strong>not</strong> the responsibility of this method to defin
 <p>In general the <code>initializeWidgets</code> method should follow the pattern:</p>
 
 <ul>
-  <li>widgets instantiation</li>
-  <li>widgets configuration specification</li>
-  <li>specification of order of focus</li>
+<li>widgets instantiation</li>
+<li>widgets configuration specification</li>
+<li>specification of order of focus</li>
 </ul>
 
 <p>The last step is not mandatory but <strong>highly</strong> recommended.
@@ -111,28 +111,31 @@ It first instantiates a button and a list widget, storing each in an instance va
 It second configures the button it by setting its label.
 Third it specifies the focus order of all the widgets: first the button and then the list.</p>
 
-<div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="nf">initializeWidgets</span>
+<div class="highlight"><pre><code class="smalltalk"><span class="nf">initializeWidgets</span>
 
-	<span class="nv">theButton</span> <span class="o">:=</span> <span class="bp">self</span> <span class="nf">newButton</span><span class="p">.</span>
-	<span class="nv">theList</span> <span class="o">:=</span> <span class="bp">self</span> <span class="nf">newList</span><span class="p">.</span>
+    <span class="nv">theButton</span> <span class="o">:=</span> <span class="bp">self</span> <span class="nf">newButton</span><span class="p">.</span>
+    <span class="nv">theList</span> <span class="o">:=</span> <span class="bp">self</span> <span class="nf">newList</span><span class="p">.</span>
 
-	<span class="nv">theButton</span> <span class="nf">label:</span> <span class="s">&#39;I am a button&#39;</span><span class="p">.</span>
-	<span class="nv">theList</span> <span class="nf">items:</span> <span class="ss">#(</span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span> <span class="m">6</span> <span class="m">7</span> <span class="m">8</span> <span class="m">9</span> <span class="m">0</span><span class="ss">)</span><span class="p">.</span>
-	
-	<span class="bp">self</span> <span class="nf">focusOrder</span>
-		<span class="nf">add:</span> <span class="nv">theButton</span><span class="p">;</span>
-		<span class="nf">add:</span> <span class="nv">theList</span><span class="p">.</span></code></pre></div>
+    <span class="nv">theButton</span> <span class="nf">label:</span> <span class="s">&#39;I am a button&#39;</span><span class="p">.</span>
+    <span class="nv">theList</span> <span class="nf">items:</span> <span class="ss">#(</span><span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span> <span class="m">6</span> <span class="m">7</span> <span class="m">8</span> <span class="m">9</span> <span class="m">0</span><span class="ss">)</span><span class="p">.</span>
+    
+    <span class="bp">self</span> <span class="nf">focusOrder</span>
+        <span class="nf">add:</span> <span class="nv">theButton</span><span class="p">;</span>
+        <span class="nf">add:</span> <span class="nv">theList</span><span class="p">.</span>
+</code></pre></div>
+
 
 <div class="hint_box alertbox">
       <div class="hint_box_row">
-	<div class="hint_box_icon fa-stack fa-lg alert-icon">
-	  <i class="fa fa-exclamation-triangle fa-2x"></i>
-	</div>
-	<div class="hint_box_text alert-text"><p>Specifying this method is <strong>mandatory</strong>, as without it the UI would have no widgets</p>
+    <div class="hint_box_icon fa-stack fa-lg alert-icon">
+      <i class="fa fa-exclamation-triangle fa-2x"></i>
+    </div>
+    <div class="hint_box_text alert-text"><p>Specifying this method is <strong>mandatory</strong>, as without it the UI would have no widgets</p>
 </div>
-</div></div>
 
-<h2 id="widget-instantiation">Widget instantiation</h2>
+<p></div></div></p>
+
+<h2>Widget instantiation</h2>
 
 <p>The instantiation of a widget can be done in two ways: through the use of an creation method or through the use of the <code>instantiate:</code> method.</p>
 
@@ -145,13 +148,14 @@ For example, to reuse a <strong>MessageBrowser</strong> widget, the code is <cod
 
 <div class="hint_box hint">
       <div class="hint_box_row">
-	<div class="hint_box_icon fa-stack fa-lg hint-icon">
-	  <i class="fa fa-square fa-stack-2x"></i>
-	  <i class="fa fa-info fa-stack-1x hint-overlay"></i>
-	</div>
-	<div class="hint_box_text hint-text"><p>Do not forger to generate the accessors for your instance variables.</p>
+    <div class="hint_box_icon fa-stack fa-lg hint-icon">
+      <i class="fa fa-square fa-stack-2x"></i>
+      <i class="fa fa-info fa-stack-1x hint-overlay"></i>
+    </div>
+    <div class="hint_box_text hint-text"><p>Do not forger to generate the accessors for your instance variables.</p>
 </div>
-</div></div>
+
+<p></div></div></p>
 
 					<div class="section-nav">
 	<div class="btn-group">
@@ -181,6 +185,22 @@ For example, to reuse a <strong>MessageBrowser</strong> widget, the code is <cod
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -282,22 +302,6 @@ For example, to reuse a <strong>MessageBrowser</strong> widget, the code is <cod
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -306,30 +310,6 @@ For example, to reuse a <strong>MessageBrowser</strong> widget, the code is <cod
     
   
 
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
   
     
   
@@ -423,6 +403,30 @@ For example, to reuse a <strong>MessageBrowser</strong> widget, the code is <cod
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 
 
   
@@ -431,6 +435,10 @@ For example, to reuse a <strong>MessageBrowser</strong> widget, the code is <cod
     
   
 
+  
+    
+  
+    
   
     
   
@@ -544,10 +552,6 @@ For example, to reuse a <strong>MessageBrowser</strong> widget, the code is <cod
   
     
   
-    
-  
-    
-  
 
 
   
@@ -802,6 +806,34 @@ For example, to reuse a <strong>MessageBrowser</strong> widget, the code is <cod
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -811,34 +843,6 @@ For example, to reuse a <strong>MessageBrowser</strong> widget, the code is <cod
   
     
       <li class="sidebar_item "><a href="/docs/example/">Example</a></li>
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
     
   
     
@@ -944,38 +948,6 @@ For example, to reuse a <strong>MessageBrowser</strong> widget, the code is <cod
     
   
     
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
       <li class="sidebar_item "><a href="/docs/starting/">Where to start?</a></li>
     
   
@@ -1051,6 +1023,38 @@ For example, to reuse a <strong>MessageBrowser</strong> widget, the code is <cod
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 
 
   
@@ -1059,6 +1063,18 @@ For example, to reuse a <strong>MessageBrowser</strong> widget, the code is <cod
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -1164,18 +1180,6 @@ For example, to reuse a <strong>MessageBrowser</strong> widget, the code is <cod
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -1184,14 +1188,6 @@ For example, to reuse a <strong>MessageBrowser</strong> widget, the code is <cod
     
   
 
-  
-    
-  
-    
-  
-    
-  
-    
   
     
   
@@ -1301,6 +1297,14 @@ For example, to reuse a <strong>MessageBrowser</strong> widget, the code is <cod
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
 
 
   
@@ -1309,18 +1313,6 @@ For example, to reuse a <strong>MessageBrowser</strong> widget, the code is <cod
     
   
 
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
   
     
   
@@ -1342,6 +1334,18 @@ For example, to reuse a <strong>MessageBrowser</strong> widget, the code is <cod
   
     
       <li class="sidebar_item "><a href="/docs/open/">Opening your UI</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
     
   
     
@@ -1565,6 +1569,38 @@ For example, to reuse a <strong>MessageBrowser</strong> widget, the code is <cod
     
   
     
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
       <li class="sidebar_item "><a href="/docs/dynamic/">Dynamic UI</a></li>
     
   
@@ -1644,38 +1680,6 @@ For example, to reuse a <strong>MessageBrowser</strong> widget, the code is <cod
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -1684,26 +1688,6 @@ For example, to reuse a <strong>MessageBrowser</strong> widget, the code is <cod
     
   
 
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
   
     
   
@@ -1801,6 +1785,26 @@ For example, to reuse a <strong>MessageBrowser</strong> widget, the code is <cod
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 
 
   
@@ -1809,6 +1813,14 @@ For example, to reuse a <strong>MessageBrowser</strong> widget, the code is <cod
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -1918,14 +1930,6 @@ For example, to reuse a <strong>MessageBrowser</strong> widget, the code is <cod
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
 
 
 </ul>
@@ -1941,6 +1945,46 @@ For example, to reuse a <strong>MessageBrowser</strong> widget, the code is <cod
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
       <li class="sidebar_item "><a href="/docs/api/">Where to find what I want</a></li>
@@ -2018,46 +2062,6 @@ For example, to reuse a <strong>MessageBrowser</strong> widget, the code is <cod
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -2066,22 +2070,6 @@ For example, to reuse a <strong>MessageBrowser</strong> widget, the code is <cod
     
   
 
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
   
     
   
@@ -2183,6 +2171,22 @@ For example, to reuse a <strong>MessageBrowser</strong> widget, the code is <cod
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 
 
   
@@ -2191,10 +2195,6 @@ For example, to reuse a <strong>MessageBrowser</strong> widget, the code is <cod
     
   
 
-  
-    
-  
-    
   
     
   
@@ -2308,6 +2308,10 @@ For example, to reuse a <strong>MessageBrowser</strong> widget, the code is <cod
   
     
   
+    
+  
+    
+  
 
 
 </ul>
@@ -2327,43 +2331,43 @@ For example, to reuse a <strong>MessageBrowser</strong> widget, the code is <cod
     
   
     
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
       <li class="sidebar_item "><a href="/docs/drag_n_drop/">Drag'n'Drop between two lists</a></li>
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
     
   
     
@@ -2467,35 +2471,35 @@ For example, to reuse a <strong>MessageBrowser</strong> widget, the code is <cod
     
   
     
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
       <li class="sidebar_item "><a href="/docs/repositories/">Repositories</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
     
   
     

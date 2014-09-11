@@ -89,36 +89,40 @@
 			<div>
 				<article>
 					<h1>Opening your UI</h1>
-					<p>The user interface we just implemented is ready to be opened.
+					<p>The user&nbsp;interface we just implemented is ready to be opened.
 To open it in a window, the message <code>openWithSpec</code> needs to be sent to an instance of the previously implemented class <strong>MyUserInterface</strong>.</p>
 
-<div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="nc">MyUserInterface</span> <span class="nb">new</span> <span class="nf">openWithSpec</span></code></pre></div>
+<div class="highlight"><pre><code class="smalltalk"><span class="nc">MyUserInterface</span> <span class="nb">new</span> <span class="nf">openWithSpec</span>
+</code></pre></div>
 
 <p>A window should appears where you can site the list with ten elements and the button labbelled <em>I am a button</em>.</p>
 
 <p>In addition, <em>Spec</em> provides support to open a model directly as a dialog window.
-For this, the method used to open the user interface must be <code>openDialogWithSpec</code>.</p>
+For this, the method used to open the user&nbsp;interface must be <code>openDialogWithSpec</code>.</p>
 
-<div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="nc">MyUserInterface</span> <span class="nb">new</span> <span class="nf">openDialogWithSpec</span></code></pre></div>
+<div class="highlight"><pre><code class="smalltalk"><span class="nc">MyUserInterface</span> <span class="nb">new</span> <span class="nf">openDialogWithSpec</span>
+</code></pre></div>
 
 <p>The dialog window is opened with a toolbar contening a <strong>cancel</strong> button and an <strong>ok</strong> button.
 To set the action to perform when ok is pressed, the hook method <code>initializeDialogWindow:</code> requires to be implemented.
 The following example shows how to change the toolbar and to make it opens a debugger when ok is pressed.</p>
 
-<div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="nf">initializeDialogWindow:</span> <span class="nv">aWindow</span>
+<div class="highlight"><pre><code class="smalltalk"><span class="nf">initializeDialogWindow:</span> <span class="nv">aWindow</span>
     
-	<span class="nv">aWindow</span>
-		<span class="nf">toolbar:</span> <span class="nc">OkToolbar</span> <span class="nb">new</span><span class="p">;</span>
-	    <span class="nf">okAction:</span> [ <span class="bp">self</span> <span class="nf">halt</span> ]<span class="p">.</span></code></pre></div>
+    <span class="nv">aWindow</span>
+        <span class="nf">toolbar:</span> <span class="nc">OkToolbar</span> <span class="nb">new</span><span class="p">;</span>
+        <span class="nf">okAction:</span> [ <span class="bp">self</span> <span class="nf">halt</span> ]<span class="p">.</span>
+</code></pre></div>
 
-<h2 id="morphic-specific">Morphic specific</h2>
+<h2>Morphic specific</h2>
 
 <p>The morphic extension provides a new way to open a <em>Spec</em> model.
 Indeed thanks to the message <code>openWorldWithSpec</code>, the model is open taking 100% of the Pharo window.</p>
 
 <p>It is usefull to run a desktop application, simulating a native window by using the Pharo window.</p>
 
-<div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="nc">MyUserInterface</span> <span class="nb">new</span> <span class="nf">openWorldWithSpec</span></code></pre></div>
+<div class="highlight"><pre><code class="smalltalk"><span class="nc">MyUserInterface</span> <span class="nb">new</span> <span class="nf">openWorldWithSpec</span>
+</code></pre></div>
 
 					<div class="section-nav">
 	<div class="btn-group">
@@ -148,6 +152,22 @@ Indeed thanks to the message <code>openWorldWithSpec</code>, the model is open t
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -249,22 +269,6 @@ Indeed thanks to the message <code>openWorldWithSpec</code>, the model is open t
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -273,30 +277,6 @@ Indeed thanks to the message <code>openWorldWithSpec</code>, the model is open t
     
   
 
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
   
     
   
@@ -390,6 +370,30 @@ Indeed thanks to the message <code>openWorldWithSpec</code>, the model is open t
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 
 
   
@@ -398,6 +402,10 @@ Indeed thanks to the message <code>openWorldWithSpec</code>, the model is open t
     
   
 
+  
+    
+  
+    
   
     
   
@@ -511,10 +519,6 @@ Indeed thanks to the message <code>openWorldWithSpec</code>, the model is open t
   
     
   
-    
-  
-    
-  
 
 
   
@@ -769,6 +773,34 @@ Indeed thanks to the message <code>openWorldWithSpec</code>, the model is open t
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -778,34 +810,6 @@ Indeed thanks to the message <code>openWorldWithSpec</code>, the model is open t
   
     
       <li class="sidebar_item "><a href="/docs/example/">Example</a></li>
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
     
   
     
@@ -911,38 +915,6 @@ Indeed thanks to the message <code>openWorldWithSpec</code>, the model is open t
     
   
     
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
       <li class="sidebar_item "><a href="/docs/starting/">Where to start?</a></li>
     
   
@@ -1018,6 +990,38 @@ Indeed thanks to the message <code>openWorldWithSpec</code>, the model is open t
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 
 
   
@@ -1026,6 +1030,18 @@ Indeed thanks to the message <code>openWorldWithSpec</code>, the model is open t
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -1131,18 +1147,6 @@ Indeed thanks to the message <code>openWorldWithSpec</code>, the model is open t
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -1151,14 +1155,6 @@ Indeed thanks to the message <code>openWorldWithSpec</code>, the model is open t
     
   
 
-  
-    
-  
-    
-  
-    
-  
-    
   
     
   
@@ -1268,6 +1264,14 @@ Indeed thanks to the message <code>openWorldWithSpec</code>, the model is open t
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
 
 
   
@@ -1276,18 +1280,6 @@ Indeed thanks to the message <code>openWorldWithSpec</code>, the model is open t
     
   
 
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
   
     
   
@@ -1309,6 +1301,18 @@ Indeed thanks to the message <code>openWorldWithSpec</code>, the model is open t
   
     
       <li class="sidebar_item current"><a href="/docs/open/">Opening your UI</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
     
   
     
@@ -1532,6 +1536,38 @@ Indeed thanks to the message <code>openWorldWithSpec</code>, the model is open t
     
   
     
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
       <li class="sidebar_item "><a href="/docs/dynamic/">Dynamic UI</a></li>
     
   
@@ -1611,38 +1647,6 @@ Indeed thanks to the message <code>openWorldWithSpec</code>, the model is open t
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -1651,26 +1655,6 @@ Indeed thanks to the message <code>openWorldWithSpec</code>, the model is open t
     
   
 
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
   
     
   
@@ -1768,6 +1752,26 @@ Indeed thanks to the message <code>openWorldWithSpec</code>, the model is open t
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 
 
   
@@ -1776,6 +1780,14 @@ Indeed thanks to the message <code>openWorldWithSpec</code>, the model is open t
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -1885,14 +1897,6 @@ Indeed thanks to the message <code>openWorldWithSpec</code>, the model is open t
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
 
 
 </ul>
@@ -1908,6 +1912,46 @@ Indeed thanks to the message <code>openWorldWithSpec</code>, the model is open t
     
   
 
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
       <li class="sidebar_item "><a href="/docs/api/">Where to find what I want</a></li>
@@ -1985,46 +2029,6 @@ Indeed thanks to the message <code>openWorldWithSpec</code>, the model is open t
   
     
   
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
 
 
   
@@ -2033,22 +2037,6 @@ Indeed thanks to the message <code>openWorldWithSpec</code>, the model is open t
     
   
 
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
   
     
   
@@ -2150,6 +2138,22 @@ Indeed thanks to the message <code>openWorldWithSpec</code>, the model is open t
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 
 
   
@@ -2158,10 +2162,6 @@ Indeed thanks to the message <code>openWorldWithSpec</code>, the model is open t
     
   
 
-  
-    
-  
-    
   
     
   
@@ -2275,6 +2275,10 @@ Indeed thanks to the message <code>openWorldWithSpec</code>, the model is open t
   
     
   
+    
+  
+    
+  
 
 
 </ul>
@@ -2294,43 +2298,43 @@ Indeed thanks to the message <code>openWorldWithSpec</code>, the model is open t
     
   
     
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
       <li class="sidebar_item "><a href="/docs/drag_n_drop/">Drag'n'Drop between two lists</a></li>
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
     
   
     
@@ -2434,35 +2438,35 @@ Indeed thanks to the message <code>openWorldWithSpec</code>, the model is open t
     
   
     
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
       <li class="sidebar_item "><a href="/docs/repositories/">Repositories</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
     
   
     

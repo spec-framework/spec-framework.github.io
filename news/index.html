@@ -125,18 +125,18 @@
 	<div class="post-content">
 		<p>I am glad to announce a new major release for Spec <i class="fa fa-smile-o"></i>.</p>
 
-<h2 id="backward-compatibility-breaker">Backward compatibility breaker</h2>
+<h2>Backward compatibility breaker</h2>
 
 <ul>
-  <li>ListModel menus: now the <code>ListModel</code> instances use an instance of <code>MenuModel</code> as argument instead of a Morphic object. An example is provided in <code>ListModel class&gt;&gt;#example</code></li>
+<li>ListModel menus: now the <code>ListModel</code> instances use an instance of <code>MenuModel</code> as argument instead of a Morphic object. An example is provided in <code>ListModel class&gt;&gt;#example</code></li>
 </ul>
 
-<h2 id="changes">Changes</h2>
+<h2>Changes</h2>
 
 <ul>
-  <li>Removes unrelated to Spec core packages (i.e. <code>Spec-Tools</code>)</li>
-  <li>Adds <code>SpecTableLayout</code>, thanks @webwarrior-ws </li>
-  <li>Removes hardcoded colours, thanks @Uko </li>
+<li>Removes unrelated to Spec core packages (i.e. <code>Spec-Tools</code>)</li>
+<li>Adds <code>SpecTableLayout</code>, thanks @webwarrior-ws </li>
+<li>Removes hardcoded colours, thanks @Uko </li>
 </ul>
 
 <p>In addition, some bug fixes and clean ups.</p>
@@ -196,8 +196,8 @@ it has been decided to change Spec license.</p>
 <p>Now Spec is released under a dual license:</p>
 
 <ul>
-  <li>GPL v3 license when shipped as part of a programming language, its core libraries and frameworks, or its Integrated Development Environment. For more information about the lincense, see <a href="https://github.com/spec-framework/spec/blob/master/LICENSE-GPL3">LICENSE-GPL</a></li>
-  <li>MIT license for other cases. For more information about the license, see <a href="https://github.com/spec-framework/spec/blob/master/LICENSE-MIT">LICENSE-MIT</a></li>
+<li>GPL v3 license when shipped as part of a programming language, its core libraries and frameworks, or its Integrated Development Environment. For more information about the lincense, see <a href="https://github.com/spec-framework/spec/blob/master/LICENSE-GPL3">LICENSE-GPL</a></li>
+<li>MIT license for other cases. For more information about the license, see <a href="https://github.com/spec-framework/spec/blob/master/LICENSE-MIT">LICENSE-MIT</a></li>
 </ul>
 
 	</div>
@@ -245,7 +245,7 @@ it has been decided to change Spec license.</p>
 	<div class="post-content">
 		<p>The discussions about Spec in the mailing list, 
 I came out with the idea that a <code>tutorial</code> section 
-could be useful <i class="fa fa-smile-o"></i>.</p>
+could be useful <i class='fa fa-smile-o'></i>.</p>
 
 <p>The first tutorial is about <a href="/docs/drag_n_drop/">drag and drop</a>.</p>
 
@@ -298,7 +298,7 @@ of splitters in Spec has been tackled.</p>
 <p>The problem was revealed when multiple morphs were present after a splitter.
 In this configuration the two morphs moved in a really strange way.</p>
 
-<p>The fix<sup><a href="https://github.com/spec-framework/spec/commit/b59dcf9e9cd0ca3bc2850f4b54aaeb394b9517a4"><i class="fa fa-github-alt"></i></a></sup> provides a 
+<p>The fix<sup><a href="https://github.com/spec-framework/spec/commit/b59dcf9e9cd0ca3bc2850f4b54aaeb394b9517a4"><i class='fa fa-github-alt'></i></a></sup> provides a 
 new algorithm to retrieve the morphs which should be attached to each splitters.</p>
 
 <p>The fix should be into Pharo as soon as the <a href="https://pharo.fogbugz.com/default.asp?13163">slice</a> is integrated.</p>
@@ -355,9 +355,10 @@ In order to provide an easy way to add a menu toolbar, Spec reuse <strong>MenuMo
 
 <p>An example can be opened via</p>
 
-<div class="highlight"><pre><code class="language-smalltalk" data-lang="smalltalk"><span class="nc">ApplicationWithToolbar</span> <span class="nb">new</span> <span class="nf">openWithSpec</span></code></pre></div>
+<div class="highlight"><pre><code class="smalltalk"><span class="nc">ApplicationWithToolbar</span> <span class="nb">new</span> <span class="nf">openWithSpec</span>
+</code></pre></div>
 
-<p><a name="fig_ApplicationWithToolbar"></a>&lt;p class="figure"&gt;<img src="/figures/ApplicationWithToolbar.png" alt="fig_ApplicationWithToolbar" title="An example of application with a toolbar" />&lt;/p&gt;</p>
+<p><a name="fig_ApplicationWithToolbar"></a><p class="figure"><img src="/figures/ApplicationWithToolbar.png" alt="fig_ApplicationWithToolbar" title="An example of application with a toolbar"></p></p>
 
 	</div>
 	<hr>
@@ -411,9 +412,9 @@ We hope that this text will help all the people that are building UIs in Pharo, 
 <p>The easiest way to read the chapter is from the continuous integration server, which produces a html file of the chapter <a href="https://ci.inria.fr/pharo-contribution/job/PharoForTheEnterprise/lastSuccessfulBuild/artifact/Spec/Spec.pier.html">here</a>.</p>
 
 <p>We tried our best to make it understandable and complete, but if you have any doubts or comments please do not hesitate to let us know !!
-You can find the pier files on GitHub<sup><a href="https://github.com/spec-framework/documentation"><i class="fa fa-github-alt"></i></a></sup>, where you can also report issues or propose fixes.</p>
+You can find the pier files on GitHub<sup><a href="https://github.com/spec-framework/documentation"><i class='fa fa-github-alt'></i></a></sup>, where you can also report issues or propose fixes.</p>
 
-<p>Now it’s time to build some cool user interfaces! <i class="fa fa-smile-o fa-2x"></i></p>
+<p>Now it&#39;s time to build some cool user interfaces! <i class='fa fa-smile-o fa-2x'></i></p>
 
 <p>PS from Ben: I would like to personally thank <a href="http://seandenigris.com">Sean P. DeNigris</a> for his surprise pull requests.</p>
 
@@ -458,7 +459,7 @@ You can find the pier files on GitHub<sup><a href="https://github.com/spec-frame
 		</div>
 	</div>
 	<div class="post-content">
-		<p>After a cool sprint yesterday, a couple of <em>Spec</em> issues has been tackled <i class="fa fa-smile-o fa-2x"></i>.</p>
+		<p>After a cool sprint yesterday, a couple of <em>Spec</em> issues has been tackled <i class='fa fa-smile-o fa-2x'></i>.</p>
 
 <p><a href="https://pharo.fogbugz.com/default.asp?12695"><strong>Case 12695</strong></a>: Fix <em>InputWidget</em> example and add a new one. These examples are showing how to set up a window modality. Thanks Samir Saleh and <a href="http://seandenigris.com">Sean P. DeNigris</a> for this fix.</p>
 
@@ -467,8 +468,8 @@ You can find the pier files on GitHub<sup><a href="https://github.com/spec-frame
 <p><a href="https://pharo.fogbugz.com/default.asp?12684"><strong>Case 12684</strong></a>: Renaming <strong>NewValueHolder</strong> into <strong>ReactiveVariable</strong>. But since Pharo 3 is already in beta phase, changing the API was not possible. So instead two hooks were introduced to allow the integration of code from Spec bleeding edge to Pharo 3. For new code (and all code in future versions of Pharo), use the following two hook methods:</p>
 
 <ul>
-  <li><code>asReactiveVariable</code>: use wherever you would have used <code>asValueHolder</code>, which will soon be deprecated. For now, it returns a <strong>NewValueHolder</strong>. In the future it will return a (polymorphic) <strong>ReactiveVariable</strong></li>
-  <li><code>selectionReactiveVariable</code>: as above, returns a <strong>SelectionValueHolder</strong> for now. This extension method allows the two different packages to coexist without having direct references from the Spec model.</li>
+<li><code>asReactiveVariable</code>: use wherever you would have used <code>asValueHolder</code>, which will soon be deprecated. For now, it returns a <strong>NewValueHolder</strong>. In the future it will return a (polymorphic) <strong>ReactiveVariable</strong></li>
+<li><code>selectionReactiveVariable</code>: as above, returns a <strong>SelectionValueHolder</strong> for now. This extension method allows the two different packages to coexist without having direct references from the Spec model.</li>
 </ul>
 
 <p>Thanks a lot <a href="http://seandenigris.com">Sean P. DeNigris</a> for you help and energy.</p>
@@ -520,7 +521,7 @@ You can find the pier files on GitHub<sup><a href="https://github.com/spec-frame
 
 <p>Because of this, the prototyping is quite limited.</p>
 
-<p>But the latest Spec commit<sup><a href="https://github.com/SpecForPharo/spec/commit/5d28c1f293bb1654e7395c18a2ea733fbd551d10"><i class="fa fa-github-alt"></i></a></sup> introduces few changes on <code>DynamicComposableModel</code> to tackle this issue.</p>
+<p>But the latest Spec commit<sup><a href="https://github.com/SpecForPharo/spec/commit/5d28c1f293bb1654e7395c18a2ea733fbd551d10"><i class='fa fa-github-alt'></i></a></sup> introduces few changes on <code>DynamicComposableModel</code> to tackle this issue.</p>
 
 <p>The problem was double: no way to add an instanciated model as a sub widget, and the lookup for the layout was looking for a selector on class side.</p>
 
@@ -528,7 +529,7 @@ You can find the pier files on GitHub<sup><a href="https://github.com/spec-frame
 
 <p>The second problem was slighty more tedious. To work, it requires from the embedded sub widget to have a layout defined. A new instance variable <code>layout</code> has been introduce to hold the <strong>SpecLayout</strong> instance used to position the sub widgets. This way, when a layout is requested for the dynamic model, this layout is returned (<em>regardless of the selector requested</em>).</p>
 
-<p>These two fixes add support for a better composition in the dynamic context <i class="fa fa-smile-o fa-2x"></i>.</p>
+<p>These two fixes add support for a better composition in the dynamic context <i class='fa fa-smile-o fa-2x'></i>.</p>
 
 <p>If you want to try, this <a href="https://gist.github.com/BenjaminVanRyseghem/cd02f2dc61f350a6495f">snippet</a> gives you an example of how to build such unser interface.</p>
 
