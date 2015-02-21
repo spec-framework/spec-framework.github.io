@@ -7,6 +7,22 @@
                 <atom:link href="http://spec.st/feed.xml" rel="self" type="application/rss+xml" />
                 
                         <item>
+                                <title>Spec presentation</title>
+                                <description>&lt;p&gt;A couple of days ago, (Johan Fabry)[http://pleiad.cl/people/jfabry] did an amazing presentation
+about Spec and its key principle &lt;strong&gt;reuse&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Before I spoil the fun, go watch the video &lt;a href=&quot;http://youtu.be/OL23s9ZUIR0?list=PL4actYd6bfnz98ngrKALwwStl3C3odEKG&quot;&gt;&lt;i class=&#39;fa fa-youtube-play&#39;&gt;&lt;/i&gt;&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The slides of the presentation can be found on SlideShare&lt;sup&gt;&lt;a href=&quot;http://www.slideshare.net/pharoproject/pharodays-2015-spec&quot;&gt;&lt;i class=&#39;fa fa-slideshare&#39;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+
+&lt;p&gt;Thanks again Johan &lt;i class=&quot;fa fa-smile-o&quot;&gt;&lt;/i&gt;!&lt;/p&gt;
+</description>
+                                <pubDate>Sat, 21 Feb 2015 01:15:29 +0000</pubDate>
+                                <link>http://spec.st//presentation/reuse/2015/02/21/Presentation.html</link>
+                                <guid isPermaLink="true">http://spec.st//presentation/reuse/2015/02/21/Presentation.html</guid>
+                        </item>
+                
+                        <item>
                                 <title>Spec 2.0.0 release</title>
                                 <description>&lt;p&gt;I am glad to announce a new major release for Spec &lt;i class=&quot;fa fa-smile-o&quot;&gt;&lt;/i&gt;.&lt;/p&gt;
 
